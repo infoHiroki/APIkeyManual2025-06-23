@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LLM（大規模言語モデル）とは - 医療機関向け API キー管理マニュアル</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="header-title">🤖 LLM（大規模言語モデル）とは</h1>
+                <p class="header-subtitle">医療機関向け API キー管理マニュアル</p>
+            </div>
+            <div class="header-actions">
+                <button onclick="window.print()" class="btn btn-outline">🖨️ 印刷</button>
+                <button id="dark-mode-toggle" class="btn btn-outline">🌙</button>
+                <a href="../../index.html" class="btn btn-primary">📚 マニュアル目次に戻る</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <main class="content" style="max-width: 1200px; margin: 40px auto; grid-column: unset;">
+            <h1>LLM（大規模言語モデル）とは</h1>
+
+            <h2>概要</h2>
+            <p>LLM（Large Language Model：大規模言語モデル）は、大量のテキストデータから学習した人工知能（AI）システムです。人間のような自然な文章を理解し、生成することができます。</p>
+
+            <h2>医療機関での活用例</h2>
+
+            <h3>文書作成支援</h3>
+            <div class="card">
+                <ul>
+                    <li>診断書や紹介状の下書き作成</li>
+                    <li>患者説明文書の作成補助</li>
+                    <li>手術記録の整理・要約</li>
+                </ul>
+            </div>
+
+            <h3>情報検索・分析</h3>
+            <div class="card">
+                <ul>
+                    <li>医学文献の要約</li>
+                    <li>症例の類似検索</li>
+                    <li>薬剤情報の照会</li>
+                </ul>
+            </div>
+
+            <h3>教育・研修</h3>
+            <div class="card">
+                <ul>
+                    <li>医学教育用コンテンツの作成</li>
+                    <li>症例検討会の資料作成</li>
+                    <li>患者・家族向け説明資料の作成</li>
+                </ul>
+            </div>
+
+            <h2>重要な制限事項</h2>
+
+            <h3>⚠️ 医療診断には使用禁止</h3>
+            <div class="alert alert-danger">
+                <ul>
+                    <li>LLMは医療診断を行うツールではありません</li>
+                    <li>診断や治療方針の決定は必ず医師が行ってください</li>
+                    <li>あくまで作業効率化のための補助ツールです</li>
+                </ul>
+            </div>
+
+            <h3>情報の正確性について</h3>
+            <div class="alert alert-warning">
+                <ul>
+                    <li>LLMが生成する情報は必ず検証が必要です</li>
+                    <li>最新の医学知識は含まれていない可能性があります</li>
+                    <li>重要な医療情報は必ず一次情報源で確認してください</li>
+                </ul>
+            </div>
+
+            <h2>次のステップ</h2>
+
+            <div class="card-grid">
+                <div class="card">
+                    <h3>🔗 関連文書</h3>
+                    <ul>
+                        <li><a href="02-what-is-api.html">APIとは何か</a></li>
+                        <li><a href="03-medical-considerations.html">医療機関での利用における注意点</a></li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <h3>📚 マニュアル全体</h3>
+                    <ul>
+                        <li><a href="../../index.html">マニュアル目次に戻る</a></li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 医療機関向け API キー管理マニュアル. 
+            <span class="footer-note">本マニュアルは医療機関での安全なAI活用を支援することを目的としています。</span></p>
+        </div>
+    </footer>
+
+    <script>
+        // ダークモード切り替え
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        if (darkModeToggle) {
+            darkModeToggle.addEventListener('click', () => {
+                const currentTheme = document.documentElement.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                
+                document.documentElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+                
+                darkModeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+            });
+        }
+
+        // 保存されたテーマを復元
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            if (darkModeToggle) {
+                darkModeToggle.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+            }
+        }
+    </script>
+</body>
+</html>

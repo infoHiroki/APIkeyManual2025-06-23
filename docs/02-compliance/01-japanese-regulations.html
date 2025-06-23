@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日本の医療機関における法規制 - 医療機関向け API キー管理マニュアル</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="header-title">⚖️ 日本の医療機関における法規制</h1>
+                <p class="header-subtitle">医療機関向け API キー管理マニュアル</p>
+            </div>
+            <div class="header-actions">
+                <button onclick="window.print()" class="btn btn-outline">🖨️ 印刷</button>
+                <button id="dark-mode-toggle" class="btn btn-outline">🌙</button>
+                <a href="../../index.html" class="btn btn-primary">📚 マニュアル目次に戻る</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <main class="content" style="max-width: 1200px; margin: 40px auto; grid-column: unset;">
+            <h1>日本の医療機関における法規制</h1>
+
+            <h2>主要法令の概要</h2>
+
+            <h3>🏥 医療法（昭和23年法律第205号）</h3>
+            <p>医療機関の開設・管理に関する基本法</p>
+
+            <h4>病院等の管理者の監督義務（第15条）</h4>
+            <div class="card">
+                <ul>
+                    <li><strong>AI利用に関する職員の監督責任</strong></li>
+                    <li>システム導入時の安全管理体制の構築</li>
+                    <li>適切な利用方法の教育・指導義務</li>
+                </ul>
+            </div>
+
+            <h4>業務委託に関する規定（第15条の3等）</h4>
+            <div class="card">
+                <ul>
+                    <li><strong>外部サービス利用時の責任</strong></li>
+                    <li>委託先の選定と管理</li>
+                    <li>データの適切な取り扱い確保</li>
+                </ul>
+            </div>
+
+            <h3>⚖️ 個人情報保護法（令和3年改正）</h3>
+            <p>医療機関におけるデータ保護の根幹</p>
+
+            <h4>医療機関の特別な義務</h4>
+            <div class="alert alert-info">
+                <h5>個人情報保護委員会・厚生労働省のガイダンス</h5>
+                <ul>
+                    <li>「医療・介護関係事業者における個人情報の適切な取扱いのためのガイダンス」</li>
+                    <li>医療機関特有の留意事項・事例の提示</li>
+                    <li>小規模診療所（医師1名）も法的義務の対象</li>
+                </ul>
+            </div>
+
+            <h4>AI利用における重要ポイント</h4>
+            <div class="alert alert-danger">
+                <h5>第三者提供の制限</h5>
+                <ul>
+                    <li>OpenAIは第三者に該当</li>
+                    <li>患者の同意なしに個人情報を送信不可</li>
+                    <li>匿名加工・仮名加工情報の適切な処理が必要</li>
+                </ul>
+            </div>
+
+            <h3>📋 医師法・各種医療職法</h3>
+            <p>専門職としての義務と責任</p>
+
+            <h4>診療義務（医師法第19条）</h4>
+            <div class="alert alert-warning">
+                <ul>
+                    <li><strong>診断・治療の最終責任は医師が負う</strong></li>
+                    <li>AIによる出力を診断に直接使用することは禁止</li>
+                    <li>医師の専門的判断を経ることが必須</li>
+                </ul>
+            </div>
+
+            <h4>守秘義務（医師法第24条）</h4>
+            <div class="alert alert-danger">
+                <ul>
+                    <li><strong>患者情報の厳格な保護</strong></li>
+                    <li>AI利用時も守秘義務の対象</li>
+                    <li>不適切な情報共有は刑事罰の対象</li>
+                </ul>
+            </div>
+
+            <h2>医療機関におけるAI利用ガイドライン</h2>
+
+            <h3>📘 厚生労働省の方針</h3>
+            <p>「医療デジタルデータのAI研究開発等への利活用に係るガイドライン」（令和6年）</p>
+
+            <h4>基本的な考え方</h4>
+            <div class="card">
+                <ul>
+                    <li><strong>患者の利益と安全性の最優先</strong></li>
+                    <li>医療従事者の専門的判断の重要性</li>
+                    <li>データ保護とプライバシーの確保</li>
+                </ul>
+            </div>
+
+            <h4>医療機関の義務</h4>
+            <div class="card">
+                <ul>
+                    <li><strong>適切な同意取得</strong></li>
+                    <li>安全管理措置の実施</li>
+                    <li>利用目的の明確化と制限</li>
+                </ul>
+            </div>
+
+            <h3>🏛️ 個人情報保護委員会の指針</h3>
+
+            <h4>医療機関への注意喚起事項</h4>
+            <div class="example-block">
+                <h5>手術動画等の個人データの第三者提供</h5>
+                <ul>
+                    <li>医療機器メーカー等への提供時の同意取得</li>
+                    <li>安全管理措置と従業者の監督</li>
+                    <li>適切な契約締結の必要性</li>
+                </ul>
+            </div>
+
+            <h4>改正個人情報保護法の留意点</h4>
+            <div class="alert alert-info">
+                <ul>
+                    <li><strong>全事業者への適用拡大</strong>（2022年4月〜）</li>
+                    <li>Cookie等の規制強化</li>
+                    <li>漏えい等報告義務の対象拡大</li>
+                </ul>
+            </div>
+
+            <h2>医療広告規制</h2>
+
+            <h3>📢 医療法における医療広告ガイドライン</h3>
+            <p>AI活用の対外的説明における注意事項</p>
+
+            <h4>規制対象</h4>
+            <div class="card">
+                <ul>
+                    <li><strong>ウェブサイトでの表現</strong></li>
+                    <li>パンフレット・院内掲示</li>
+                    <li>SNS・プレスリリース</li>
+                </ul>
+            </div>
+
+            <h4>AI利用に関する表現の注意点</h4>
+            <div class="card-grid">
+                <div class="card">
+                    <h5>❌ 誇大広告の禁止</h5>
+                    <ul>
+                        <li>「AI診断」等の表現は不適切</li>
+                        <li>効果の過度な強調は禁止</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h5>❌ 比較優良広告の禁止</h5>
+                    <ul>
+                        <li>他院との比較表現の制限</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2>コンプライアンス体制の構築</h2>
+
+            <h3>🛡️ 必要な管理体制</h3>
+
+            <h4>組織的安全管理措置</h4>
+            <div class="card">
+                <ul>
+                    <li><strong>AI利用に関する規程の整備</strong></li>
+                    <li>責任者・担当者の明確化</li>
+                    <li>定期的な教育・研修の実施</li>
+                </ul>
+            </div>
+
+            <h4>技術的安全管理措置</h4>
+            <div class="card">
+                <ul>
+                    <li><strong>アクセス制御の実施</strong></li>
+                    <li>利用状況の記録・監査</li>
+                    <li>不正利用の検知システム</li>
+                </ul>
+            </div>
+
+            <h3>📊 定期的な見直し</h3>
+
+            <h4>内部監査の実施</h4>
+            <div class="card">
+                <ul>
+                    <li><strong>AI利用状況の定期確認</strong></li>
+                    <li>法令遵守状況の評価</li>
+                    <li>改善点の抽出と対応</li>
+                </ul>
+            </div>
+
+            <h4>外部監査の活用</h4>
+            <div class="card">
+                <ul>
+                    <li>第三者による客観的評価</li>
+                    <li>専門的知見の導入</li>
+                    <li>業界ベストプラクティスとの比較</li>
+                </ul>
+            </div>
+
+            <h2>関連リンク・情報源</h2>
+
+            <h3>🔗 公式情報源</h3>
+            <div class="card">
+                <ul>
+                    <li><a href="https://www.ppc.go.jp/" target="_blank">個人情報保護委員会</a></li>
+                    <li><a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/iryou/anzen/index.html" target="_blank">厚生労働省 医療安全対策</a></li>
+                    <li><a href="https://www.ppc.go.jp/personalinfo/legal/iryoukaigo_guidance/" target="_blank">医療・介護関係事業者における個人情報の適切な取扱いのためのガイダンス</a></li>
+                </ul>
+            </div>
+
+            <h3>📚 参考資料</h3>
+            <div class="card">
+                <ul>
+                    <li>日本医師会「医療機関におけるAI活用の手引き」</li>
+                    <li>各都道府県医師会のAI利用ガイドライン</li>
+                    <li>医療情報システム開発センター（MEDIS-DC）資料</li>
+                </ul>
+            </div>
+
+            <h2>次のステップ</h2>
+
+            <div class="card-grid">
+                <div class="card">
+                    <h3>🔗 関連文書</h3>
+                    <ul>
+                        <li><a href="02-openai-privacy.html">OpenAIプライバシーポリシーの要点</a></li>
+                        <li><a href="03-baa-hipaa.html">BAA（Business Associate Agreement）について</a></li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <h3>📚 マニュアル全体</h3>
+                    <ul>
+                        <li><a href="../../index.html">マニュアル目次に戻る</a></li>
+                        <li><a href="../01-basics/03-medical-considerations.html">医療機関での利用における注意点</a></li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 医療機関向け API キー管理マニュアル. 
+            <span class="footer-note">本マニュアルは医療機関での安全なAI活用を支援することを目的としています。</span></p>
+        </div>
+    </footer>
+
+    <script>
+        // ダークモード切り替え
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        if (darkModeToggle) {
+            darkModeToggle.addEventListener('click', () => {
+                const currentTheme = document.documentElement.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                
+                document.documentElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+                
+                darkModeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+            });
+        }
+
+        // 保存されたテーマを復元
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            if (darkModeToggle) {
+                darkModeToggle.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+            }
+        }
+    </script>
+</body>
+</html>

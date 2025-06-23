@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenAIプライバシーポリシーの要点 - 医療機関向け API キー管理マニュアル</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="header-title">🔒 OpenAIプライバシーポリシーの要点</h1>
+                <p class="header-subtitle">医療機関向け API キー管理マニュアル</p>
+            </div>
+            <div class="header-actions">
+                <button onclick="window.print()" class="btn btn-outline">🖨️ 印刷</button>
+                <button id="dark-mode-toggle" class="btn btn-outline">🌙</button>
+                <a href="../../index.html" class="btn btn-primary">📚 マニュアル目次に戻る</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <main class="content" style="max-width: 1200px; margin: 40px auto; grid-column: unset;">
+            <h1>OpenAIプライバシーポリシーの要点</h1>
+
+            <h2>基本的な考え方</h2>
+
+            <h3>🔒 OpenAIのプライバシー保護方針</h3>
+            <p>OpenAIは利用者のプライバシーを尊重し、個人情報を安全に管理することを約束しています。</p>
+
+            <h4>適用範囲の重要な区分</h4>
+            <div class="alert alert-info">
+                <ul>
+                    <li><strong>一般ユーザー向けサービス</strong>: ChatGPT等（本プライバシーポリシーが適用）</li>
+                    <li><strong>事業者向けAPIサービス</strong>: 別途顧客契約で規律（医療機関での利用はこちら）</li>
+                </ul>
+            </div>
+
+            <h2>データの取得と利用</h2>
+
+            <h3>📊 取得される個人情報の種類</h3>
+
+            <h4>お客様が提供する情報</h4>
+            <div class="card">
+                <ul>
+                    <li><strong>アカウント情報</strong>: 氏名、連絡先、認証情報、支払情報</li>
+                    <li><strong>ユーザーコンテンツ</strong>: 入力内容、アップロードファイル（文書、画像、音声等）</li>
+                    <li><strong>コミュニケーション情報</strong>: サポートとのやり取り</li>
+                </ul>
+            </div>
+
+            <h4>自動取得される技術情報</h4>
+            <div class="card">
+                <ul>
+                    <li><strong>ログデータ</strong>: IPアドレス、ブラウザ情報、アクセス日時</li>
+                    <li><strong>利用データ</strong>: 利用機能、行動パターン、アクセス状況</li>
+                    <li><strong>デバイス情報</strong>: OS、デバイス識別子、ブラウザ名</li>
+                    <li><strong>位置情報</strong>: IPアドレスベースの大まかな地域（GPSは選択制）</li>
+                </ul>
+            </div>
+
+            <h3>🎯 利用目的</h3>
+
+            <h4>主要な利用目的</h4>
+            <div class="card-grid">
+                <div class="card">
+                    <h5>1. サービス提供</h5>
+                    <p>質問への回答、機能の提供</p>
+                </div>
+                <div class="card">
+                    <h5>2. サービス改善</h5>
+                    <p>新機能開発、品質向上、調査実施</p>
+                </div>
+                <div class="card">
+                    <h5>3. コミュニケーション</h5>
+                    <p>サービス変更の通知、情報提供</p>
+                </div>
+                <div class="card">
+                    <h5>4. セキュリティ</h5>
+                    <p>不正利用防止、システム保護</p>
+                </div>
+                <div class="card">
+                    <h5>5. 法的義務</h5>
+                    <p>権利保護、安全確保</p>
+                </div>
+            </div>
+
+            <h4>⚠️ 医療機関が注意すべき点</h4>
+            <div class="alert alert-warning">
+                <ul>
+                    <li><strong>モデル学習への利用</strong>: コンテンツ情報がChatGPTモデルの学習に使用される可能性</li>
+                    <li><strong>オプトアウト可能</strong>: 学習利用の停止要求が可能</li>
+                </ul>
+            </div>
+
+            <h2>データの保存と保有期間</h2>
+
+            <h3>⏱️ 標準的な保有期間</h3>
+            <div class="card">
+                <ul>
+                    <li><strong>APIデータ</strong>: 最大30日間保有（安全上の理由）</li>
+                    <li><strong>削除処理</strong>: 30日後にシステムから削除（法的要求がない限り）</li>
+                </ul>
+            </div>
+
+            <h3>🗑️ データの削除権</h3>
+            <div class="card">
+                <ul>
+                    <li><strong>削除要求</strong>: 個人データの削除請求が可能</li>
+                    <li><strong>一時チャット</strong>: 履歴非表示、最大30日保有</li>
+                    <li><strong>アカウント削除</strong>: 全データの削除要求が可能</li>
+                </ul>
+            </div>
+
+            <h3>📱 設定による制御</h3>
+            <p>利用者の設定により保有期間の調整が一部可能</p>
+
+            <h2>第三者への情報開示</h2>
+
+            <h3>🤝 開示される状況</h3>
+
+            <h4>業務運営のための開示</h4>
+            <div class="card">
+                <ul>
+                    <li><strong>ベンダー・サービス提供事業者</strong>: ホスティング、カスタマーサービス、決済処理等</li>
+                    <li><strong>関連会社</strong>: OpenAIグループ内での共有</li>
+                    <li><strong>指示に従った取り扱い</strong>: 契約に基づく適切な管理</li>
+                </ul>
+            </div>
+
+            <h4>法的要求による開示</h4>
+            <div class="alert alert-warning">
+                <ul>
+                    <li><strong>政府当局</strong>: 法的義務、不正防止、安全保護のため</li>
+                    <li><strong>裁判所命令</strong>: 法的手続きに基づく開示</li>
+                </ul>
+            </div>
+
+            <h4>ビジネス上の開示</h4>
+            <div class="card">
+                <ul>
+                    <li><strong>事業譲渡</strong>: M&A、事業再編時の情報承継</li>
+                    <li><strong>ビジネスアカウント管理者</strong>: 企業アカウントの管理者アクセス</li>
+                </ul>
+            </div>
+
+            <h3>👥 利用者間での情報共有</h3>
+            <div class="alert alert-info">
+                <ul>
+                    <li><strong>共有リンク</strong>: ChatGPT会話の他ユーザーとの共有</li>
+                    <li><strong>第三者アプリ</strong>: GPTカスタムアクション等での情報送信</li>
+                    <li><strong>第三者の規約適用</strong>: 共有先の独自プライバシーポリシーが適用</li>
+                </ul>
+            </div>
+
+            <h2>国際的なデータ移転</h2>
+
+            <h3>🌐 データ処理場所</h3>
+            <div class="alert alert-warning">
+                <ul>
+                    <li><strong>米国での処理</strong>: OpenAIの米国施設・サーバーでの処理・保有</li>
+                    <li><strong>複数法域</strong>: 様々な国のサーバーでの処理</li>
+                    <li><strong>適切な保護措置</strong>: 法的に有効な移転メカニズムの使用</li>
+                </ul>
+            </div>
+
+            <h2>利用者の権利</h2>
+
+            <h3>🛡️ 基本的な権利</h3>
+            <div class="card-grid">
+                <div class="card">
+                    <h5>アクセス権</h5>
+                    <p>個人データとその取扱い方法の情報取得</p>
+                </div>
+                <div class="card">
+                    <h5>削除権</h5>
+                    <p>個人データの削除要求</p>
+                </div>
+                <div class="card">
+                    <h5>修正権</h5>
+                    <p>不正確なデータの修正要求</p>
+                </div>
+                <div class="card">
+                    <h5>ポータビリティ権</h5>
+                    <p>データの第三者移転要求</p>
+                </div>
+                <div class="card">
+                    <h5>制限権</h5>
+                    <p>データ取扱いの制限要求</p>
+                </div>
+                <div class="card">
+                    <h5>異議申立権</h5>
+                    <p>データ取扱い方法への異議</p>
+                </div>
+                <div class="card">
+                    <h5>苦情申立権</h5>
+                    <p>データ保護当局への苦情</p>
+                </div>
+            </div>
+
+            <h3>📞 権利行使の方法</h3>
+            <div class="card">
+                <ul>
+                    <li><strong>オンライン</strong>: <a href="https://privacy.openai.com" target="_blank">privacy.openai.com</a></li>
+                    <li><strong>メール</strong>: <a href="mailto:dsar@openai.com">dsar@openai.com</a></li>
+                    <li><strong>データ保護責任者</strong>: <a href="mailto:privacy@openai.com">privacy@openai.com</a></li>
+                </ul>
+            </div>
+
+            <h2>医療機関での利用における重要な考慮事項</h2>
+
+            <h3>⚠️ 医療データの特別な注意</h3>
+            <div class="alert alert-danger">
+                <ul>
+                    <li><strong>PHI（保護対象保健情報）の取り扱い</strong>: HIPAA適用外（米国法）</li>
+                    <li><strong>日本の個人情報保護法</strong>: より厳格な保護が必要</li>
+                    <li><strong>患者同意</strong>: 個人情報のAI利用について適切な同意取得</li>
+                </ul>
+            </div>
+
+            <h3>🏥 医療機関での対応策</h3>
+            <div class="card-grid">
+                <div class="card">
+                    <h5>匿名化の徹底</h5>
+                    <p>個人特定情報の除去</p>
+                </div>
+                <div class="card">
+                    <h5>院内規定の整備</h5>
+                    <p>AI利用に関する独自規定</p>
+                </div>
+                <div class="card">
+                    <h5>職員教育</h5>
+                    <p>プライバシー保護に関する研修</p>
+                </div>
+            </div>
+
+            <h3>📋 記録・監査の重要性</h3>
+            <div class="card">
+                <ul>
+                    <li><strong>利用ログ</strong>: AI利用状況の記録保持</li>
+                    <li><strong>定期監査</strong>: 適切な利用の確認</li>
+                    <li><strong>インシデント対応</strong>: 不適切利用の発見・対応手順</li>
+                </ul>
+            </div>
+
+            <h2>参考リンク</h2>
+
+            <h3>🔗 公式情報</h3>
+            <div class="card">
+                <ul>
+                    <li><a href="https://openai.com/ja-JP/policies/row-privacy-policy/" target="_blank">OpenAI プライバシーポリシー（日本語）</a></li>
+                    <li><a href="https://help.openai.com/" target="_blank">OpenAI ヘルプセンター</a></li>
+                    <li><a href="https://platform.openai.com/docs/data-usage-policies" target="_blank">OpenAI データ使用ポリシー</a></li>
+                </ul>
+            </div>
+
+            <h2>次のステップ</h2>
+
+            <div class="card-grid">
+                <div class="card">
+                    <h3>🔗 関連文書</h3>
+                    <ul>
+                        <li><a href="03-baa-hipaa.html">BAA（Business Associate Agreement）について</a></li>
+                        <li><a href="../03-security/01-security-overview.html">医療機関向けセキュリティガイドライン</a></li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <h3>📚 マニュアル全体</h3>
+                    <ul>
+                        <li><a href="../../index.html">マニュアル目次に戻る</a></li>
+                        <li><a href="01-japanese-regulations.html">日本の医療機関における法規制</a></li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 医療機関向け API キー管理マニュアル. 
+            <span class="footer-note">本マニュアルは医療機関での安全なAI活用を支援することを目的としています。</span></p>
+        </div>
+    </footer>
+
+    <script>
+        // ダークモード切り替え
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        if (darkModeToggle) {
+            darkModeToggle.addEventListener('click', () => {
+                const currentTheme = document.documentElement.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                
+                document.documentElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+                
+                darkModeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+            });
+        }
+
+        // 保存されたテーマを復元
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            if (darkModeToggle) {
+                darkModeToggle.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+            }
+        }
+    </script>
+</body>
+</html>

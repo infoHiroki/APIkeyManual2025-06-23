@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BAA（Business Associate Agreement）について - 医療機関向け API キー管理マニュアル</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="header-title">📜 BAA（Business Associate Agreement）について</h1>
+                <p class="header-subtitle">医療機関向け API キー管理マニュアル</p>
+            </div>
+            <div class="header-actions">
+                <button onclick="window.print()" class="btn btn-outline">🖨️ 印刷</button>
+                <button id="dark-mode-toggle" class="btn btn-outline">🌙</button>
+                <a href="../../index.html" class="btn btn-primary">📚 マニュアル目次に戻る</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <main class="content" style="max-width: 1200px; margin: 40px auto; grid-column: unset;">
+            <h1>BAA（Business Associate Agreement）について</h1>
+
+            <h2>BAA（Business Associate Agreement）とは</h2>
+
+            <h3>🏥 HIPAA（Health Insurance Portability and Accountability Act）の背景</h3>
+            <div class="card">
+                <ul>
+                    <li><strong>米国の医療プライバシー法</strong>: 1996年制定、医療情報保護の連邦法</li>
+                    <li><strong>PHI（Protected Health Information）</strong>: 保護対象保健情報の定義</li>
+                    <li><strong>Business Associate</strong>: 医療機関の業務を支援する事業者</li>
+                </ul>
+            </div>
+
+            <h3>📜 BAAの目的と機能</h3>
+            <div class="card-grid">
+                <div class="card">
+                    <h4>責任の明確化</h4>
+                    <p>医療データ取り扱いにおける責任分担</p>
+                </div>
+                <div class="card">
+                    <h4>セキュリティ基準</h4>
+                    <p>適切な安全管理措置の実施義務</p>
+                </div>
+                <div class="card">
+                    <h4>法的保護</h4>
+                    <p>HIPAA違反リスクの軽減</p>
+                </div>
+            </div>
+
+            <h2>OpenAIとのBAA</h2>
+
+            <h3>✅ OpenAIのBAA提供状況（2024年現在）</h3>
+            <div class="alert alert-info">
+                <p>OpenAIは医療機関向けにBAAを提供しています。</p>
+            </div>
+
+            <h4>BAA取得の条件</h4>
+            <div class="card">
+                <ul>
+                    <li><strong>ケースバイケース審査</strong>: 各申請を個別に検討</li>
+                    <li><strong>適格な利用用途</strong>: 医療目的での利用であることの証明</li>
+                    <li><strong>企業情報の提供</strong>: 申請組織の詳細情報が必要</li>
+                </ul>
+            </div>
+
+            <h4>申請プロセス</h4>
+            <div class="example-block">
+                <ol>
+                    <li><strong>初回申請</strong>: baa@openai.com宛てに申請</li>
+                    <li><strong>企業情報提供</strong>: 会社概要と利用用途の説明</li>
+                    <li><strong>審査期間</strong>: 1-2営業日で初回回答</li>
+                    <li><strong>詳細確認</strong>: 追加情報が必要な場合あり</li>
+                    <li><strong>BAA締結</strong>: 通常数営業日で完了</li>
+                </ol>
+            </div>
+
+            <h3>📋 BAAの主要内容</h3>
+
+            <h4>データ取り扱いに関する義務</h4>
+            <div class="card">
+                <ul>
+                    <li><strong>ZDR（Zero Data Retention）</strong>: データ保持期間ゼロのオプション</li>
+                    <li><strong>利用制限</strong>: 訓練データへの利用禁止</li>
+                    <li><strong>セキュリティ</strong>: 暗号化・アクセス制御の実施</li>
+                </ul>
+            </div>
+
+            <h4>OpenAIの保証事項</h4>
+            <div class="card-grid">
+                <div class="card">
+                    <h5>SOC 2 Type 2準拠</h5>
+                    <p>セキュリティ監査の実施</p>
+                </div>
+                <div class="card">
+                    <h5>暗号化</h5>
+                    <p>保存時（AES-256）・転送時（TLS 1.2+）の暗号化</p>
+                </div>
+                <div class="card">
+                    <h5>アクセス制御</h5>
+                    <p>厳格なデータアクセス管理</p>
+                </div>
+            </div>
+
+            <h2>日本の医療機関における考慮事項</h2>
+
+            <h3>🇯🇵 日本法との関係</h3>
+            <div class="alert alert-warning">
+                <p>日本にはHIPAAに相当する法律は存在しませんが、より厳格な保護が必要です。</p>
+            </div>
+
+            <h4>個人情報保護法との相違点</h4>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>項目</th>
+                            <th>HIPAA（米国）</th>
+                            <th>個人情報保護法（日本）</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>適用範囲</td>
+                            <td>医療機関特化</td>
+                            <td>全事業者対象</td>
+                        </tr>
+                        <tr>
+                            <td>罰則</td>
+                            <td>主に行政処分</td>
+                            <td>個人に対する刑事罰が厳格</td>
+                        </tr>
+                        <tr>
+                            <td>同意</td>
+                            <td>一般的な同意</td>
+                            <td>より詳細な同意取得が必要</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>🏥 医療機関でのBAA活用</h3>
+
+            <h4>BAAが必要な場面</h4>
+            <div class="alert alert-danger">
+                <ul>
+                    <li><strong>患者データの処理</strong>: 個人を特定可能な情報の利用</li>
+                    <li><strong>診療支援</strong>: 診断・治療に関わる情報処理</li>
+                    <li><strong>研究利用</strong>: 医学研究での匿名化データ利用</li>
+                </ul>
+            </div>
+
+            <h4>BAAが不要な場面</h4>
+            <div class="alert alert-success">
+                <ul>
+                    <li><strong>完全匿名化データ</strong>: 個人特定不可能な情報</li>
+                    <li><strong>公開情報</strong>: 既に公開されている医学情報</li>
+                    <li><strong>教育・研修</strong>: 架空の症例による教育利用</li>
+                </ul>
+            </div>
+
+            <h2>ZDR（Zero Data Retention）について</h2>
+
+            <h3>🗑️ ZDRの概要</h3>
+            <div class="card">
+                <ul>
+                    <li><strong>データ保持期間</strong>: 処理完了後即座に削除</li>
+                    <li><strong>対象API</strong>: 特定のエンドポイントのみ対応</li>
+                    <li><strong>BAA必須</strong>: ZDR利用にはBAA締結が前提</li>
+                </ul>
+            </div>
+
+            <h3>⚠️ ZDRの制限事項</h3>
+            <div class="alert alert-warning">
+                <ul>
+                    <li><strong>一部機能非対応</strong>: Assistants、Threads等は対象外</li>
+                    <li><strong>個別申請必要</strong>: 自動設定は不可、個別リクエストが必要</li>
+                    <li><strong>利用用途審査</strong>: 適格な利用目的の証明が必要</li>
+                </ul>
+            </div>
+
+            <h2>実装上の注意点</h2>
+
+            <h3>🔒 技術的な考慮事項</h3>
+
+            <h4>API利用時の設定</h4>
+            <div class="card">
+                <ul>
+                    <li><strong>エンドポイント選択</strong>: ZDR対応エンドポイントの利用</li>
+                    <li><strong>データ最小化</strong>: 必要最小限のデータのみ送信</li>
+                    <li><strong>ログ管理</strong>: 院内でのアクセスログ記録</li>
+                </ul>
+            </div>
+
+            <h4>セキュリティ対策</h4>
+            <div class="card">
+                <ul>
+                    <li><strong>APIキー管理</strong>: 適切なキーの保管・ローテーション</li>
+                    <li><strong>ネットワーク</strong>: VPN・ファイアウォールによる保護</li>
+                    <li><strong>監査</strong>: 定期的な利用状況の確認</li>
+                </ul>
+            </div>
+
+            <h3>📊 運用面での管理</h3>
+
+            <h4>職員への教育</h4>
+            <div class="card">
+                <ul>
+                    <li><strong>BAA内容の理解</strong>: 契約内容の周知徹底</li>
+                    <li><strong>適切な利用方法</strong>: 技術的制限の理解</li>
+                    <li><strong>インシデント対応</strong>: 不適切利用の発見・報告手順</li>
+                </ul>
+            </div>
+
+            <h4>記録・文書化</h4>
+            <div class="card">
+                <ul>
+                    <li><strong>利用記録</strong>: AI利用の詳細ログ保持</li>
+                    <li><strong>定期レビュー</strong>: BAA遵守状況の確認</li>
+                    <li><strong>改善計画</strong>: 問題発見時の対応策</li>
+                </ul>
+            </div>
+
+            <h2>申請時の必要情報</h2>
+
+            <h3>📝 準備すべき資料</h3>
+
+            <h4>組織情報</h4>
+            <div class="card">
+                <ul>
+                    <li><strong>法人概要</strong>: 正式名称、所在地、事業内容</li>
+                    <li><strong>医療機関情報</strong>: 許可番号、診療科目、規模</li>
+                    <li><strong>責任者情報</strong>: 管理者、IT責任者の詳細</li>
+                </ul>
+            </div>
+
+            <h4>利用計画</h4>
+            <div class="card">
+                <ul>
+                    <li><strong>利用目的</strong>: 具体的な活用場面の説明</li>
+                    <li><strong>データ種類</strong>: 取り扱う情報の種類・範囲</li>
+                    <li><strong>セキュリティ</strong>: 院内の安全管理体制</li>
+                </ul>
+            </div>
+
+            <h3>📞 申請・問い合わせ先</h3>
+            <div class="card">
+                <ul>
+                    <li><strong>BAA申請</strong>: <a href="mailto:baa@openai.com">baa@openai.com</a></li>
+                    <li><strong>技術サポート</strong>: 専用サポート窓口（BAA締結後提供）</li>
+                </ul>
+            </div>
+
+            <h2>まとめ</h2>
+
+            <h3>✅ BAA取得のメリット</h3>
+            <div class="alert alert-success">
+                <ul>
+                    <li><strong>法的リスク軽減</strong>: HIPAA準拠による責任明確化</li>
+                    <li><strong>患者信頼</strong>: 適切なデータ保護の証明</li>
+                    <li><strong>ZDR利用</strong>: 最高レベルのプライバシー保護</li>
+                </ul>
+            </div>
+
+            <h3>⚠️ 注意すべき点</h3>
+            <div class="alert alert-warning">
+                <ul>
+                    <li><strong>日本法との併用</strong>: 国内法令も同時に遵守必要</li>
+                    <li><strong>技術的制限</strong>: 利用可能機能の制約</li>
+                    <li><strong>継続的管理</strong>: 契約後の運用管理が重要</li>
+                </ul>
+            </div>
+
+            <h2>次のステップ</h2>
+
+            <div class="card-grid">
+                <div class="card">
+                    <h3>🔗 関連文書</h3>
+                    <ul>
+                        <li><a href="../03-security/01-security-overview.html">医療機関向けセキュリティガイドライン</a></li>
+                        <li><a href="../04-implementation/01-api-key-setup.html">APIキー管理の具体的手順</a></li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <h3>📚 マニュアル全体</h3>
+                    <ul>
+                        <li><a href="../../index.html">マニュアル目次に戻る</a></li>
+                        <li><a href="01-japanese-regulations.html">日本の医療機関における法規制</a></li>
+                        <li><a href="02-openai-privacy.html">OpenAIプライバシーポリシーの要点</a></li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 医療機関向け API キー管理マニュアル. 
+            <span class="footer-note">本マニュアルは医療機関での安全なAI活用を支援することを目的としています。</span></p>
+        </div>
+    </footer>
+
+    <script>
+        // ダークモード切り替え
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        if (darkModeToggle) {
+            darkModeToggle.addEventListener('click', () => {
+                const currentTheme = document.documentElement.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                
+                document.documentElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+                
+                darkModeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+            });
+        }
+
+        // 保存されたテーマを復元
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            if (darkModeToggle) {
+                darkModeToggle.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+            }
+        }
+    </script>
+</body>
+</html>

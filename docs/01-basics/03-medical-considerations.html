@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>医療機関での利用における注意点 - 医療機関向け API キー管理マニュアル</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="header-title">🏥 医療機関での利用における注意点</h1>
+                <p class="header-subtitle">医療機関向け API キー管理マニュアル</p>
+            </div>
+            <div class="header-actions">
+                <button onclick="window.print()" class="btn btn-outline">🖨️ 印刷</button>
+                <button id="dark-mode-toggle" class="btn btn-outline">🌙</button>
+                <a href="../../index.html" class="btn btn-primary">📚 マニュアル目次に戻る</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <main class="content" style="max-width: 1200px; margin: 40px auto; grid-column: unset;">
+            <h1>医療機関での利用における注意点</h1>
+
+            <h2>医療AI利用の基本原則</h2>
+
+            <h3>🏥 医師法・医療法の遵守</h3>
+            <ul>
+                <li><strong>診断行為は医師のみ</strong>: AIの出力を診断に直接使用することは医師法違反</li>
+                <li><strong>医療広告規制</strong>: AI活用について患者・外部に説明する際は広告規制に注意</li>
+                <li><strong>安全管理義務</strong>: 医療機関としてのAI利用に関する安全管理体制が必要</li>
+            </ul>
+
+            <h3>📊 医療の質と安全性の確保</h3>
+            <ul>
+                <li><strong>エビデンスベース</strong>: AI出力は補助情報として活用し、医学的根拠の確認が必須</li>
+                <li><strong>最新情報の確認</strong>: LLMの学習データは過去のものであり、最新のガイドラインを確認</li>
+                <li><strong>専門医師の判断</strong>: 専門分野の内容は該当専門医による確認が必要</li>
+            </ul>
+
+            <h2>適用可能な業務と制限事項</h2>
+
+            <h3>✅ 適用可能な業務</h3>
+            
+            <div class="card">
+                <h4>文書作成補助</h4>
+                <ul>
+                    <li>診断書、紹介状の下書き作成</li>
+                    <li>手術記録の整理・構造化</li>
+                    <li>患者・家族向け説明資料の作成</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h4>情報整理・検索</h4>
+                <ul>
+                    <li>医学文献の要約作成</li>
+                    <li>症例報告の構造化</li>
+                    <li>教育資料の作成</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h4>業務効率化</h4>
+                <ul>
+                    <li>会議議事録の整理</li>
+                    <li>統計データの分析補助</li>
+                    <li>研究計画の構成支援</li>
+                </ul>
+            </div>
+
+            <h3>❌ 使用禁止の業務</h3>
+            
+            <div class="alert alert-danger">
+                <h4>直接的な医療行為</h4>
+                <ul>
+                    <li>診断の確定</li>
+                    <li>治療方針の決定</li>
+                    <li>薬剤選択の最終判断</li>
+                </ul>
+            </div>
+
+            <div class="alert alert-danger">
+                <h4>緊急時の判断</h4>
+                <ul>
+                    <li>救急対応の指示</li>
+                    <li>手術適応の判断</li>
+                    <li>投薬量の決定</li>
+                </ul>
+            </div>
+
+            <h2>データセキュリティの考慮事項</h2>
+
+            <h3>🔒 個人情報保護の徹底</h3>
+            <ul>
+                <li><strong>患者情報の非送信</strong>: 氏名、生年月日、診察券番号等は絶対に入力しない</li>
+                <li><strong>匿名化の実施</strong>: 必要な場合は適切な匿名化処理を実施</li>
+                <li><strong>院内規定の遵守</strong>: 各医療機関の情報セキュリティポリシーに従う</li>
+            </ul>
+
+            <h3>📋 記録・監査の重要性</h3>
+            <ul>
+                <li><strong>利用ログの保持</strong>: AI利用の記録を適切に保管</li>
+                <li><strong>定期的な監査</strong>: AI利用状況の定期的な確認・評価</li>
+                <li><strong>インシデント対応</strong>: 不適切利用の発見時の対応手順</li>
+            </ul>
+
+            <h2>リスク管理</h2>
+
+            <h3>⚠️ 医療リスクの認識</h3>
+            <div class="alert alert-warning">
+                <ul>
+                    <li><strong>情報の正確性</strong>: AI出力の情報が古い・不正確な可能性</li>
+                    <li><strong>バイアスの存在</strong>: 学習データに含まれるバイアスの影響</li>
+                    <li><strong>言語の誤解</strong>: 医学用語の誤用・誤解釈の可能性</li>
+                </ul>
+            </div>
+
+            <h3>🛡️ リスク軽減策</h3>
+            <div class="alert alert-success">
+                <ul>
+                    <li><strong>複数情報源での確認</strong>: AI出力と医学文献・ガイドラインとの照合</li>
+                    <li><strong>段階的な導入</strong>: 重要度の低い業務から段階的に導入</li>
+                    <li><strong>定期的な評価</strong>: AI利用の効果とリスクの定期的な評価</li>
+                </ul>
+            </div>
+
+            <h2>職員教育の必要性</h2>
+
+            <h3>👨‍⚕️ 医師・看護師への教育</h3>
+            <ul>
+                <li>AI利用の適用範囲と制限の理解</li>
+                <li>個人情報保護の徹底</li>
+                <li>医療安全への配慮</li>
+            </ul>
+
+            <h3>👥 全職員向け教育</h3>
+            <ul>
+                <li>基本的なAI知識</li>
+                <li>セキュリティ意識の向上</li>
+                <li>院内規定の周知徹底</li>
+            </ul>
+
+            <h2>次のステップ</h2>
+
+            <div class="card-grid">
+                <div class="card">
+                    <h3>🔗 関連文書</h3>
+                    <ul>
+                        <li><a href="../02-compliance/01-japanese-regulations.html">日本の医療機関における法規制</a></li>
+                        <li><a href="../02-compliance/02-openai-privacy.html">OpenAIプライバシーポリシーの要点</a></li>
+                        <li><a href="../03-security/01-security-overview.html">医療機関向けセキュリティガイドライン</a></li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <h3>📚 マニュアル全体</h3>
+                    <ul>
+                        <li><a href="../../index.html">マニュアル目次に戻る</a></li>
+                        <li><a href="01-what-is-llm.html">LLMとは</a></li>
+                        <li><a href="02-what-is-api.html">APIとは</a></li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 医療機関向け API キー管理マニュアル. 
+            <span class="footer-note">本マニュアルは医療機関での安全なAI活用を支援することを目的としています。</span></p>
+        </div>
+    </footer>
+
+    <script>
+        // ダークモード切り替え
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        if (darkModeToggle) {
+            darkModeToggle.addEventListener('click', () => {
+                const currentTheme = document.documentElement.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                
+                document.documentElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+                
+                darkModeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+            });
+        }
+
+        // 保存されたテーマを復元
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            if (darkModeToggle) {
+                darkModeToggle.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+            }
+        }
+    </script>
+</body>
+</html>

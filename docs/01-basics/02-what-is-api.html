@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APIとは - 医療機関向け API キー管理マニュアル</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="header-title">🔌 APIとは</h1>
+                <p class="header-subtitle">医療機関向け API キー管理マニュアル</p>
+            </div>
+            <div class="header-actions">
+                <button onclick="window.print()" class="btn btn-outline">🖨️ 印刷</button>
+                <button id="dark-mode-toggle" class="btn btn-outline">🌙</button>
+                <a href="../../index.html" class="btn btn-primary">📚 マニュアル目次に戻る</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <main class="content" style="max-width: 1200px; margin: 40px auto; grid-column: unset;">
+            <h1>APIとは</h1>
+
+            <h2>API（Application Programming Interface）の基本概念</h2>
+            <p>APIは、「Application Programming Interface」の略称で、異なるソフトウェア同士が情報をやり取りするためのインターフェースです。</p>
+
+            <h3>医療機関での例え</h3>
+            <p>病院内の部門間連携に例えると：</p>
+            
+            <div class="card-grid">
+                <div class="card">
+                    <h4>🔬 検査科</h4>
+                    <p>血液検査の結果を<strong>電子カルテシステム</strong>に送信</p>
+                </div>
+                <div class="card">
+                    <h4>💊 薬剤部</h4>
+                    <p>処方情報を<strong>調剤システム</strong>から受信</p>
+                </div>
+                <div class="card">
+                    <h4>📸 放射線科</h4>
+                    <p>画像データを<strong>PACS</strong>に保存</p>
+                </div>
+            </div>
+
+            <div class="alert alert-info">
+                <p>これらの部門間で決められた形式で情報をやり取りするルールが「API」です。</p>
+            </div>
+
+            <h2>OpenAI APIの仕組み</h2>
+
+            <h3>基本的な流れ</h3>
+            <div class="example-block">
+                <ol>
+                    <li><strong>質問の送信</strong>: アプリケーションがOpenAIに質問やタスクを送信</li>
+                    <li><strong>処理</strong>: OpenAIのLLMが回答を生成</li>
+                    <li><strong>回答の受信</strong>: アプリケーションが回答を受け取り表示</li>
+                </ol>
+            </div>
+
+            <h3>APIキーの役割</h3>
+            <div class="card-grid">
+                <div class="card">
+                    <h4>🔐 認証</h4>
+                    <p>利用者を識別</p>
+                </div>
+                <div class="card">
+                    <h4>💰 課金</h4>
+                    <p>使用量に応じた料金計算</p>
+                </div>
+                <div class="card">
+                    <h4>🛡️ セキュリティ</h4>
+                    <p>不正利用の防止</p>
+                </div>
+            </div>
+
+            <h2>医療機関でのAPI活用例</h2>
+
+            <h3>院内システムとの連携</h3>
+            <div class="card">
+                <ul>
+                    <li>電子カルテから患者情報を匿名化して文書作成支援</li>
+                    <li>検査データの解釈補助（診断支援ではない）</li>
+                    <li>医学論文の検索・要約</li>
+                </ul>
+            </div>
+
+            <h3>業務効率化</h3>
+            <div class="card">
+                <ul>
+                    <li>診療記録の下書き作成</li>
+                    <li>患者説明資料の準備</li>
+                    <li>研究データの分析支援</li>
+                </ul>
+            </div>
+
+            <h2>重要な注意事項</h2>
+
+            <h3>⚠️ 直接的な診断・治療決定は禁止</h3>
+            <div class="alert alert-danger">
+                <ul>
+                    <li>APIから得られた情報を診断に直接使用してはいけません</li>
+                    <li>必ず医師の専門的判断を経てください</li>
+                </ul>
+            </div>
+
+            <h3>データの取り扱い</h3>
+            <div class="alert alert-warning">
+                <ul>
+                    <li>個人情報を含む内容の送信は厳禁</li>
+                    <li>院内規定に従った利用が必須</li>
+                </ul>
+            </div>
+
+            <h2>次のステップ</h2>
+
+            <div class="card-grid">
+                <div class="card">
+                    <h3>🔗 関連文書</h3>
+                    <ul>
+                        <li><a href="03-medical-considerations.html">医療機関での利用における注意点</a></li>
+                        <li><a href="../02-compliance/01-japanese-regulations.html">法規制とコンプライアンス</a></li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <h3>📚 マニュアル全体</h3>
+                    <ul>
+                        <li><a href="../../index.html">マニュアル目次に戻る</a></li>
+                        <li><a href="01-what-is-llm.html">LLMとは</a></li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 医療機関向け API キー管理マニュアル. 
+            <span class="footer-note">本マニュアルは医療機関での安全なAI活用を支援することを目的としています。</span></p>
+        </div>
+    </footer>
+
+    <script>
+        // ダークモード切り替え
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        if (darkModeToggle) {
+            darkModeToggle.addEventListener('click', () => {
+                const currentTheme = document.documentElement.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                
+                document.documentElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+                
+                darkModeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+            });
+        }
+
+        // 保存されたテーマを復元
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            if (darkModeToggle) {
+                darkModeToggle.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+            }
+        }
+    </script>
+</body>
+</html>
