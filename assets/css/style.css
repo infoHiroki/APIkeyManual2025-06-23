@@ -34,6 +34,7 @@
 
 body {
     font-family: 'Noto Sans JP', sans-serif;
+    font-size: 16px;
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--bg-color);
@@ -296,7 +297,7 @@ body {
     border-radius: 6px;
     display: block;
     transition: all 0.3s ease;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
 }
 
 .nav-section a:hover {
@@ -387,6 +388,7 @@ h5 {
 p {
     margin-bottom: 16px;
     line-height: 1.7;
+    font-size: 1.05em;
 }
 
 /* Lists */
@@ -398,6 +400,7 @@ ul, ol {
 li {
     margin-bottom: 8px;
     line-height: 1.6;
+    font-size: 1.02em;
 }
 
 /* Links */
@@ -497,6 +500,7 @@ th, td {
     padding: 12px 15px;
     text-align: left;
     border-bottom: 1px solid var(--border-color);
+    font-size: 1.02em;
 }
 
 th {
