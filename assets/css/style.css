@@ -214,6 +214,7 @@ body {
     font-weight: 600;
     color: var(--primary-color);
     margin-bottom: 4px;
+    text-shadow: 0 1px 2px rgba(255, 155, 179, 0.2);
 }
 
 .search-result-content {
@@ -277,6 +278,7 @@ body {
     font-size: 1rem;
     margin-bottom: 10px;
     font-weight: 600;
+    text-shadow: 0 1px 2px rgba(255, 155, 179, 0.2);
 }
 
 .nav-section ul {
@@ -351,6 +353,7 @@ h1 {
     font-weight: 700;
     border-bottom: 3px solid var(--primary-color);
     padding-bottom: 15px;
+    text-shadow: 0 1px 2px rgba(255, 155, 179, 0.3);
 }
 
 h2 {
@@ -402,11 +405,13 @@ a {
     color: var(--accent-color);
     text-decoration: none;
     transition: color 0.3s ease;
+    text-shadow: 0 1px 2px rgba(255, 123, 154, 0.2);
 }
 
 a:hover {
     color: var(--primary-color);
     text-decoration: underline;
+    text-shadow: 0 1px 2px rgba(255, 155, 179, 0.3);
 }
 
 /* Alerts */
@@ -471,6 +476,7 @@ a:hover {
     color: var(--primary-color);
     margin-top: 0;
     margin-bottom: 15px;
+    text-shadow: 0 1px 2px rgba(255, 155, 179, 0.2);
 }
 
 /* Tables */
@@ -497,6 +503,7 @@ th {
     background: var(--light-gray);
     font-weight: 600;
     color: var(--primary-color);
+    text-shadow: 0 1px 2px rgba(255, 155, 179, 0.2);
 }
 
 tr:hover {
@@ -511,6 +518,7 @@ code {
     font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
     font-size: 0.9em;
     color: var(--primary-color);
+    text-shadow: 0 1px 1px rgba(255, 155, 179, 0.2);
 }
 
 pre {
@@ -732,9 +740,18 @@ blockquote {
 .font-weight-bold { font-weight: 700; }
 .font-weight-normal { font-weight: 400; }
 
-.text-primary { color: var(--primary-color); }
-.text-secondary { color: var(--secondary-color); }
-.text-accent { color: var(--accent-color); }
+.text-primary { 
+    color: var(--primary-color); 
+    text-shadow: 0 1px 2px rgba(255, 155, 179, 0.2);
+}
+.text-secondary { 
+    color: var(--secondary-color); 
+    text-shadow: 0 1px 2px rgba(255, 179, 198, 0.2);
+}
+.text-accent { 
+    color: var(--accent-color); 
+    text-shadow: 0 1px 2px rgba(255, 123, 154, 0.2);
+}
 
 .d-none { display: none; }
 .d-block { display: block; }
