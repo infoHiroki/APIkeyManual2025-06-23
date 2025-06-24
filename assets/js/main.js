@@ -62,11 +62,6 @@ class ManualApp {
             printBtn.addEventListener('click', () => this.printManual());
         }
 
-        // ダークモード切り替え
-        const darkModeToggle = document.getElementById('dark-mode-toggle');
-        if (darkModeToggle) {
-            darkModeToggle.addEventListener('click', () => this.toggleDarkMode());
-        }
 
         // サイドバートグル（モバイル）
         const sidebarToggle = document.getElementById('sidebar-toggle');
@@ -120,12 +115,6 @@ class ManualApp {
         // 初期セクションを表示
         this.showSection(this.currentSection);
         
-        // ダークモードの初期状態を復元
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme) {
-            document.documentElement.setAttribute('data-theme', savedTheme);
-            this.updateDarkModeButton();
-        }
     }
 
     isValidSection(section) {
@@ -367,24 +356,6 @@ class ManualApp {
         }, 100);
     }
 
-    // ダークモード切り替え
-    toggleDarkMode() {
-        const currentTheme = document.documentElement.getAttribute('data-theme');
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        
-        document.documentElement.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-        
-        this.updateDarkModeButton();
-    }
-
-    updateDarkModeButton() {
-        const darkModeToggle = document.getElementById('dark-mode-toggle');
-        if (!darkModeToggle) return;
-
-        const currentTheme = document.documentElement.getAttribute('data-theme');
-        darkModeToggle.textContent = currentTheme === 'dark' ? '☀️' : '🌙';
-    }
 
     // サイドバートグル（モバイル）
     toggleSidebar() {

@@ -19,7 +19,6 @@
             <div class="header-actions">
                 <button id="search-btn" class="btn btn-outline">🔍 検索</button>
                 <button id="print-btn" class="btn btn-outline">🖨️ 印刷</button>
-                <button id="dark-mode-toggle" class="btn btn-outline">🌙</button>
                 <a href="docs/01-basics/01-what-is-llm.html" class="btn btn-primary">📖 マニュアルを開始</a>
             </div>
         </div>
@@ -43,47 +42,139 @@
                 <button id="sidebar-toggle" class="sidebar-toggle">☰</button>
             </div>
             
-            <div class="nav-section">
-                <h4>📖 01. 基本概念</h4>
-                <ul>
-                    <li><a href="docs/01-basics/01-what-is-llm.html">LLMとは</a></li>
-                    <li><a href="docs/01-basics/02-what-is-api.html">APIとは</a></li>
-                    <li><a href="docs/01-basics/03-medical-considerations.html">医療機関での注意点</a></li>
-                </ul>
-            </div>
+            <div class="sidebar-content">
+                <div class="nav-section" data-section="basics">
+                    <div class="nav-section-header">
+                        <h4>📖 01. 基本概念</h4>
+                        <span class="nav-section-toggle">▼</span>
+                    </div>
+                    <ul class="nav-subsection">
+                        <li><a href="docs/01-basics/01-what-is-llm.html">LLMとは</a></li>
+                        <li><a href="docs/01-basics/02-what-is-api.html">APIとは</a></li>
+                        <li><a href="docs/01-basics/03-medical-considerations.html">医療機関での注意点</a></li>
+                    </ul>
+                </div>
 
-            <div class="nav-section">
-                <h4>⚖️ 02. 法規制・コンプライアンス</h4>
-                <ul>
-                    <li><a href="docs/02-compliance/01-japanese-regulations.html">日本の医療機関における法規制</a></li>
-                    <li><a href="docs/02-compliance/02-openai-privacy.html">OpenAIプライバシーポリシー</a></li>
-                    <li><a href="docs/02-compliance/03-baa-hipaa.html">BAA・HIPAA について</a></li>
-                </ul>
-            </div>
+                <div class="nav-section" data-section="compliance">
+                    <div class="nav-section-header">
+                        <h4>⚖️ 02. 法規制・コンプライアンス</h4>
+                        <span class="nav-section-toggle">▼</span>
+                    </div>
+                    <ul class="nav-subsection">
+                        <li><a href="docs/02-compliance/01-japanese-regulations.html">日本の医療機関における法規制</a></li>
+                        <li><a href="docs/02-compliance/02-openai-privacy.html">OpenAIプライバシーポリシー</a></li>
+                        <li>
+                            <div class="nav-subsection-group">
+                                <span class="nav-subsection-title">🤝 BAA・HIPAA ガイド</span>
+                                <ul class="nav-subsection-items">
+                                    <li><a href="docs/02-compliance/03-baa-hipaa/01-basics.html">BAA基本概念</a></li>
+                                    <li><a href="docs/02-compliance/03-baa-hipaa/02-zdr.html">ZDR詳細</a></li>
+                                    <li><a href="docs/02-compliance/03-baa-hipaa/03-implementation.html">実装・申請手順</a></li>
+                                    <li><a href="docs/02-compliance/03-baa-hipaa/04-decision-guide.html">意思決定ガイド</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
 
-            <div class="nav-section">
-                <h4>🛡️ 03. セキュリティ</h4>
-                <ul>
-                    <li><a href="docs/03-security/01-security-overview.html">セキュリティ概要</a></li>
-                    <li><a href="docs/03-security/02-patient-data-protection.html">患者情報保護</a></li>
-                    <li><a href="docs/03-security/03-api-key-security.html">APIキーセキュリティ</a></li>
-                </ul>
-            </div>
+                <div class="nav-section" data-section="security">
+                    <div class="nav-section-header">
+                        <h4>🛡️ 03. セキュリティ</h4>
+                        <span class="nav-section-toggle">▼</span>
+                    </div>
+                    <ul class="nav-subsection">
+                        <li><a href="docs/03-security/01-security-overview.html">セキュリティ概要</a></li>
+                        <li><a href="docs/03-security/02-patient-data-protection.html">患者情報保護</a></li>
+                        <li><a href="docs/03-security/03-api-key-security.html">APIキーセキュリティ</a></li>
+                        <li>
+                            <div class="nav-subsection-group">
+                                <span class="nav-subsection-title">🔍 セキュリティ監査</span>
+                                <ul class="nav-subsection-items">
+                                    <li><a href="docs/03-security/04-security-audit/01-overview-daily.html">監査概要・日常チェック</a></li>
+                                    <li><a href="docs/03-security/04-security-audit/02-audit-items-tools.html">重点監査項目・ツール</a></li>
+                                    <li><a href="docs/03-security/04-security-audit/03-audit-response-improvement.html">監査対応・改善</a></li>
+                                    <li><a href="docs/03-security/04-security-audit/04-documentation-training.html">文書管理・担当者育成</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
 
-            <div class="nav-section">
-                <h4>🔧 04. 実装・運用</h4>
-                <ul>
-                    <li><a href="docs/04-implementation/01-api-key-setup.html">APIキーの取得と設定</a></li>
-                    <li><a href="docs/04-implementation/02-practical-usage.html">実践的な使用ガイド</a></li>
-                </ul>
-            </div>
+                <div class="nav-section" data-section="implementation">
+                    <div class="nav-section-header">
+                        <h4>🔧 04. 実装・運用</h4>
+                        <span class="nav-section-toggle">▼</span>
+                    </div>
+                    <ul class="nav-subsection">
+                        <li><a href="docs/04-implementation/01-api-key-setup.html">APIキーの取得と設定</a></li>
+                        <li><a href="docs/04-implementation/02-practical-usage.html">実践的な使用ガイド</a></li>
+                        <li>
+                            <div class="nav-subsection-group">
+                                <span class="nav-subsection-title">🚨 トラブルシューティング</span>
+                                <ul class="nav-subsection-items">
+                                    <li><a href="docs/04-implementation/03-troubleshooting/01-emergency-technical.html">緊急時対応・技術的問題</a></li>
+                                    <li><a href="docs/04-implementation/03-troubleshooting/02-application-cost.html">アプリケーション・コスト問題</a></li>
+                                    <li><a href="docs/04-implementation/03-troubleshooting/03-maintenance-escalation.html">システム保守・エスカレーション</a></li>
+                                    <li><a href="docs/04-implementation/03-troubleshooting/04-tools-improvement.html">ツール・継続的改善</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="nav-subsection-group">
+                                <span class="nav-subsection-title">📊 運用管理</span>
+                                <ul class="nav-subsection-items">
+                                    <li><a href="docs/04-implementation/04-operations-management/01-daily-operations.html">日常運用</a></li>
+                                    <li><a href="docs/04-implementation/04-operations-management/02-user-cost-management.html">利用者・コスト管理</a></li>
+                                    <li><a href="docs/04-implementation/04-operations-management/03-analysis-improvement.html">データ分析・改善</a></li>
+                                    <li><a href="docs/04-implementation/04-operations-management/04-documentation-emergency.html">文書管理・緊急時対応</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
 
-            <div class="nav-section">
-                <h4>📋 05. リファレンス</h4>
-                <ul>
-                    <li><a href="docs/05-reference/01-quick-reference.html">クイックリファレンス</a></li>
-                    <li><a href="docs/05-reference/02-executive-summary.html">エグゼクティブサマリー</a></li>
-                </ul>
+                <div class="nav-section" data-section="reference">
+                    <div class="nav-section-header">
+                        <h4>📋 05. リファレンス</h4>
+                        <span class="nav-section-toggle">▼</span>
+                    </div>
+                    <ul class="nav-subsection">
+                        <li><a href="docs/05-reference/01-quick-reference.html">クイックリファレンス</a></li>
+                        <li><a href="docs/05-reference/02-executive-summary.html">エグゼクティブサマリー</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section" data-section="training">
+                    <div class="nav-section-header">
+                        <h4>🎓 06. 研修・トレーニング</h4>
+                        <span class="nav-section-toggle">▼</span>
+                    </div>
+                    <ul class="nav-subsection">
+                        <li>
+                            <div class="nav-subsection-group">
+                                <span class="nav-subsection-title">📚 職員研修プログラム</span>
+                                <ul class="nav-subsection-items">
+                                    <li><a href="docs/06-training/01-overview.html">研修体系概要</a></li>
+                                    <li><a href="docs/06-training/02-advanced.html">継続・職種別研修</a></li>
+                                    <li><a href="docs/06-training/03-evaluation.html">効果測定・評価</a></li>
+                                    <li><a href="docs/06-training/04-management.html">運営体制・教材管理</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a href="docs/06-training/02-assessment-tests.html">理解度テスト問題集</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section" data-section="reporting">
+                    <div class="nav-section-header">
+                        <h4>📊 07. レポート・分析</h4>
+                        <span class="nav-section-toggle">▼</span>
+                    </div>
+                    <ul class="nav-subsection">
+                        <li><a href="docs/07-reporting/01-monthly-reports.html">月次レポートテンプレート</a></li>
+                        <li><a href="docs/07-reporting/02-training-effectiveness.html">研修効果測定レポート</a></li>
+                    </ul>
+                </div>
             </div>
         </nav>
 
@@ -218,6 +309,7 @@
     </footer>
 
     <script src="assets/js/content.js"></script>
+    <script src="assets/js/sidebar.js"></script>
     <script src="assets/js/main.js"></script>
 </body>
 </html>
