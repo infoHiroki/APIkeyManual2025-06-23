@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>医療機関向け API キー管理マニュアル</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="header-title">🏥 医療機関向け API キー管理マニュアル</h1>
+                <p class="header-subtitle">総合病院における安全なLLM AI活用ガイド</p>
+            </div>
+            <div class="header-actions">
+                <button onclick="window.print()" class="btn btn-outline">🖨️ 印刷</button>
+                <button id="dark-mode-toggle" class="btn btn-outline">🌙</button>
+                <a href="index.html" class="btn btn-primary">📚 マニュアル本編へ</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <main class="content" style="max-width: 1200px; margin: 40px auto; grid-column: unset;">
+            <h1>医療機関向け API キー管理マニュアル</h1>
+
+            <p>本マニュアルは、総合病院を含む医療機関がLLM（大規模言語モデル）AIのAPIを安全に利用するためのガイドラインです。</p>
+
+            <h2>構成</h2>
+
+            <h3>📖 01-basics - 基本概念</h3>
+            <div class="card">
+                <ul>
+                    <li><a href="docs/01-basics/01-what-is-llm.html">LLMとAIの基本概念</a></li>
+                    <li><a href="docs/01-basics/02-what-is-api.html">APIとは何か</a></li>
+                    <li><a href="docs/01-basics/03-medical-considerations.html">医療機関での活用可能性</a></li>
+                </ul>
+            </div>
+
+            <h3>⚖️ 02-compliance - 法規制・コンプライアンス</h3>
+            <div class="card">
+                <ul>
+                    <li><a href="docs/02-compliance/01-japanese-regulations.html">日本の医療機関における法規制</a></li>
+                    <li><a href="docs/02-compliance/02-openai-privacy.html">個人情報保護法</a></li>
+                    <li><a href="docs/02-compliance/03-baa-hipaa.html">OpenAIのプライバシーポリシー</a></li>
+                </ul>
+            </div>
+
+            <h3>🛡️ 03-security - セキュリティガイドライン</h3>
+            <div class="card">
+                <ul>
+                    <li><a href="docs/03-security/01-security-overview.html">医療機関特有のセキュリティリスク</a></li>
+                    <li><a href="docs/03-security/02-patient-data-protection.html">患者情報の保護</a></li>
+                    <li><a href="docs/03-security/03-api-key-security.html">セキュリティベストプラクティス</a></li>
+                </ul>
+            </div>
+
+            <h3>🔧 04-implementation - 実装・運用</h3>
+            <div class="card">
+                <ul>
+                    <li><a href="docs/04-implementation/01-api-key-setup.html">APIキーの取得と管理</a></li>
+                    <li><a href="docs/04-implementation/02-practical-usage.html">実践的な使用方法</a></li>
+                </ul>
+            </div>
+
+            <h3>📋 05-reference - リファレンス</h3>
+            <div class="card">
+                <ul>
+                    <li><a href="docs/05-reference/01-quick-reference.html">クイックリファレンス</a></li>
+                    <li><a href="docs/05-reference/02-executive-summary.html">エグゼクティブサマリー</a></li>
+                </ul>
+            </div>
+
+            <h2>🚀 はじめに</h2>
+
+            <p>医療機関でのAI活用は、業務効率化と医療の質向上に大きな可能性をもたらします。一方で、患者情報の保護やセキュリティリスクへの適切な対応が不可欠です。</p>
+
+            <h3>⚡ クイックスタート</h3>
+            <div class="alert alert-info">
+                <p>初めての方は以下の順序で読み進めることをお勧めします：</p>
+                <ol>
+                    <li><a href="docs/01-basics/01-what-is-llm.html">LLMとは</a> - 基本概念の理解</li>
+                    <li><a href="docs/01-basics/03-medical-considerations.html">医療機関での注意点</a> - 重要な制限事項</li>
+                    <li><a href="docs/03-security/02-patient-data-protection.html">患者情報保護</a> - セキュリティの基本</li>
+                    <li><a href="docs/04-implementation/01-api-key-setup.html">APIキーの取得と設定</a> - 実装手順</li>
+                </ol>
+            </div>
+
+            <h3>🎯 対象読者</h3>
+            <ul>
+                <li>医療機関の管理者・責任者</li>
+                <li>IT担当者・システム管理者</li>
+                <li>医師・看護師・医療従事者</li>
+                <li>事務職員・管理部門職員</li>
+            </ul>
+
+            <h2>📋 重要な前提条件</h2>
+            
+            <h3>⚠️ 利用制限</h3>
+            <div class="alert alert-danger">
+                <ul>
+                    <li><strong>診断・治療の最終判断は必ず医師が行う</strong></li>
+                    <li><strong>患者の個人情報は絶対に入力しない</strong></li>
+                    <li><strong>AI出力は参考情報として活用し、必ず検証する</strong></li>
+                    <li><strong>緊急時の判断には使用しない</strong></li>
+                </ul>
+            </div>
+
+            <h3>🏥 医療機関での責任</h3>
+            <ul>
+                <li>適切なガバナンス体制の構築</li>
+                <li>職員への継続的な教育・研修</li>
+                <li>セキュリティインシデントの予防と対応</li>
+                <li>法令遵守の徹底</li>
+            </ul>
+
+            <h2>📊 マニュアルの活用方法</h2>
+            
+            <div class="card-grid">
+                <div class="card">
+                    <h3>👔 管理者・責任者向け</h3>
+                    <ul>
+                        <li><a href="docs/05-reference/02-executive-summary.html">エグゼクティブサマリー</a> - 全体概要と意思決定情報</li>
+                        <li><a href="docs/02-compliance/01-japanese-regulations.html">法規制・コンプライアンス</a> - 法的要件の確認</li>
+                        <li><a href="docs/05-reference/01-quick-reference.html">クイックリファレンス</a> - 緊急時対応</li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <h3>⚙️ 実務担当者向け</h3>
+                    <ul>
+                        <li><a href="docs/04-implementation/02-practical-usage.html">実践的な使用ガイド</a> - 日常業務での活用方法</li>
+                        <li><a href="docs/04-implementation/01-api-key-setup.html">APIキー管理</a> - 技術的な設定手順</li>
+                        <li><a href="docs/03-security/01-security-overview.html">セキュリティガイドライン</a> - 安全な利用方法</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2>🔗 外部リンク</h2>
+            
+            <h3>公式情報</h3>
+            <div class="card">
+                <ul>
+                    <li><a href="https://platform.openai.com/" target="_blank">OpenAI Platform</a></li>
+                    <li><a href="https://openai.com/ja-JP/policies/row-privacy-policy/" target="_blank">OpenAI プライバシーポリシー</a></li>
+                    <li><a href="https://www.ppc.go.jp/" target="_blank">個人情報保護委員会</a></li>
+                    <li><a href="https://www.mhlw.go.jp/" target="_blank">厚生労働省</a></li>
+                </ul>
+            </div>
+
+            <h3>サポート</h3>
+            <div class="card">
+                <ul>
+                    <li><a href="https://help.openai.com/" target="_blank">OpenAI ヘルプセンター</a></li>
+                    <li><a href="mailto:baa@openai.com">BAA申請</a></li>
+                    <li><a href="mailto:support@openai.com">技術サポート</a></li>
+                </ul>
+            </div>
+
+            <h2>📞 緊急時連絡先</h2>
+
+            <div class="alert alert-danger">
+                <h3>セキュリティインシデント発生時</h3>
+                <ol>
+                    <li>院内IT責任者への即座の連絡</li>
+                    <li>該当システムの利用停止</li>
+                    <li>OpenAI サポート (support@openai.com) への報告</li>
+                    <li>必要に応じて個人情報保護委員会への報告</li>
+                </ol>
+            </div>
+
+            <h2>📅 更新履歴</h2>
+            <div class="card">
+                <ul>
+                    <li><strong>2025-06-23</strong>: 初版作成（全セクション完成）
+                        <ul>
+                            <li>基本概念・法規制・セキュリティ・実装ガイドを網羅</li>
+                            <li>医療機関向けの実践的な内容を重点的に作成</li>
+                            <li>OpenAI最新プライバシーポリシー（2024年11月版）反映</li>
+                            <li>包括的なHTMLサイトとして完成</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="alert alert-info">
+                <h3>📚 マニュアル本編へ</h3>
+                <p>詳細な内容は<a href="index.html">マニュアル本編</a>をご覧ください。</p>
+            </div>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 医療機関向け API キー管理マニュアル. 
+            <span class="footer-note">本マニュアルは医療機関での安全なAI活用を支援することを目的としています。</span></p>
+        </div>
+    </footer>
+
+    <script>
+        // ダークモード切り替え
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        if (darkModeToggle) {
+            darkModeToggle.addEventListener('click', () => {
+                const currentTheme = document.documentElement.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                
+                document.documentElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+                
+                darkModeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+            });
+        }
+
+        // 保存されたテーマを復元
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            if (darkModeToggle) {
+                darkModeToggle.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+            }
+        }
+    </script>
+</body>
+</html>

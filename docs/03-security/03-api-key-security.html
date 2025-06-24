@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APIキーセキュリティ - 医療機関向け API キー管理マニュアル</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="header-title">🔑 APIキーセキュリティ</h1>
+                <p class="header-subtitle">医療機関向け API キー管理マニュアル</p>
+            </div>
+            <div class="header-actions">
+                <button onclick="window.print()" class="btn btn-outline">🖨️ 印刷</button>
+                <button id="dark-mode-toggle" class="btn btn-outline">🌙</button>
+                <a href="../../index.html" class="btn btn-primary">📚 マニュアル目次に戻る</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <main class="content" style="max-width: 1200px; margin: 40px auto; grid-column: unset;">
+            <h1>APIキーセキュリティ</h1>
+
+            <h2>APIキーの基本理解</h2>
+
+            <h3>🔑 APIキーとは</h3>
+            <p>APIキーは、OpenAI APIを利用するための認証情報です。銀行のキャッシュカードと同様に、適切な管理が必要です。</p>
+
+            <h4>APIキーの機能</h4>
+            <div class="card">
+                <ul>
+                    <li><strong>認証</strong>: 利用者の身元確認</li>
+                    <li><strong>認可</strong>: 利用可能な機能の制御</li>
+                    <li><strong>課金</strong>: 使用量に基づく料金計算</li>
+                    <li><strong>監査</strong>: 利用状況の追跡・記録</li>
+                </ul>
+            </div>
+
+            <h4>APIキーの形式</h4>
+            <div class="card">
+                <pre><code>sk-proj-abcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ</code></pre>
+                <ul>
+                    <li>「sk-proj-」で始まる長い文字列</li>
+                    <li>大文字・小文字・数字の組み合わせ</li>
+                    <li>一度生成されると変更不可（再生成のみ）</li>
+                </ul>
+            </div>
+
+            <h2>APIキー管理の重要性</h2>
+
+            <h3>⚠️ 不適切な管理によるリスク</h3>
+
+            <h4>不正利用による被害</h4>
+            <div class="alert alert-danger">
+                <ul>
+                    <li><strong>金銭的損失</strong>: 第三者による大量利用で高額請求</li>
+                    <li><strong>データ漏洩</strong>: 不正アクセスによる情報流出</li>
+                    <li><strong>サービス停止</strong>: アカウント凍結による業務停止</li>
+                    <li><strong>法的責任</strong>: 患者情報流出時の損害賠償</li>
+                </ul>
+            </div>
+
+            <h4>具体的な被害事例（想定）</h4>
+            <div class="alert alert-warning">
+                <ul>
+                    <li>月額数万円の予定が数百万円の請求</li>
+                    <li>患者情報が外部に送信される事故</li>
+                    <li>院内システムが使用不能になる障害</li>
+                    <li>報道による医療機関の信頼失墜</li>
+                </ul>
+            </div>
+
+            <h3>🛡️ 適切な管理によるメリット</h3>
+            <div class="card">
+                <ul>
+                    <li><strong>安全な利用</strong>: 認可された職員のみの利用</li>
+                    <li><strong>コスト管理</strong>: 予算に応じた利用制限</li>
+                    <li><strong>監査対応</strong>: 利用状況の透明性確保</li>
+                    <li><strong>事故防止</strong>: セキュリティインシデントの予防</li>
+                </ul>
+            </div>
+
+            <h2>APIキーの安全な管理方法</h2>
+
+            <h3>🔒 生成時の注意事項</h3>
+
+            <h4>管理者による一元管理</h4>
+            <div class="card">
+                <ul>
+                    <li><strong>IT責任者</strong>: システム管理者が一括管理</li>
+                    <li><strong>最小限の発行</strong>: 必要最小限の数のみ生成</li>
+                    <li><strong>用途別発行</strong>: 部署・用途ごとに個別キー</li>
+                    <li><strong>定期的な見直し</strong>: 不要なキーの定期削除</li>
+                </ul>
+            </div>
+
+            <h4>生成時の記録</h4>
+            <div class="card">
+                <pre><code>APIキー管理台帳の例:
+- キーID: key_001
+- 発行日: 2024-06-23
+- 発行者: IT管理者
+- 利用部署: 内科外来
+- 利用目的: 診療記録作成支援
+- 有効期限: 2024-12-31
+- 最終確認日: 2024-06-23</code></pre>
+            </div>
+
+            <h3>🗄️ 保存・保管方法</h3>
+
+            <h4>✅ 推奨される保管方法</h4>
+
+            <h5>1. パスワード管理ツール</h5>
+            <div class="card">
+                <pre><code>推奨ツール例:
+- 1Password
+- Bitwarden
+- LastPass Business
+- Azure Key Vault</code></pre>
+            </div>
+
+            <h5>2. 暗号化された文書</h5>
+            <div class="card">
+                <ul>
+                    <li>暗号化PDFファイル</li>
+                    <li>暗号化Excelファイル</li>
+                    <li>GPG暗号化テキスト</li>
+                </ul>
+            </div>
+
+            <h5>3. 物理的な安全保管</h5>
+            <div class="card">
+                <ul>
+                    <li>金庫での保管</li>
+                    <li>施錠された引き出し</li>
+                    <li>アクセス制限された部屋</li>
+                </ul>
+            </div>
+
+            <h4>❌ 避けるべき保管方法</h4>
+
+            <h5>危険な保管場所</h5>
+            <div class="alert alert-danger">
+                <ul>
+                    <li><strong>平文ファイル</strong>: 暗号化されていないExcel・Word</li>
+                    <li><strong>メール</strong>: 社内外メールでの送信・保管</li>
+                    <li><strong>チャットツール</strong>: Slack・Teams等での共有</li>
+                    <li><strong>クラウドドライブ</strong>: 無暗号化でのクラウド保存</li>
+                    <li><strong>付箋・メモ</strong>: 机上・PC画面への貼り付け</li>
+                    <li><strong>ブラウザ保存</strong>: Webブラウザの自動保存機能</li>
+                </ul>
+            </div>
+
+            <h5>共有の危険性</h5>
+            <div class="card">
+                <pre><code>❌ 悪い例:
+「APIキーをメールで送信」
+「Slackでキーを共有」
+「共有フォルダに平文保存」
+
+✅ 良い例:
+「パスワード管理ツールで共有」
+「暗号化メールでの送信」
+「口頭・電話での伝達」</code></pre>
+            </div>
+
+            <h3>🔄 定期的な更新・ローテーション</h3>
+
+            <h4>更新タイミング</h4>
+            <div class="card">
+                <ul>
+                    <li><strong>定期更新</strong>: 3-6ヶ月ごと</li>
+                    <li><strong>職員変更時</strong>: 担当者の異動・退職時</li>
+                    <li><strong>セキュリティインシデント</strong>: 漏洩疑いがある場合</li>
+                    <li><strong>システム変更</strong>: 利用システムの大幅変更時</li>
+                </ul>
+            </div>
+
+            <h4>更新手順</h4>
+            <div class="card">
+                <ol>
+                    <li><strong>新しいキーの生成</strong>: 既存キーと並行運用</li>
+                    <li><strong>システムの設定変更</strong>: 新キーでのテスト実行</li>
+                    <li><strong>動作確認</strong>: 全機能の正常動作確認</li>
+                    <li><strong>旧キーの無効化</strong>: 既存キーの削除・無効化</li>
+                    <li><strong>記録の更新</strong>: 管理台帳の更新</li>
+                </ol>
+            </div>
+
+            <h2>アクセス制御と権限管理</h2>
+
+            <h3>👥 アクセス権限の設計</h3>
+
+            <h4>職種別権限設定</h4>
+            <div class="card">
+                <pre><code>医師：
+- 診断支援AI: 参照のみ
+- 文書作成AI: 作成・編集可
+- 管理機能: アクセス不可
+
+看護師：
+- 患者説明資料: 作成・編集可
+- 診断支援AI: アクセス不可
+- 管理機能: アクセス不可
+
+事務職員：
+- 文書作成AI: 限定的利用
+- 患者情報AI: アクセス不可
+- 管理機能: アクセス不可
+
+IT管理者：
+- 全機能: フルアクセス
+- 管理機能: 設定・監視可
+- 監査機能: ログ確認可</code></pre>
+            </div>
+
+            <h4>時間・場所制限</h4>
+            <div class="card">
+                <ul>
+                    <li><strong>利用時間</strong>: 診療時間内のみ</li>
+                    <li><strong>アクセス場所</strong>: 院内ネットワークのみ</li>
+                    <li><strong>デバイス制限</strong>: 院内PCのみ利用可</li>
+                    <li><strong>VPN接続</strong>: 院外アクセス時の認証</li>
+                </ul>
+            </div>
+
+            <h3>🔐 二要素認証の実装</h3>
+
+            <h4>推奨される認証方法</h4>
+            <div class="card">
+                <ol>
+                    <li><strong>SMS認証</strong>: 携帯電話への認証コード送信</li>
+                    <li><strong>認証アプリ</strong>: Google Authenticator、Microsoft Authenticator</li>
+                    <li><strong>ハードウェアトークン</strong>: YubiKey等の物理デバイス</li>
+                    <li><strong>生体認証</strong>: 指紋・顔認証（デバイス対応時）</li>
+                </ol>
+            </div>
+
+            <h4>実装例</h4>
+            <div class="card">
+                <pre><code>ログイン手順:
+1. ユーザーID・パスワード入力
+2. 二要素認証コード入力
+3. APIキーの自動取得・設定
+4. 利用ログの自動記録</code></pre>
+            </div>
+
+            <h2>利用状況の監視・監査</h2>
+
+            <h3>📊 ログ監視システム</h3>
+
+            <h4>監視すべき項目</h4>
+            <div class="card">
+                <ul>
+                    <li><strong>利用時刻</strong>: アクセス日時・利用時間</li>
+                    <li><strong>利用者</strong>: ユーザーID・担当者名</li>
+                    <li><strong>利用内容</strong>: 使用した機能・サービス</li>
+                    <li><strong>データ量</strong>: 送受信したデータサイズ</li>
+                    <li><strong>コスト</strong>: 利用料金・累積費用</li>
+                </ul>
+            </div>
+
+            <h4>異常検知アラート</h4>
+            <div class="card">
+                <pre><code>アラート設定例:
+- 時間外利用（診療時間外のアクセス）
+- 大量利用（通常の10倍以上の利用）
+- 異常な場所（院外からのアクセス）
+- 連続失敗（パスワード間違い等）
+- 高額利用（月額予算の50%超過）</code></pre>
+            </div>
+
+            <h3>📈 定期的な監査</h3>
+
+            <h4>月次監査項目</h4>
+            <div class="card">
+                <ul>
+                    <li>☐ APIキー利用状況の確認</li>
+                    <li>☐ 不正アクセスの有無確認</li>
+                    <li>☐ 利用コストの妥当性評価</li>
+                    <li>☐ 職員の利用パターン分析</li>
+                </ul>
+            </div>
+
+            <h4>四半期監査項目</h4>
+            <div class="card">
+                <ul>
+                    <li>☐ APIキーの棚卸し・見直し</li>
+                    <li>☐ アクセス権限の適切性確認</li>
+                    <li>☐ セキュリティポリシーの遵守状況</li>
+                    <li>☐ 教育効果の測定・評価</li>
+                </ul>
+            </div>
+
+            <h2>インシデント対応</h2>
+
+            <h3>🚨 APIキー漏洩時の対応</h3>
+
+            <h4>緊急対応（24時間以内）</h4>
+            <div class="alert alert-danger">
+                <ol>
+                    <li><strong>キーの無効化</strong>: 該当キーの即座な削除</li>
+                    <li><strong>影響範囲の調査</strong>: 利用状況・アクセスログの確認</li>
+                    <li><strong>一時停止</strong>: 関連システムの利用停止</li>
+                    <li><strong>報告</strong>: 管理者・責任者への報告</li>
+                </ol>
+            </div>
+
+            <h4>短期対応（1週間以内）</h4>
+            <div class="alert alert-warning">
+                <ol>
+                    <li><strong>新キーの発行</strong>: セキュアな環境での再生成</li>
+                    <li><strong>システム復旧</strong>: 新キーでの動作確認・復旧</li>
+                    <li><strong>原因調査</strong>: 漏洩経路・原因の特定</li>
+                    <li><strong>再発防止策</strong>: 対策の検討・実装</li>
+                </ol>
+            </div>
+
+            <h4>長期対応（1ヶ月以内）</h4>
+            <div class="card">
+                <ol>
+                    <li><strong>セキュリティ強化</strong>: 管理体制の見直し・改善</li>
+                    <li><strong>教育実施</strong>: 職員への再教育・研修</li>
+                    <li><strong>監査強化</strong>: 監視・監査体制の強化</li>
+                    <li><strong>文書化</strong>: 事故記録・対策の文書化</li>
+                </ol>
+            </div>
+
+            <h3>🔍 疑わしい活動の検知</h3>
+
+            <h4>注意すべき兆候</h4>
+            <div class="alert alert-warning">
+                <ul>
+                    <li><strong>予期しない高額請求</strong>: 通常の利用料金を大幅に超過</li>
+                    <li><strong>異常なアクセスパターン</strong>: 深夜・休日の大量利用</li>
+                    <li><strong>不正なIPアドレス</strong>: 院外・海外からのアクセス</li>
+                    <li><strong>エラー率の増加</strong>: 認証失敗・API呼び出し失敗</li>
+                </ul>
+            </div>
+
+            <h4>対応手順</h4>
+            <div class="card">
+                <ol>
+                    <li><strong>即座の一時停止</strong>: 疑わしいキーの利用停止</li>
+                    <li><strong>詳細調査</strong>: ログ・アクセス履歴の詳細分析</li>
+                    <li><strong>影響評価</strong>: 患者情報・業務への影響評価</li>
+                    <li><strong>適切な対応</strong>: 状況に応じた対策実施</li>
+                </ol>
+            </div>
+
+            <h2>セキュリティ教育・研修</h2>
+
+            <h3>👨‍🏫 職員教育プログラム</h3>
+
+            <h4>基礎研修（全職員対象）</h4>
+            <div class="card">
+                <ul>
+                    <li>APIキーの基本概念</li>
+                    <li>適切な取り扱い方法</li>
+                    <li>禁止事項・注意点</li>
+                    <li>インシデント報告手順</li>
+                </ul>
+            </div>
+
+            <h4>専門研修（管理者・IT担当者）</h4>
+            <div class="card">
+                <ul>
+                    <li>技術的なセキュリティ対策</li>
+                    <li>ログ監視・分析方法</li>
+                    <li>インシデント対応手順</li>
+                    <li>最新セキュリティ動向</li>
+                </ul>
+            </div>
+
+            <h3>📚 継続的な教育</h3>
+
+            <h4>定期的な情報共有</h4>
+            <div class="card">
+                <ul>
+                    <li>セキュリティニュースの共有</li>
+                    <li>業界事例の紹介</li>
+                    <li>院内ポリシーの更新周知</li>
+                    <li>質疑応答・意見交換</li>
+                </ul>
+            </div>
+
+            <h2>次のステップ</h2>
+
+            <div class="card-grid">
+                <div class="card">
+                    <h3>🔗 関連文書</h3>
+                    <ul>
+                        <li><a href="../04-implementation/01-api-key-setup.html">APIキーの取得と設定</a></li>
+                        <li><a href="../04-implementation/02-practical-usage.html">実践的な使用ガイド</a></li>
+                        <li><a href="01-security-overview.html">セキュリティガイドライン概要</a></li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <h3>📚 マニュアル全体</h3>
+                    <ul>
+                        <li><a href="../../index.html">マニュアル目次に戻る</a></li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 医療機関向け API キー管理マニュアル. 
+            <span class="footer-note">本マニュアルは医療機関での安全なAI活用を支援することを目的としています。</span></p>
+        </div>
+    </footer>
+
+    <script>
+        // ダークモード切り替え
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        if (darkModeToggle) {
+            darkModeToggle.addEventListener('click', () => {
+                const currentTheme = document.documentElement.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                
+                document.documentElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+                
+                darkModeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+            });
+        }
+
+        // 保存されたテーマを復元
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            if (darkModeToggle) {
+                darkModeToggle.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>エグゼクティブサマリー - 医療機関向け API キー管理マニュアル</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="header-title">📊 エグゼクティブサマリー</h1>
+                <p class="header-subtitle">医療機関向け API キー管理マニュアル</p>
+            </div>
+            <div class="header-actions">
+                <button onclick="window.print()" class="btn btn-outline">🖨️ 印刷</button>
+                <button id="dark-mode-toggle" class="btn btn-outline">🌙</button>
+                <a href="../../index.html" class="btn btn-primary">📚 マニュアル目次に戻る</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <main class="content" style="max-width: 1200px; margin: 40px auto; grid-column: unset;">
+            <h1>エグゼクティブサマリー</h1>
+
+            <h2>🏥 医療機関向けAPI管理マニュアル要約</h2>
+
+            <h3>目的・対象</h3>
+            <div class="card">
+                <p>本マニュアルは、総合病院を含む医療機関がOpenAI APIを安全かつ効果的に活用するためのガイドラインです。API・LLMの知識がない職員でも理解できるよう、基本概念から実践的な運用方法まで網羅しています。</p>
+            </div>
+
+            <h2>📊 主要リスクと対策</h2>
+
+            <h3>🔴 重大リスク</h3>
+            <div class="card">
+                <table class="risk-table">
+                    <thead>
+                        <tr>
+                            <th>リスク</th>
+                            <th>影響度</th>
+                            <th>発生確率</th>
+                            <th>対策優先度</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>患者情報漏洩</td>
+                            <td>極大</td>
+                            <td>中</td>
+                            <td>最高</td>
+                        </tr>
+                        <tr>
+                            <td>不正利用による高額請求</td>
+                            <td>大</td>
+                            <td>中</td>
+                            <td>高</td>
+                        </tr>
+                        <tr>
+                            <td>医療事故（AI情報の誤用）</td>
+                            <td>極大</td>
+                            <td>低</td>
+                            <td>最高</td>
+                        </tr>
+                        <tr>
+                            <td>アカウント乗っ取り</td>
+                            <td>大</td>
+                            <td>低</td>
+                            <td>高</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>🛡️ 必須対策</h3>
+            <div class="alert alert-warning">
+                <ol>
+                    <li><strong>患者情報の完全保護</strong>: 個人特定情報の一切の送信禁止</li>
+                    <li><strong>APIキーの厳格管理</strong>: 暗号化保存・定期更新・アクセス制御</li>
+                    <li><strong>医師による最終確認</strong>: AI出力の医学的妥当性確認の義務化</li>
+                    <li><strong>利用監視体制</strong>: 24時間365日の異常検知システム</li>
+                </ol>
+            </div>
+
+            <h2>⚖️ 法的要件・コンプライアンス</h2>
+
+            <h3>主要関連法令</h3>
+            <div class="card-grid">
+                <div class="card">
+                    <h4>個人情報保護法</h4>
+                    <p>患者情報の第三者提供制限</p>
+                </div>
+                <div class="card">
+                    <h4>医師法・医療法</h4>
+                    <p>診断・治療責任の医師帰属</p>
+                </div>
+                <div class="card">
+                    <h4>医療広告規制</h4>
+                    <p>AI活用の対外説明時の注意事項</p>
+                </div>
+            </div>
+
+            <h3>必要な対応</h3>
+            <div class="card">
+                <ul>
+                    <li><strong>BAA締結</strong>: OpenAIとのBusiness Associate Agreement</li>
+                    <li><strong>院内規程整備</strong>: AI利用に関する独自ルールの策定</li>
+                    <li><strong>定期監査</strong>: 法令遵守状況の継続的確認</li>
+                </ul>
+            </div>
+
+            <h2>💰 コスト・投資対効果</h2>
+
+            <h3>導入コストの目安</h3>
+            <div class="card-grid">
+                <div class="card">
+                    <h4>小規模診療所（10名以下）</h4>
+                    <ul>
+                        <li>初期設定: 10-20万円</li>
+                        <li>月額利用料: 5-15万円</li>
+                        <li>教育・研修: 5-10万円</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>中規模病院（100名程度）</h4>
+                    <ul>
+                        <li>初期設定: 50-100万円</li>
+                        <li>月額利用料: 20-50万円</li>
+                        <li>教育・研修: 20-40万円</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>大規模病院（500名以上）</h4>
+                    <ul>
+                        <li>初期設定: 200-500万円</li>
+                        <li>月額利用料: 100-300万円</li>
+                        <li>教育・研修: 100-200万円</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>期待される効果</h3>
+            <div class="card">
+                <ul>
+                    <li><strong>業務効率化</strong>: 文書作成時間50-70%削減</li>
+                    <li><strong>質の向上</strong>: 標準化された記録・説明資料</li>
+                    <li><strong>教育効果</strong>: 職員の医学知識向上支援</li>
+                    <li><strong>患者満足度</strong>: わかりやすい説明資料による向上</li>
+                </ul>
+            </div>
+
+            <h2>🎯 実装ロードマップ</h2>
+
+            <h3>フェーズ1: 準備・試験導入（1-2ヶ月）</h3>
+            <div class="card">
+                <ul class="checklist">
+                    <li><input type="checkbox"> 院内規程の策定</li>
+                    <li><input type="checkbox"> 責任者・管理者の決定</li>
+                    <li><input type="checkbox"> OpenAIアカウント開設・BAA締結</li>
+                    <li><input type="checkbox"> セキュリティ基盤の整備</li>
+                    <li><input type="checkbox"> パイロット部署での試験運用</li>
+                </ul>
+            </div>
+
+            <h3>フェーズ2: 段階的拡大（3-6ヶ月）</h3>
+            <div class="card">
+                <ul class="checklist">
+                    <li><input type="checkbox"> 職員教育・研修の実施</li>
+                    <li><input type="checkbox"> 複数部署への展開</li>
+                    <li><input type="checkbox"> 利用状況の監視・分析</li>
+                    <li><input type="checkbox"> 問題点の特定・改善</li>
+                    <li><input type="checkbox"> 運用プロセスの最適化</li>
+                </ul>
+            </div>
+
+            <h3>フェーズ3: 全面展開・最適化（6-12ヶ月）</h3>
+            <div class="card">
+                <ul class="checklist">
+                    <li><input type="checkbox"> 全部署での本格運用</li>
+                    <li><input type="checkbox"> 高度な活用方法の導入</li>
+                    <li><input type="checkbox"> 継続的な改善サイクル確立</li>
+                    <li><input type="checkbox"> ROI測定・効果検証</li>
+                    <li><input type="checkbox"> 次世代技術への対応準備</li>
+                </ul>
+            </div>
+
+            <h2>👥 組織体制・役割分担</h2>
+
+            <h3>必要な体制</h3>
+            <div class="card">
+                <h4>AI利用委員会（月1回開催）</h4>
+                <ul>
+                    <li>委員長: 院長または副院長</li>
+                    <li>IT責任者: システム管理・技術対応</li>
+                    <li>医療安全管理者: リスク管理・インシデント対応</li>
+                    <li>各部署代表: 現場の声の反映</li>
+                </ul>
+                
+                <h4>運用チーム（日常管理）</h4>
+                <ul>
+                    <li>IT管理者: 技術的な日常管理</li>
+                    <li>部署責任者: 各部署での利用管理</li>
+                    <li>教育担当者: 職員研修・サポート</li>
+                </ul>
+            </div>
+
+            <h3>役割と責任</h3>
+            <div class="card">
+                <table class="role-table">
+                    <thead>
+                        <tr>
+                            <th>役職</th>
+                            <th>主な責任</th>
+                            <th>権限</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>院長</td>
+                            <td>最終責任・方針決定</td>
+                            <td>全体統括</td>
+                        </tr>
+                        <tr>
+                            <td>IT責任者</td>
+                            <td>技術管理・セキュリティ</td>
+                            <td>システム管理</td>
+                        </tr>
+                        <tr>
+                            <td>医療安全管理者</td>
+                            <td>リスク管理・事故対応</td>
+                            <td>利用停止権限</td>
+                        </tr>
+                        <tr>
+                            <td>部署責任者</td>
+                            <td>現場での適切な利用</td>
+                            <td>部署内管理</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>📈 成功指標・KPI</h2>
+
+            <h3>効率性指標</h3>
+            <div class="card">
+                <ul>
+                    <li><strong>文書作成時間</strong>: 50%以上削減目標</li>
+                    <li><strong>診療記録品質</strong>: 標準化率90%以上</li>
+                    <li><strong>職員満足度</strong>: 利用者満足度80%以上</li>
+                </ul>
+            </div>
+
+            <h3>安全性指標</h3>
+            <div class="card">
+                <ul>
+                    <li><strong>セキュリティインシデント</strong>: ゼロ件維持</li>
+                    <li><strong>患者情報漏洩</strong>: ゼロ件維持</li>
+                    <li><strong>不適切利用</strong>: 月1件以下</li>
+                </ul>
+            </div>
+
+            <h3>経済性指標</h3>
+            <div class="card">
+                <ul>
+                    <li><strong>ROI</strong>: 12ヶ月以内に投資回収</li>
+                    <li><strong>コスト削減</strong>: 年間業務コスト10%削減</li>
+                    <li><strong>収益向上</strong>: 診療の質向上による患者増</li>
+                </ul>
+            </div>
+
+            <h2>⚠️ 重要な注意事項</h2>
+
+            <h3>絶対に避けるべき行為</h3>
+            <div class="alert alert-danger">
+                <ol>
+                    <li><strong>患者個人情報の送信</strong>: 氏名・生年月日・住所等</li>
+                    <li><strong>診断への直接利用</strong>: AI出力を診断根拠とする行為</li>
+                    <li><strong>無確認での治療方針決定</strong>: 医師の判断を経ない決定</li>
+                    <li><strong>APIキーの不適切な共有</strong>: メール・チャット等での共有</li>
+                </ol>
+            </div>
+
+            <h3>必須の確認事項</h3>
+            <div class="alert alert-warning">
+                <ol>
+                    <li><strong>医学的妥当性</strong>: 必ず医師による確認</li>
+                    <li><strong>最新情報</strong>: ガイドライン・添付文書での確認</li>
+                    <li><strong>患者同意</strong>: AI利用についての適切な説明</li>
+                    <li><strong>記録保持</strong>: 利用状況の詳細ログ記録</li>
+                </ol>
+            </div>
+
+            <h2>🚀 将来の展望</h2>
+
+            <h3>技術進歩への対応</h3>
+            <div class="card-grid">
+                <div class="card">
+                    <h4>多言語対応</h4>
+                    <p>外国人患者への対応強化</p>
+                </div>
+                <div class="card">
+                    <h4>音声認識</h4>
+                    <p>診療中のリアルタイム記録支援</p>
+                </div>
+                <div class="card">
+                    <h4>画像解析</h4>
+                    <p>放射線・病理画像の補助診断</p>
+                </div>
+                <div class="card">
+                    <h4>予測分析</h4>
+                    <p>患者状態の予測・早期介入</p>
+                </div>
+            </div>
+
+            <h3>規制環境の変化</h3>
+            <div class="card">
+                <ul>
+                    <li><strong>医療AI規制</strong>: 国内外の規制動向への対応</li>
+                    <li><strong>データ保護強化</strong>: より厳格なプライバシー保護</li>
+                    <li><strong>標準化</strong>: 医療AI利用の業界標準策定</li>
+                    <li><strong>認証制度</strong>: AI活用医療機関の認証制度</li>
+                </ul>
+            </div>
+
+            <h2>📞 緊急時連絡先</h2>
+
+            <h3>院内緊急連絡先</h3>
+            <div class="card">
+                <ul>
+                    <li><strong>IT責任者</strong>: [内線] - 技術的問題</li>
+                    <li><strong>医療安全管理者</strong>: [内線] - 安全性問題</li>
+                    <li><strong>事務長</strong>: [内線] - 運営・契約問題</li>
+                </ul>
+            </div>
+
+            <h3>外部緊急連絡先</h3>
+            <div class="card">
+                <ul>
+                    <li><strong>OpenAI サポート</strong>: support@openai.com</li>
+                    <li><strong>OpenAI BAA</strong>: baa@openai.com</li>
+                    <li><strong>個人情報保護委員会</strong>: 03-6457-9849</li>
+                </ul>
+            </div>
+
+            <h2>📚 関連資料</h2>
+
+            <h3>必読文書</h3>
+            <div class="card-grid">
+                <div class="card">
+                    <h4><a href="../01-basics/01-what-is-llm.html">基本概念</a></h4>
+                    <p>LLM・APIの基礎知識</p>
+                </div>
+                <div class="card">
+                    <h4><a href="../02-compliance/01-japanese-regulations.html">法規制・コンプライアンス</a></h4>
+                    <p>法的要件</p>
+                </div>
+                <div class="card">
+                    <h4><a href="../03-security/01-security-overview.html">セキュリティガイドライン</a></h4>
+                    <p>安全対策</p>
+                </div>
+                <div class="card">
+                    <h4><a href="../04-implementation/01-api-key-setup.html">実装・運用</a></h4>
+                    <p>具体的手順</p>
+                </div>
+            </div>
+
+            <h3>外部参考資料</h3>
+            <div class="card">
+                <ul>
+                    <li>OpenAI公式ドキュメント</li>
+                    <li>厚生労働省AI利用ガイドライン</li>
+                    <li>個人情報保護委員会ガイダンス</li>
+                    <li>日本医師会AIガイドライン</li>
+                </ul>
+            </div>
+
+            <div class="alert alert-info">
+                <p><strong>重要</strong>: このマニュアルは2025年6月時点の情報に基づいています。技術の進歩や規制の変更に応じて、定期的な更新が必要です。</p>
+            </div>
+
+            <h2>次のステップ</h2>
+
+            <div class="card-grid">
+                <div class="card">
+                    <h3>🔗 関連文書</h3>
+                    <ul>
+                        <li><a href="01-quick-reference.html">クイックリファレンス</a></li>
+                        <li><a href="../04-implementation/01-api-key-setup.html">API キー設定ガイド</a></li>
+                        <li><a href="../03-security/01-security-overview.html">セキュリティ概要</a></li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <h3>📚 マニュアル全体</h3>
+                    <ul>
+                        <li><a href="../../index.html">マニュアル目次に戻る</a></li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 医療機関向け API キー管理マニュアル. 
+            <span class="footer-note">本マニュアルは医療機関での安全なAI活用を支援することを目的としています。</span></p>
+        </div>
+    </footer>
+
+    <script>
+        // ダークモード切り替え
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        if (darkModeToggle) {
+            darkModeToggle.addEventListener('click', () => {
+                const currentTheme = document.documentElement.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                
+                document.documentElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+                
+                darkModeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+            });
+        }
+
+        // 保存されたテーマを復元
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            if (darkModeToggle) {
+                darkModeToggle.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+            }
+        }
+    </script>
+</body>
+</html>
