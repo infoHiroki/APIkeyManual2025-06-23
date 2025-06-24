@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>運用管理概要と日常運用 - 医療機関向け API キー管理マニュアル</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="header-title">🏥 運用管理概要と日常運用</h1>
+                <p class="header-subtitle">医療機関向け API キー管理マニュアル</p>
+            </div>
+            <div class="header-actions">
+                <button onclick="window.print()" class="btn btn-outline">🖨️ 印刷</button>
+                <button id="dark-mode-toggle" class="btn btn-outline">🌙</button>
+                <a href="../../../index.html" class="btn btn-primary">📚 マニュアル目次に戻る</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <main class="content" style="max-width: 1200px; margin: 40px auto; grid-column: unset;">
+            <h1>運用管理概要と日常運用</h1>
+
+            <h2>🏥 運用管理の概要</h2>
+
+            <h3>運用管理の目的</h3>
+            <ul>
+                <li><strong>安全な継続運用</strong>: 医療機関でのAI利用の安全性確保</li>
+                <li><strong>効果的な活用</strong>: 投資対効果の最大化と業務効率向上</li>
+                <li><strong>リスク管理</strong>: セキュリティリスクと医療リスクの最小化</li>
+                <li><strong>法令遵守</strong>: 関連法規制の継続的な遵守</li>
+            </ul>
+
+            <h3>運用管理の対象範囲</h3>
+            <ul>
+                <li><strong>技術システム</strong>: AIシステムの稼働管理</li>
+                <li><strong>利用者管理</strong>: 職員のアクセス権限・利用状況管理</li>
+                <li><strong>データ管理</strong>: 入出力データの適切な管理</li>
+                <li><strong>コスト管理</strong>: 利用コストの監視・最適化</li>
+            </ul>
+
+            <h2>📅 日常運用管理</h2>
+
+            <h3>日次運用タスク</h3>
+
+            <h4>システム稼働確認（所要時間：15分）</h4>
+            <div class="code-block">
+                <pre><code>確認者：IT管理者
+実施時間：毎朝9:00
+
+チェック項目：
+- [ ] AIシステムの稼働状況確認
+- [ ] エラーログの確認（24時間以内）
+- [ ] レスポンス時間の確認
+- [ ] 利用者からの問い合わせ確認
+
+記録方法：
+- 日次運用チェックシート記入
+- 異常発見時は障害管理システムに記録
+- 月次レポートへの反映
+
+実施例：
+8:30  システムログイン
+8:35  エラーログ確認 → 異常なし
+8:40  レスポンステスト → 平均2.3秒（正常）
+8:45  Help Desk確認 → 新規問い合わせ0件</code></pre>
+            </div>
+
+            <h4>利用状況監視（所要時間：10分）</h4>
+            <div class="code-block">
+                <pre><code>確認者：IT管理者
+実施時間：毎朝9:30
+
+確認内容：
+- [ ] 前日のAPI利用回数
+- [ ] 利用コスト（前日・月累計）
+- [ ] アクティブユーザー数
+- [ ] 異常な利用パターンの検出
+
+許容範囲：
+- 日次API利用：500-2000回
+- 日次コスト：$50-$200
+- アクティブユーザー：20-50名
+- 単一ユーザー最大利用：100回/日
+
+アラート条件：
+- 利用量が前日比200%以上
+- コストが日次予算の150%以上
+- 単一ユーザーが200回/日以上</code></pre>
+            </div>
+
+            <h4>セキュリティチェック（所要時間：5分）</h4>
+            <div class="code-block">
+                <pre><code>確認者：セキュリティ管理者
+実施時間：毎朝10:00
+
+チェック項目：
+- [ ] 不審なアクセスログの確認
+- [ ] 不正IPアドレスからのアクセス
+- [ ] 異常時間帯でのアクセス
+- [ ] APIキーの不正利用の兆候
+
+確認手順：
+1. アクセスログの抽出
+2. 院外IPアドレスの特定
+3. 夜間・休日アクセスの確認
+4. 利用パターンの異常検出</code></pre>
+            </div>
+
+            <h3>週次運用タスク</h3>
+
+            <h4>利用状況分析（所要時間：30分）</h4>
+            <div class="code-block">
+                <pre><code>実施者：IT責任者
+実施日：毎週金曜日
+
+分析項目：
+1. 週次利用統計の作成
+   - 総利用回数・利用時間
+   - 部門別利用状況
+   - 機能別利用状況
+   - エラー発生率
+
+2. 利用者別分析
+   - アクティブユーザー分析
+   - 利用頻度の分析
+   - 利用効果の評価
+
+3. トレンド分析
+   - 利用量の推移
+   - コストの推移
+   - 利用者数の推移
+
+レポート出力：
+- 週次運用レポート（管理者向け）
+- 利用状況サマリー（経営陣向け）</code></pre>
+            </div>
+
+            <h4>システムメンテナンス（所要時間：60分）</h4>
+            <div class="code-block">
+                <pre><code>実施者：IT管理者
+実施日：毎週土曜日 18:00-19:00
+
+メンテナンス内容：
+1. システム更新
+   - [ ] セキュリティパッチの適用
+   - [ ] システムアップデートの確認
+   - [ ] 依存ライブラリの更新
+
+2. データメンテナンス
+   - [ ] ログファイルのアーカイブ
+   - [ ] 不要ファイルの削除
+   - [ ] データベースの最適化
+
+3. バックアップ確認
+   - [ ] 定期バックアップの実行確認
+   - [ ] バックアップデータの整合性確認
+   - [ ] 復元テストの実施（月1回）
+
+事前準備：
+- 利用者への事前通知（72時間前）
+- メンテナンス中の代替手段の準備
+- 緊急時連絡体制の確認</code></pre>
+            </div>
+
+            <h3>月次運用タスク</h3>
+
+            <h4>包括的運用評価（所要時間：120分）</h4>
+            <div class="code-block">
+                <pre><code>実施者：IT責任者 + 医療安全管理者
+実施日：毎月第1営業日
+
+評価内容：
+1. システム稼働率評価
+   - 稼働率目標：99.5%以上
+   - 障害発生件数・影響時間
+   - 平均復旧時間（MTTR）
+
+2. セキュリティ評価
+   - セキュリティインシデント件数
+   - 脆弱性対応状況
+   - アクセス制御の適切性
+
+3. 利用効果評価
+   - ROI（投資対効果）分析
+   - 業務効率化の効果測定
+   - 利用者満足度調査結果
+
+4. コンプライアンス評価
+   - 法規制遵守状況
+   - 院内規定遵守状況
+   - 監査指摘事項の対応状況</code></pre>
+            </div>
+
+            <h2>次のステップ</h2>
+
+            <p>日常運用の基盤を確立した後は、以下のステップに進んでください：</p>
+
+            <div class="card">
+                <ul>
+                    <li><a href="./02-user-cost-management.html">利用者管理とコスト管理</a> - 利用者アカウント管理とコスト最適化</li>
+                    <li><a href="./03-analysis-improvement.html">データ分析と継続的改善</a> - KPI設定と改善サイクル</li>
+                    <li><a href="./04-documentation-emergency.html">文書管理と緊急時対応</a> - 運用文書整備と緊急時体制</li>
+                    <li><a href="../../06-training/01-overview.html">職員研修プログラム</a> - 定期的な職員教育</li>
+                </ul>
+            </div>
+
+            <div class="page-navigation">
+                <a href="../02-practical-usage.html" class="page-nav-btn">← 前：実用的な使用方法</a>
+                <div class="page-nav-center">
+                    <a href="../../../index.html">📚 目次</a>
+                </div>
+                <a href="02-user-cost-management.html" class="page-nav-btn">次：利用者管理とコスト管理 →</a>
+            </div>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 医療機関向け API キー管理マニュアル. 
+            <span class="footer-note">本マニュアルは医療機関での安全なAI活用を支援することを目的としています。</span></p>
+        </div>
+    </footer>
+
+    <script>
+        // ダークモード切り替え
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        if (darkModeToggle) {
+            darkModeToggle.addEventListener('click', () => {
+                const currentTheme = document.documentElement.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                
+                document.documentElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+                
+                darkModeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+            });
+        }
+
+        // 保存されたテーマを復元
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            if (darkModeToggle) {
+                darkModeToggle.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+            }
+        }
+    </script>
+</body>
+</html>

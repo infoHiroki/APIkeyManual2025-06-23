@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>システム保守とエスカレーション - 医療機関向け API キー管理マニュアル</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="header-title">🛠️ システム保守とエスカレーション</h1>
+                <p class="header-subtitle">医療機関向け API キー管理マニュアル</p>
+            </div>
+            <div class="header-actions">
+                <button onclick="window.print()" class="btn btn-outline">🖨️ 印刷</button>
+                <button id="dark-mode-toggle" class="btn btn-outline">🌙</button>
+                <a href="../../../index.html" class="btn btn-primary">📚 マニュアル目次に戻る</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <main class="content" style="max-width: 1200px; margin: 40px auto; grid-column: unset;">
+            <h1>システム保守とエスカレーション</h1>
+
+            <h2>🛠️ システム保守・メンテナンス</h2>
+
+            <h3>定期メンテナンス時の対応</h3>
+
+            <h4>事前準備</h4>
+            <div class="card">
+                <h5>メンテナンス前チェックリスト:</h5>
+                <div class="code-block">
+                    <pre><code>1. バックアップの確認
+   - [ ] データベースのバックアップ
+   - [ ] 設定ファイルのバックアップ
+   - [ ] ログファイルのアーカイブ
+
+2. 利用者への通知
+   - [ ] メンテナンス予告の通知
+   - [ ] 代替手段の案内
+   - [ ] 緊急連絡先の確認
+
+3. 復旧手順の確認
+   - [ ] 復旧手順書の準備
+   - [ ] テスト環境での検証
+   - [ ] ロールバック手順の確認</code></pre>
+                </div>
+            </div>
+
+            <h4>メンテナンス中の対応</h4>
+            <div class="code-block">
+                <pre><code>対応手順:
+
+1. システム停止
+   - 利用者への最終通知
+   - アプリケーションの停止
+   - データベースの停止
+
+2. 作業実施
+   - 計画された作業の実行
+   - 進捗状況の記録
+   - 問題発生時の対応
+
+3. 動作確認
+   - 基本機能のテスト
+   - データ整合性の確認
+   - 性能の確認</code></pre>
+            </div>
+
+            <h2>📞 エスカレーション手順</h2>
+
+            <h3>社内エスカレーション</h3>
+
+            <h4>レベル1: 現場対応</h4>
+            <div class="card">
+                <div class="code-block">
+                    <pre><code>対応範囲:
+- 基本的な操作エラー
+- 一般的な技術的問題
+- 利用方法の質問
+
+対応者:
+- システム管理者
+- IT担当者
+
+対応時間:
+- 通常業務時間内: 30分以内
+- 緊急時: 即座</code></pre>
+                </div>
+            </div>
+
+            <h4>レベル2: 管理者対応</h4>
+            <div class="card">
+                <div class="code-block">
+                    <pre><code>対応範囲:
+- 複雑な技術的問題
+- セキュリティインシデント
+- システム障害
+
+対応者:
+- IT責任者
+- 医療安全管理者
+
+対応時間:
+- 通常: 2時間以内
+- 緊急時: 30分以内</code></pre>
+                </div>
+            </div>
+
+            <h4>レベル3: 経営陣対応</h4>
+            <div class="alert alert-danger">
+                <div class="code-block">
+                    <pre><code>対応範囲:
+- 重大なセキュリティ事故
+- 法的問題の可能性
+- 大規模システム障害
+
+対応者:
+- 院長・事務長
+- 法務担当
+
+対応時間:
+- 即座（24時間体制）</code></pre>
+                </div>
+            </div>
+
+            <h3>外部エスカレーション</h3>
+
+            <h4>OpenAI サポート</h4>
+            <div class="card">
+                <h5>連絡先:</h5>
+                <div class="code-block">
+                    <pre><code>- 一般的な問題: help.openai.com
+- 技術的問題: support@openai.com
+- BAA関連: baa@openai.com
+
+連絡時の情報:
+- アカウント情報
+- エラーメッセージ
+- 発生時刻
+- 影響範囲</code></pre>
+                </div>
+            </div>
+
+            <h4>規制当局</h4>
+            <div class="card">
+                <h5>個人情報保護委員会:</h5>
+                <div class="code-block">
+                    <pre><code>- 電話: 03-6457-9849
+- ウェブ: https://www.ppc.go.jp/</code></pre>
+                </div>
+                <h5>厚生労働省:</h5>
+                <div class="code-block">
+                    <pre><code>- 電話: 03-5253-1111（代表）
+- 医政局総務課</code></pre>
+                </div>
+            </div>
+
+            <h2>エスカレーション実践例</h2>
+
+            <h3>事例1: セキュリティインシデント</h3>
+            <div class="card">
+                <h4>状況:</h4>
+                <p>不審な大量アクセスを検知、患者情報の漏洩が疑われる状況</p>
+                
+                <h4>エスカレーション手順:</h4>
+                <div class="code-block">
+                    <pre><code>1. 初動対応（レベル1 → レベル2）
+   時刻: 14:30
+   - システム管理者が異常を検知
+   - 即座にシステムアクセスを遮断
+   - IT責任者への緊急連絡（14:35）
+
+2. 詳細調査（レベル2）
+   時刻: 14:35-15:30
+   - ログ分析によるアクセス状況確認
+   - 影響範囲の特定
+   - 医療安全管理者への報告（15:00）
+
+3. 経営陣報告（レベル3）
+   時刻: 15:30-16:00
+   - 院長・事務長への緊急報告
+   - 法的対応の検討開始
+   - 外部機関への連絡準備
+
+4. 外部報告
+   時刻: 16:00-
+   - 個人情報保護委員会への報告
+   - OpenAIへの緊急連絡
+   - 患者・家族への対応準備</code></pre>
+                </div>
+            </div>
+
+            <h3>事例2: システム障害</h3>
+            <div class="card">
+                <h4>状況:</h4>
+                <p>電子カルテシステムと連携したAI機能が完全停止</p>
+                
+                <h4>エスカレーション手順:</h4>
+                <div class="code-block">
+                    <pre><code>1. 現場対応（レベル1）
+   時刻: 09:00-09:30
+   - 利用者からの障害報告
+   - 基本的な復旧作業を実施
+   - 解決できずIT責任者に連絡
+
+2. 管理者対応（レベル2）
+   時刻: 09:30-11:00
+   - システム詳細調査実施
+   - 代替手段の案内
+   - 復旧作業の実施
+
+3. 外部サポート
+   時刻: 11:00-
+   - OpenAI サポートへの連絡
+   - ベンダーサポートへの連絡
+   - 専門技術者の派遣要請
+
+4. 復旧完了
+   時刻: 14:00
+   - システム復旧確認
+   - 動作テスト実施
+   - 利用者への復旧通知</code></pre>
+                </div>
+            </div>
+
+            <h2>保守・エスカレーション体制の改善</h2>
+
+            <h3>定期的な見直し</h3>
+            <div class="card">
+                <h5>見直し項目:</h5>
+                <div class="code-block">
+                    <pre><code>1. 連絡体制の確認
+   - 連絡先情報の更新
+   - 責任者の変更反映
+   - 連絡手段の多重化
+
+2. 対応手順の改善
+   - 過去の事例分析
+   - 対応時間の短縮
+   - 手順書の更新
+
+3. 技術スキルの向上
+   - 担当者の技術研修
+   - 新技術への対応
+   - 外部研修の受講
+
+実施頻度:
+- 四半期ごとの見直し
+- 年1回の総合評価
+- インシデント発生時の臨時見直し</code></pre>
+                </div>
+            </div>
+
+            <div class="page-navigation">
+                <a href="02-application-cost.html" class="page-nav-btn">← 前：アプリケーション問題とコスト管理</a>
+                <div class="page-nav-center">
+                    <a href="../../../index.html">📚 目次</a>
+                </div>
+                <a href="04-tools-improvement.html" class="page-nav-btn">次：ツールと継続的改善 →</a>
+            </div>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 医療機関向け API キー管理マニュアル. 
+            <span class="footer-note">本マニュアルは医療機関での安全なAI活用を支援することを目的としています。</span></p>
+        </div>
+    </footer>
+
+    <script>
+        // ダークモード切り替え
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        if (darkModeToggle) {
+            darkModeToggle.addEventListener('click', () => {
+                const currentTheme = document.documentElement.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                
+                document.documentElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+                
+                darkModeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+            });
+        }
+
+        // 保存されたテーマを復元
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            if (darkModeToggle) {
+                darkModeToggle.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+            }
+        }
+    </script>
+</body>
+</html>

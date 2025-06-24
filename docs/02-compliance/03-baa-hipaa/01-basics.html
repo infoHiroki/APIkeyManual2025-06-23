@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BAA（Business Associate Agreement）の基本概念 - 医療機関向け API キー管理マニュアル</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="header-title">🤝 BAA（Business Associate Agreement）の基本概念</h1>
+                <p class="header-subtitle">医療機関向け API キー管理マニュアル</p>
+            </div>
+            <div class="header-actions">
+                <button onclick="window.print()" class="btn btn-outline">🖨️ 印刷</button>
+                <button id="dark-mode-toggle" class="btn btn-outline">🌙</button>
+                <a href="../../../index.html" class="btn btn-primary">📚 マニュアル目次に戻る</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <main class="content" style="max-width: 1200px; margin: 40px auto; grid-column: unset;">
+            <h1>BAA（Business Associate Agreement）の基本概念</h1>
+
+            <h2>⚠️ 重要な免責事項</h2>
+            <div class="alert alert-warning">
+                <h3>料金情報について:</h3>
+                <p>本マニュアルに記載されている料金情報は、公開情報や業界標準に基づく推測です。OpenAIの正式な料金表は非公開のため、実際の導入前には必ず公式チャネルで最新の料金体系を確認してください。</p>
+                
+                <h3>情報の最新性:</h3>
+                <p>本情報は2025年6月時点のものです。OpenAIのサービス内容や料金体系は変更される可能性があります。</p>
+                
+                <h3>確認先:</h3>
+                <ul>
+                    <li>BAA申請・料金: baa@openai.com</li>
+                    <li>一般問い合わせ: support@openai.com</li>
+                    <li>技術サポート: help.openai.com</li>
+                </ul>
+            </div>
+
+            <h2>🤝 BAAとは何か - 分かりやすい基本概念</h2>
+
+            <h3>📖 簡単な説明</h3>
+            <p><strong>BAA（Business Associate Agreement）</strong>は、医療機関とIT会社が「患者情報を特別に大切に扱います」という約束をする契約書です。</p>
+
+            <h3>🏗️ わかりやすい例え</h3>
+            <div class="card">
+                <h4>普通の契約：</h4>
+                <p>「コンビニ → 清掃業者」<br>
+                「普通にきれいにしてください」</p>
+                
+                <h4>BAA契約：</h4>
+                <p>「病院 → IT業者」<br>
+                「患者情報が含まれる可能性があるので、特別なルールで特別に厳重に管理してください」</p>
+            </div>
+
+            <h3>🔐 金庫の例え</h3>
+            <div class="card">
+                <h4>一般利用：</h4>
+                <p>「貴重品預かります（普通の金庫）」</p>
+                
+                <h4>BAA利用：</h4>
+                <p>「医療情報お預かります（特別仕様の金庫）」</p>
+                <ul>
+                    <li>二重ロック</li>
+                    <li>監視カメラ</li>
+                    <li>24時間警備</li>
+                    <li>専用管理者</li>
+                </ul>
+            </div>
+
+            <h2>🏥 HIPAA（Health Insurance Portability and Accountability Act）の基礎</h2>
+
+            <h3>📜 HIPAAとは</h3>
+            <div class="card">
+                <ul>
+                    <li><strong>制定年</strong>: 1996年（米国）</li>
+                    <li><strong>目的</strong>: 医療情報のプライバシー保護</li>
+                    <li><strong>適用範囲</strong>: 米国の医療機関と関連事業者</li>
+                    <li><strong>PHI（Protected Health Information）</strong>: 保護対象となる医療情報</li>
+                </ul>
+            </div>
+
+            <h3>🌐 日本の医療機関への影響</h3>
+            <div class="card">
+                <h4>なぜ日本でHIPAAが重要？</h4>
+                <ol>
+                    <li>OpenAIは米国企業</li>
+                    <li>米国のルールで医療データを処理</li>
+                    <li>日本の病院も間接的に米国法の影響</li>
+                    <li>より厳格な保護を受けられる</li>
+                </ol>
+            </div>
+
+            <h3>🔗 Business Associateの仕組み</h3>
+            <div class="card">
+                <p>医療機関（Covered Entity）<br>
+                ↓ 業務委託（BAA契約）<br>
+                外部業者（Business Associate）</p>
+                
+                <h4>例：</h4>
+                <ul>
+                    <li>病院 → クラウドサービス（OpenAI）</li>
+                    <li>診療所 → データ処理業者</li>
+                    <li>薬局 → IT会社</li>
+                </ul>
+            </div>
+
+            <h2>📊 BAA締結前後の比較</h2>
+
+            <h3>⚖️ 保護レベルの違い</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>項目</th>
+                        <th>一般利用</th>
+                        <th>BAA利用</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>扱い</strong></td>
+                        <td>普通のお客さん</td>
+                        <td>医療パートナー</td>
+                    </tr>
+                    <tr>
+                        <td><strong>データ保持</strong></td>
+                        <td>30日間保存</td>
+                        <td>厳格管理・即座削除オプション</td>
+                    </tr>
+                    <tr>
+                        <td><strong>学習利用</strong></td>
+                        <td>可能性あり</td>
+                        <td>禁止</td>
+                    </tr>
+                    <tr>
+                        <td><strong>サポート</strong></td>
+                        <td>標準窓口</td>
+                        <td>医療専用窓口</td>
+                    </tr>
+                    <tr>
+                        <td><strong>セキュリティ</strong></td>
+                        <td>標準レベル</td>
+                        <td>医療特化レベル</td>
+                    </tr>
+                    <tr>
+                        <td><strong>責任分担</strong></td>
+                        <td>あいまい</td>
+                        <td>明確な契約</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>💰 料金面での違い</h3>
+
+            <h4>❓ BAA締結の料金（要確認）</h4>
+            <div class="card">
+                <h5>推測される料金体系:</h5>
+                <ul>
+                    <li>BAA申請・締結プロセス: 無料の可能性が高い</li>
+                    <li>基本的な医療向け保護機能: 標準提供</li>
+                    <li>契約書の作成・管理: 追加料金なし</li>
+                </ul>
+                
+                <h5>推測の根拠:</h5>
+                <ul>
+                    <li>✓ 業界標準では無料が一般的</li>
+                    <li>✓ OpenAI公開価格表に記載なし</li>
+                    <li>✓ 他社（Microsoft等）は標準提供</li>
+                    <li>✓ Enterprise契約不要での提供</li>
+                </ul>
+            </div>
+
+            <h4>💵 有料の可能性が高い</h4>
+            <div class="card">
+                <ul>
+                    <li>ZDR（Zero Data Retention）</li>
+                    <li>専用サポート窓口</li>
+                    <li>特別なSLA（Service Level Agreement）</li>
+                    <li>カスタムセキュリティ設定</li>
+                </ul>
+            </div>
+
+            <h4>🔍 重要な注意事項</h4>
+            <div class="alert alert-danger">
+                <h5>⚠️ 料金情報の信頼性について:</h5>
+                <ul>
+                    <li>本マニュアルの料金情報は推測に基づく</li>
+                    <li>公式な料金表は非公開</li>
+                    <li>実際の料金は個別見積もりが必要</li>
+                </ul>
+                
+                <h5>必須確認先:</h5>
+                <ul>
+                    <li>BAA申請時: baa@openai.com</li>
+                    <li>営業相談: OpenAI Sales Team</li>
+                    <li>技術質問: help.openai.com</li>
+                </ul>
+            </div>
+
+            <h2>🎯 医療機関での必要性レベル</h2>
+
+            <h3>🔴 BAA必須レベル</h3>
+            <div class="alert alert-danger">
+                <h4>高リスク利用場面：</h4>
+                <ul>
+                    <li>患者情報の誤入力リスクがある</li>
+                    <li>診療現場での直接利用</li>
+                    <li>複数職員での日常的利用</li>
+                    <li>外部監査・患者からの問い合わせ対応</li>
+                </ul>
+                <p><strong>→ BAA締結が実質必須</strong></p>
+            </div>
+
+            <h3>🟡 BAA推奨レベル</h3>
+            <div class="alert alert-warning">
+                <h4>中リスク利用場面：</h4>
+                <ul>
+                    <li>医療機関としての信頼性確保</li>
+                    <li>将来的な利用拡大を予定</li>
+                    <li>管理者・責任者からの要求</li>
+                    <li>監査対応の簡素化</li>
+                </ul>
+                <p><strong>→ BAA締結を強く推奨</strong></p>
+            </div>
+
+            <h3>🟢 BAA不要レベル</h3>
+            <div class="alert alert-success">
+                <h4>低リスク利用場面：</h4>
+                <ul>
+                    <li>完全匿名化データのみ</li>
+                    <li>一般的な医学情報検索</li>
+                    <li>教育・研修目的のみ</li>
+                    <li>個人医師の学習目的</li>
+                </ul>
+                <p><strong>→ 標準API利用で十分</strong></p>
+            </div>
+
+            <h2>日本の医療機関における考慮事項</h2>
+
+            <h3>🇯🇵 日本法との関係</h3>
+            <p>日本にはHIPAAに相当する法律は存在しませんが、より厳格な保護が必要です。</p>
+
+            <h4>個人情報保護法との相違点</h4>
+            <div class="card">
+                <ul>
+                    <li><strong>適用範囲</strong>: HIPAAは医療機関特化、日本は全事業者対象</li>
+                    <li><strong>罰則</strong>: 日本の方が個人に対する刑事罰が厳格</li>
+                    <li><strong>同意</strong>: 日本はより詳細な同意取得が必要</li>
+                </ul>
+            </div>
+
+            <h3>🏥 医療機関でのBAA活用</h3>
+
+            <h4>BAAが必要な場面</h4>
+            <div class="card">
+                <ul>
+                    <li><strong>患者データの処理</strong>: 個人を特定可能な情報の利用</li>
+                    <li><strong>診療支援</strong>: 診断・治療に関わる情報処理</li>
+                    <li><strong>研究利用</strong>: 医学研究での匿名化データ利用</li>
+                </ul>
+            </div>
+
+            <h4>BAAが不要な場面</h4>
+            <div class="card">
+                <ul>
+                    <li><strong>完全匿名化データ</strong>: 個人特定不可能な情報</li>
+                    <li><strong>公開情報</strong>: 既に公開されている医学情報</li>
+                    <li><strong>教育・研修</strong>: 架空の症例による教育利用</li>
+                </ul>
+            </div>
+
+            <h2>次のステップ</h2>
+            <div class="card">
+                <ul>
+                    <li><a href="./02-zdr.html">ZDR（Zero Data Retention）の詳細</a></li>
+                    <li><a href="./03-implementation.html">OpenAIとのBAA実装・申請手順</a></li>
+                    <li><a href="./04-decision-guide.html">医療機関向け意思決定ガイド</a></li>
+                </ul>
+            </div>
+
+            <div class="page-navigation">
+                <a href="../02-data-protection.html" class="page-nav-btn">← 前：データ保護</a>
+                <div class="page-nav-center">
+                    <a href="../../../index.html">📚 目次</a>
+                </div>
+                <a href="02-zdr.html" class="page-nav-btn">次：ZDR完全解説 →</a>
+            </div>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 医療機関向け API キー管理マニュアル. 
+            <span class="footer-note">本マニュアルは医療機関での安全なAI活用を支援することを目的としています。</span></p>
+        </div>
+    </footer>
+
+    <script>
+        // ダークモード切り替え
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        if (darkModeToggle) {
+            darkModeToggle.addEventListener('click', () => {
+                const currentTheme = document.documentElement.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                
+                document.documentElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+                
+                darkModeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+            });
+        }
+
+        // 保存されたテーマを復元
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            if (darkModeToggle) {
+                darkModeToggle.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+            }
+        }
+    </script>
+</body>
+</html>

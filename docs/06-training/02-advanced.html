@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>継続・職種別研修 - 医療機関向け API キー管理マニュアル</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="header-title">📈 継続・職種別研修</h1>
+                <p class="header-subtitle">医療機関向け API キー管理マニュアル</p>
+            </div>
+            <div class="header-actions">
+                <button onclick="window.print()" class="btn btn-outline">🖨️ 印刷</button>
+                <button id="dark-mode-toggle" class="btn btn-outline">🌙</button>
+                <a href="../../index.html" class="btn btn-primary">📚 マニュアル目次に戻る</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <main class="content" style="max-width: 1200px; margin: 40px auto; grid-column: unset;">
+            <h1>継続研修と職種別研修</h1>
+
+            <h2>📈 継続研修プログラム</h2>
+
+            <h3>一般職員向け継続研修</h3>
+
+            <h4>四半期研修（年4回実施）</h4>
+            <div class="card">
+                <pre><code>対象者: AI利用資格を持つ全職員
+期間: 2時間
+形式: オンライン + 対面（選択制）</code></pre>
+
+                <p><strong>第1四半期：効果的な活用方法</strong></p>
+                <ul>
+                    <li>成功事例の共有</li>
+                    <li>新機能の紹介</li>
+                    <li>プロンプト改善テクニック</li>
+                </ul>
+
+                <p><strong>第2四半期：セキュリティ更新</strong></p>
+                <ul>
+                    <li>最新の脅威情報</li>
+                    <li>セキュリティ対策の見直し</li>
+                    <li>インシデント事例の学習</li>
+                </ul>
+
+                <p><strong>第3四半期：法規制・コンプライアンス</strong></p>
+                <ul>
+                    <li>法改正情報の共有</li>
+                    <li>ガイドライン変更の対応</li>
+                    <li>監査結果の共有</li>
+                </ul>
+
+                <p><strong>第4四半期：年間総括・来年計画</strong></p>
+                <ul>
+                    <li>利用実績の振り返り</li>
+                    <li>改善点の確認</li>
+                    <li>次年度の目標設定</li>
+                </ul>
+            </div>
+
+            <h4>部署別専門研修（年2回実施）</h4>
+            <div class="card">
+                <p><strong>内科外来向け研修:</strong></p>
+                <ul>
+                    <li>慢性疾患管理での活用</li>
+                    <li>患者指導資料の作成</li>
+                    <li>診療記録の効率化</li>
+                </ul>
+
+                <p><strong>外科病棟向け研修:</strong></p>
+                <ul>
+                    <li>手術記録の構造化</li>
+                    <li>術前・術後説明の作成</li>
+                    <li>合併症情報の整理</li>
+                </ul>
+
+                <p><strong>看護部向け研修:</strong></p>
+                <ul>
+                    <li>看護記録の改善</li>
+                    <li>患者・家族への説明資料</li>
+                    <li>看護計画の作成支援</li>
+                </ul>
+
+                <p><strong>事務部門向け研修:</strong></p>
+                <ul>
+                    <li>文書作成の効率化</li>
+                    <li>データ分析の支援</li>
+                    <li>業務プロセスの改善</li>
+                </ul>
+            </div>
+
+            <h3>管理者向け研修</h3>
+
+            <h4>管理者基礎研修（新任管理者必須）</h4>
+            <div class="card">
+                <pre><code>期間: 1日（6時間）
+対象: 部門長、課長級以上</code></pre>
+
+                <h5>カリキュラム:</h5>
+                <ol>
+                    <li><strong>管理者の責任と役割（90分）</strong>
+                        <ul>
+                            <li>医療機関でのAI利用管理</li>
+                            <li>法的責任とリスク管理</li>
+                            <li>職員指導の要点</li>
+                        </ul>
+                    </li>
+                    <li><strong>システム管理の基本（90分）</strong>
+                        <ul>
+                            <li>アクセス権限の管理</li>
+                            <li>利用状況の監視</li>
+                            <li>セキュリティ管理</li>
+                        </ul>
+                    </li>
+                    <li><strong>インシデント対応（90分）</strong>
+                        <ul>
+                            <li>緊急時の判断基準</li>
+                            <li>エスカレーション手順</li>
+                            <li>事後対応と改善</li>
+                        </ul>
+                    </li>
+                    <li><strong>効果測定と改善（90分）</strong>
+                        <ul>
+                            <li>ROI分析の方法</li>
+                            <li>利用効果の評価</li>
+                            <li>継続的改善の実施</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <h4>管理者向け定期研修（年6回実施）</h4>
+            <div class="card">
+                <p><strong>奇数月：技術・運用に関する研修</strong></p>
+                <ul>
+                    <li>システム更新情報</li>
+                    <li>新機能の活用方法</li>
+                    <li>運用改善事例</li>
+                </ul>
+
+                <p><strong>偶数月：管理・戦略に関する研修</strong></p>
+                <ul>
+                    <li>利用状況の分析</li>
+                    <li>コスト管理の最適化</li>
+                    <li>中長期戦略の検討</li>
+                </ul>
+            </div>
+
+            <h2>🏥 職種別専門研修</h2>
+
+            <h3>医師向け研修</h3>
+
+            <h4>専門医向け高度活用研修</h4>
+            <div class="card">
+                <pre><code>対象: 各科専門医、指導医
+期間: 半日（4時間）
+頻度: 年2回</code></pre>
+
+                <h5>内容:</h5>
+                <ol>
+                    <li><strong>専門分野での高度活用（120分）</strong>
+                        <ul>
+                            <li>最新エビデンスの検索・整理</li>
+                            <li>複雑症例の情報整理</li>
+                            <li>研究計画の構成支援</li>
+                            <li>学会発表資料の作成</li>
+                        </ul>
+                    </li>
+                    <li><strong>指導・教育での活用（60分）</strong>
+                        <ul>
+                            <li>研修医指導での利用</li>
+                            <li>教育資料の作成</li>
+                            <li>症例検討会の準備</li>
+                        </ul>
+                    </li>
+                    <li><strong>医学的妥当性の評価（60分）</strong>
+                        <ul>
+                            <li>AI出力の信頼性評価</li>
+                            <li>エビデンスレベルの確認</li>
+                            <li>最新ガイドラインとの照合</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <h3>看護師向け研修</h3>
+
+            <h4>看護業務特化研修</h4>
+            <div class="card">
+                <pre><code>対象: 看護師、看護主任
+期間: 3時間
+頻度: 年3回</code></pre>
+
+                <h5>内容:</h5>
+                <ol>
+                    <li><strong>看護記録の改善（90分）</strong>
+                        <ul>
+                            <li>SOAP記録の構造化</li>
+                            <li>看護過程の記録支援</li>
+                            <li>申し送り情報の整理</li>
+                        </ul>
+                    </li>
+                    <li><strong>患者・家族教育の支援（60分）</strong>
+                        <ul>
+                            <li>退院指導資料の作成</li>
+                            <li>服薬指導の説明資料</li>
+                            <li>療養生活の指導内容</li>
+                        </ul>
+                    </li>
+                    <li><strong>看護研究での活用（30分）</strong>
+                        <ul>
+                            <li>研究計画の作成支援</li>
+                            <li>文献レビューの効率化</li>
+                            <li>データ分析の支援</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <h3>IT担当者向け研修</h3>
+
+            <h4>技術管理者研修</h4>
+            <div class="card">
+                <pre><code>対象: IT管理者、システム担当者
+期間: 1日（8時間）
+頻度: 年4回</code></pre>
+
+                <h5>内容:</h5>
+                <ol>
+                    <li><strong>システム設計・構築（180分）</strong>
+                        <ul>
+                            <li>APIの統合方法</li>
+                            <li>セキュリティアーキテクチャ</li>
+                            <li>パフォーマンス最適化</li>
+                        </ul>
+                    </li>
+                    <li><strong>運用・監視（120分）</strong>
+                        <ul>
+                            <li>ログ分析手法</li>
+                            <li>異常検出の仕組み</li>
+                            <li>自動化ツールの活用</li>
+                        </ul>
+                    </li>
+                    <li><strong>セキュリティ管理（120分）</strong>
+                        <ul>
+                            <li>脅威分析と対策</li>
+                            <li>インシデント対応技術</li>
+                            <li>監査ツールの活用</li>
+                        </ul>
+                    </li>
+                    <li><strong>最新技術動向（60分）</strong>
+                        <ul>
+                            <li>AI技術の進歩</li>
+                            <li>新サービスの評価</li>
+                            <li>業界トレンドの把握</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <h2>次のステップ</h2>
+            <div class="card">
+                <p>継続研修と職種別研修について理解した後は、以下のドキュメントを参照してください：</p>
+                
+                <p><strong>研修関連:</strong></p>
+                <ul>
+                    <li><a href="./01-overview.html">研修体系と新規利用者研修</a> - 基礎研修の内容</li>
+                    <li><a href="./03-evaluation.html">研修効果測定</a> - 研修の効果測定方法</li>
+                    <li><a href="./04-management.html">運営体制と教材管理</a> - 研修運営の詳細</li>
+                </ul>
+            </div>
+
+            <div class="page-navigation">
+                <a href="01-overview.html" class="page-nav-btn">← 前：研修体系概要</a>
+                <div class="page-nav-center">
+                    <a href="../../index.html">📚 目次</a>
+                </div>
+                <a href="03-evaluation.html" class="page-nav-btn">次：効果測定・評価 →</a>
+            </div>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 医療機関向け API キー管理マニュアル. 
+            <span class="footer-note">本マニュアルは医療機関での安全なAI活用を支援することを目的としています。</span></p>
+        </div>
+    </footer>
+
+    <script>
+        // ダークモード切り替え
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        if (darkModeToggle) {
+            darkModeToggle.addEventListener('click', () => {
+                const currentTheme = document.documentElement.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                
+                document.documentElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+                
+                darkModeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+            });
+        }
+
+        // 保存されたテーマを復元
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            if (darkModeToggle) {
+                darkModeToggle.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+            }
+        }
+    </script>
+</body>
+</html>

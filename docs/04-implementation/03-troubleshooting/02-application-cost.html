@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>アプリケーション問題とコスト管理 - 医療機関向け API キー管理マニュアル</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="header-title">💻 アプリケーション問題とコスト管理</h1>
+                <p class="header-subtitle">医療機関向け API キー管理マニュアル</p>
+            </div>
+            <div class="header-actions">
+                <button onclick="window.print()" class="btn btn-outline">🖨️ 印刷</button>
+                <button id="dark-mode-toggle" class="btn btn-outline">🌙</button>
+                <a href="../../../index.html" class="btn btn-primary">📚 マニュアル目次に戻る</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <main class="content" style="max-width: 1200px; margin: 40px auto; grid-column: unset;">
+            <h1>アプリケーション問題とコスト管理</h1>
+
+            <h2>💻 アプリケーション固有の問題</h2>
+
+            <h3>プログラミング関連</h3>
+
+            <h4>Python での実装問題</h4>
+            <div class="code-block">
+                <pre><code># よくあるエラーと解決方法
+
+# 1. ライブラリインポートエラー
+❌ エラー: ModuleNotFoundError: No module named 'openai'
+✅ 解決: pip install openai
+
+# 2. 環境変数読み込みエラー
+❌ エラー: 環境変数が読み込まれない
+✅ 解決:
+import os
+from dotenv import load_dotenv
+load_dotenv()
+api_key = os.getenv("OPENAI_API_KEY")
+
+# 3. 文字エンコーディングエラー
+❌ エラー: UnicodeDecodeError
+✅ 解決:
+with open('file.txt', 'r', encoding='utf-8') as f:
+    content = f.read()
+
+# 4. JSON解析エラー
+❌ エラー: json.JSONDecodeError
+✅ 解決:
+try:
+    data = json.loads(response.text)
+except json.JSONDecodeError as e:
+    print(f"JSON解析エラー: {e}")
+    # エラーハンドリング</code></pre>
+            </div>
+
+            <h4>JavaScript での実装問題</h4>
+            <div class="code-block">
+                <pre><code>// よくあるエラーと解決方法
+
+// 1. CORS エラー
+❌ エラー: CORS policy blocked
+✅ 解決: サーバーサイドでAPI呼び出しを実行
+
+// 2. 非同期処理エラー
+❌ エラー: Promise rejection
+✅ 解決:
+async function callOpenAI() {
+  try {
+    const response = await fetch(API_URL, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${API_KEY}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    });
+    return await response.json();
+  } catch (error) {
+    console.error('API呼び出しエラー:', error);
+    throw error;
+  }
+}
+
+// 3. 環境変数アクセスエラー
+❌ エラー: process.env.API_KEY is undefined
+✅ 解決: .env ファイルの設定確認</code></pre>
+            </div>
+
+            <h3>データベース・ファイル関連</h3>
+
+            <h4>データ保存・取得エラー</h4>
+            <div class="card">
+                <h5>症状:</h5>
+                <ul>
+                    <li>AI出力の保存に失敗</li>
+                    <li>過去の利用履歴が取得できない</li>
+                </ul>
+
+                <h5>解決方法:</h5>
+                <div class="code-block">
+                    <pre><code>1. 権限確認
+   - ファイル・フォルダの書き込み権限
+   - データベースの接続権限
+   - ネットワークドライブのアクセス権限
+
+2. ストレージ容量確認
+   - ディスク容量の確認
+   - データベースサイズの確認
+   - ログファイルの肥大化チェック
+
+3. バックアップ・復旧
+   - 定期バックアップの確認
+   - データ復旧手順の実行
+   - システム復旧の実施</code></pre>
+                </div>
+            </div>
+
+            <h2>📊 利用状況・コスト関連</h2>
+
+            <h3>想定外の高額請求</h3>
+
+            <h4>原因調査と対応</h4>
+            <div class="alert alert-warning">
+                <h5>調査手順:</h5>
+                <div class="code-block">
+                    <pre><code>1. 利用状況の詳細確認
+   - OpenAI Platform → Usage
+   - 日別・時間別の利用パターン確認
+   - 異常なスパイクの特定
+
+2. トークン使用量の分析
+   - 入力・出力トークン数の確認
+   - 長すぎるプロンプトの特定
+   - 無駄な繰り返し処理の発見
+
+3. 不正利用の確認
+   - アクセスログの確認
+   - IPアドレスの確認
+   - 利用パターンの異常検出
+
+対応策:
+- 利用上限の設定
+- アラート設定の強化
+- 定期的な利用レビュー</code></pre>
+                </div>
+            </div>
+
+            <h3>利用量が想定より少ない</h3>
+
+            <h4>原因と改善策</h4>
+            <div class="card">
+                <h5>考えられる原因:</h5>
+                <div class="code-block">
+                    <pre><code>1. ユーザビリティの問題
+   - 操作が複雑すぎる
+   - 機能が分かりにくい
+   - 効果が実感できない
+
+2. 教育・研修の不足
+   - 使用方法の理解不足
+   - 活用方法の認知不足
+   - セキュリティへの過度な不安
+
+改善策:
+- ユーザビリティの改善
+- 追加研修の実施
+- 成功事例の共有
+- サポート体制の強化</code></pre>
+                </div>
+            </div>
+
+            <h2>問題解決の実践例</h2>
+
+            <h3>事例1: プロンプト最適化によるコスト削減</h3>
+            <div class="card">
+                <h4>問題:</h4>
+                <p>月次コストが予算を大幅に超過（300%増）</p>
+                
+                <h4>原因調査:</h4>
+                <div class="code-block">
+                    <pre><code>1. 利用状況分析
+   - 平均プロンプト長: 3,000文字
+   - 不要な前置き・説明が多数含有
+   - 同一内容の重複した質問
+
+2. トークン使用量分析
+   - 入力トークン: 予想の250%
+   - 出力トークン: 標準的
+   - 主な原因: プロンプトの冗長性</code></pre>
+                </div>
+
+                <h4>対応策:</h4>
+                <div class="code-block">
+                    <pre><code>1. プロンプトテンプレートの作成
+   - 簡潔で効果的なテンプレート
+   - 部門別・用途別のテンプレート
+   - 不要な文言の除去
+
+2. 利用者教育
+   - 効率的なプロンプト作成研修
+   - 成功事例の共有
+   - 定期的なフィードバック
+
+結果:
+- 月次コスト: 40%削減
+- 利用者満足度: 向上
+- 応答品質: 維持</code></pre>
+                </div>
+            </div>
+
+            <h3>事例2: システム連携エラーの解決</h3>
+            <div class="card">
+                <h4>問題:</h4>
+                <p>電子カルテシステムとの連携でデータ取得エラーが頻発</p>
+                
+                <h4>原因調査:</h4>
+                <div class="code-block">
+                    <pre><code>1. エラーログ分析
+   - 接続タイムアウトエラー: 60%
+   - 認証エラー: 30%
+   - データフォーマットエラー: 10%
+
+2. ネットワーク調査
+   - 院内ネットワークの帯域制限
+   - プロキシサーバーの設定問題
+   - ファイアウォールの制限</code></pre>
+                </div>
+
+                <h4>対応策:</h4>
+                <div class="code-block">
+                    <pre><code>1. 技術的改善
+   - 接続タイムアウト時間の延長
+   - リトライ機能の実装
+   - 非同期処理への変更
+
+2. インフラ改善
+   - ネットワーク帯域の拡張
+   - プロキシ設定の最適化
+   - ファイアウォール規則の調整
+
+結果:
+- エラー発生率: 95%削減
+- 処理時間: 50%短縮
+- 利用者からの苦情: ほぼゼロ</code></pre>
+                </div>
+            </div>
+
+            <div class="page-navigation">
+                <a href="01-emergency-technical.html" class="page-nav-btn">← 前：緊急時対応と技術的問題</a>
+                <div class="page-nav-center">
+                    <a href="../../../index.html">📚 目次</a>
+                </div>
+                <a href="03-maintenance-escalation.html" class="page-nav-btn">次：システム保守とエスカレーション →</a>
+            </div>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 医療機関向け API キー管理マニュアル. 
+            <span class="footer-note">本マニュアルは医療機関での安全なAI活用を支援することを目的としています。</span></p>
+        </div>
+    </footer>
+
+    <script>
+        // ダークモード切り替え
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        if (darkModeToggle) {
+            darkModeToggle.addEventListener('click', () => {
+                const currentTheme = document.documentElement.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                
+                document.documentElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+                
+                darkModeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+            });
+        }
+
+        // 保存されたテーマを復元
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            if (darkModeToggle) {
+                darkModeToggle.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+            }
+        }
+    </script>
+</body>
+</html>

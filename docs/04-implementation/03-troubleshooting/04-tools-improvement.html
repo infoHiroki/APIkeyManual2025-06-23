@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ツールと継続的改善 - 医療機関向け API キー管理マニュアル</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="header-title">📚 ツールと継続的改善</h1>
+                <p class="header-subtitle">医療機関向け API キー管理マニュアル</p>
+            </div>
+            <div class="header-actions">
+                <button onclick="window.print()" class="btn btn-outline">🖨️ 印刷</button>
+                <button id="dark-mode-toggle" class="btn btn-outline">🌙</button>
+                <a href="../../../index.html" class="btn btn-primary">📚 マニュアル目次に戻る</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <main class="content" style="max-width: 1200px; margin: 40px auto; grid-column: unset;">
+            <h1>ツールと継続的改善</h1>
+
+            <h2>📚 関連資料・ツール</h2>
+
+            <h3>トラブルシューティングツール</h3>
+
+            <h4>ログ分析ツール</h4>
+            <div class="card">
+                <h5>推奨ツール:</h5>
+                <ul>
+                    <li>システムログの解析</li>
+                    <li>APIアクセスログの分析</li>
+                    <li>エラーパターンの検出</li>
+                </ul>
+
+                <h5>使用方法:</h5>
+                <div class="code-block">
+                    <pre><code>1. ログファイルの収集
+2. パターン分析の実行
+3. 問題箇所の特定
+4. 対策の検討</code></pre>
+                </div>
+            </div>
+
+            <h4>監視・アラートシステム</h4>
+            <div class="card">
+                <h5>監視項目:</h5>
+                <ul>
+                    <li>API利用状況</li>
+                    <li>エラー発生率</li>
+                    <li>応答時間</li>
+                    <li>コスト増加</li>
+                </ul>
+
+                <h5>アラート設定:</h5>
+                <div class="code-block">
+                    <pre><code>- しきい値の設定
+- 通知先の設定
+- エスカレーション条件</code></pre>
+                </div>
+            </div>
+
+            <h3>ドキュメント・チェックリスト</h3>
+
+            <h4>問題解決記録テンプレート</h4>
+            <div class="code-block">
+                <pre><code>問題発生記録:
+- 発生日時:
+- 報告者:
+- 症状:
+- 影響範囲:
+- 原因:
+- 対応内容:
+- 最終確認:
+- 再発防止策:</code></pre>
+            </div>
+
+            <h4>定期点検チェックリスト</h4>
+            <div class="card">
+                <h5>日次点検:</h5>
+                <div class="code-block">
+                    <pre><code>- [ ] システム稼働状況
+- [ ] エラーログ確認
+- [ ] 利用状況確認</code></pre>
+                </div>
+
+                <h5>週次点検:</h5>
+                <div class="code-block">
+                    <pre><code>- [ ] 利用統計レビュー
+- [ ] セキュリティログ確認
+- [ ] バックアップ確認</code></pre>
+                </div>
+
+                <h5>月次点検:</h5>
+                <div class="code-block">
+                    <pre><code>- [ ] 総合システム評価
+- [ ] コスト分析
+- [ ] 改善計画策定</code></pre>
+                </div>
+            </div>
+
+            <h2>🔄 継続的改善</h2>
+
+            <h3>フィードバック収集</h3>
+
+            <h4>ユーザーフィードバック</h4>
+            <div class="card">
+                <h5>収集方法:</h5>
+                <ul>
+                    <li>定期的なアンケート</li>
+                    <li>利用者インタビュー</li>
+                    <li>問題報告の分析</li>
+                </ul>
+
+                <h5>活用方法:</h5>
+                <ul>
+                    <li>システム改善</li>
+                    <li>研修内容の更新</li>
+                    <li>運用手順の見直し</li>
+                </ul>
+            </div>
+
+            <h4>システム改善</h4>
+            <div class="card">
+                <h5>改善サイクル:</h5>
+                <div class="code-block">
+                    <pre><code>1. 問題の特定
+2. 原因分析
+3. 対策の検討
+4. 実装・テスト
+5. 効果測定
+6. 標準化</code></pre>
+                </div>
+
+                <h5>実施頻度:</h5>
+                <div class="code-block">
+                    <pre><code>- 緊急改善: 随時
+- 定期改善: 月次
+- 大幅改善: 四半期</code></pre>
+                </div>
+            </div>
+
+            <h2>改善活動の実践例</h2>
+
+            <h3>事例1: ユーザビリティ改善</h3>
+            <div class="card">
+                <h4>問題:</h4>
+                <p>利用者から「操作が複雑で使いにくい」との意見が多数寄せられた</p>
+                
+                <h4>フィードバック分析:</h4>
+                <div class="code-block">
+                    <pre><code>1. アンケート結果
+   - 操作性: 2.1/5.0
+   - 学習コスト: 高い（78%）
+   - 頻繁に使用: 低い（22%）
+
+2. 具体的な問題点
+   - メニュー構造が分かりにくい
+   - エラーメッセージが専門的すぎる
+   - ヘルプ機能が不十分</code></pre>
+                </div>
+
+                <h4>改善策の実施:</h4>
+                <div class="code-block">
+                    <pre><code>1. UI/UX改善
+   - メニュー構造の簡素化
+   - 直感的なアイコンの採用
+   - ユーザーフレンドリーなメッセージ
+
+2. ヘルプ機能の充実
+   - 操作ガイドの動画化
+   - FAQ の充実
+   - チャットサポートの導入
+
+3. 段階的な機能公開
+   - 基本機能から徐々に公開
+   - 利用者のスキルレベルに応じた機能制限
+   - 習熟度に応じた機能拡張</code></pre>
+                </div>
+
+                <h4>改善結果:</h4>
+                <div class="code-block">
+                    <pre><code>- 操作性評価: 4.2/5.0（改善）
+- 利用頻度: 3倍増加
+- サポート問い合わせ: 60%削減
+- 利用者満足度: 大幅向上</code></pre>
+                </div>
+            </div>
+
+            <h3>事例2: トラブル対応プロセス改善</h3>
+            <div class="card">
+                <h4>問題:</h4>
+                <p>トラブル解決に時間がかかり、業務への影響が長期化</p>
+                
+                <h4>現状分析:</h4>
+                <div class="code-block">
+                    <pre><code>1. 対応時間分析
+   - 平均解決時間: 4.5時間
+   - 情報収集: 60%
+   - 原因特定: 25%
+   - 対策実施: 15%
+
+2. 問題点の特定
+   - 初動対応が遅い
+   - 情報共有が不十分
+   - 類似問題の再発</code></pre>
+                </div>
+
+                <h4>改善策の実施:</h4>
+                <div class="code-block">
+                    <pre><code>1. プロセス改善
+   - 初動対応チェックリストの作成
+   - エスカレーション基準の明確化
+   - 情報共有ツールの導入
+
+2. ナレッジベース構築
+   - 過去事例のデータベース化
+   - FAQ の充実
+   - ベストプラクティスの共有
+
+3. 予防策の強化
+   - 定期的な予防保守
+   - 監視機能の強化
+   - 早期警告システムの導入</code></pre>
+                </div>
+
+                <h4>改善結果:</h4>
+                <div class="code-block">
+                    <pre><code>- 平均解決時間: 1.5時間（67%短縮）
+- 初動対応時間: 15分以内達成
+- 同種問題の再発: 80%削減
+- 利用者からの評価: 向上</code></pre>
+                </div>
+            </div>
+
+            <h2>継続的改善の仕組み</h2>
+
+            <h3>改善提案制度</h3>
+            <div class="card">
+                <h5>提案受付:</h5>
+                <ul>
+                    <li>利用者からの改善提案</li>
+                    <li>管理者からの改善指示</li>
+                    <li>システム監視による自動検知</li>
+                </ul>
+
+                <h5>評価・実施プロセス:</h5>
+                <div class="code-block">
+                    <pre><code>1. 提案の受付・整理
+2. 影響度・優先度の評価
+3. 実施計画の策定
+4. 承認・予算確保
+5. 実施・テスト
+6. 効果測定・フィードバック</code></pre>
+                </div>
+            </div>
+
+            <h2>次のステップ</h2>
+
+            <p>トラブルシューティング体制を確立したら、以下の関連ドキュメントも参照してください：</p>
+
+            <div class="card">
+                <ul>
+                    <li><a href="../../03-security/04-security-audit/01-overview-daily.html">セキュリティ監査ガイド</a></li>
+                    <li><a href="../04-operations-management/01-daily-operations.html">運用管理ガイド</a></li>
+                    <li><a href="../../05-reference/01-quick-reference.html">クイックリファレンス</a></li>
+                </ul>
+            </div>
+
+            <div class="page-navigation">
+                <a href="03-maintenance-escalation.html" class="page-nav-btn">← 前：システム保守とエスカレーション</a>
+                <div class="page-nav-center">
+                    <a href="../../../index.html">📚 目次</a>
+                </div>
+                <a href="../../03-security/04-security-audit/01-overview-daily.html" class="page-nav-btn">次：セキュリティ監査概要 →</a>
+            </div>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 医療機関向け API キー管理マニュアル. 
+            <span class="footer-note">本マニュアルは医療機関での安全なAI活用を支援することを目的としています。</span></p>
+        </div>
+    </footer>
+
+    <script>
+        // ダークモード切り替え
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        if (darkModeToggle) {
+            darkModeToggle.addEventListener('click', () => {
+                const currentTheme = document.documentElement.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                
+                document.documentElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+                
+                darkModeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+            });
+        }
+
+        // 保存されたテーマを復元
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            if (darkModeToggle) {
+                darkModeToggle.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+            }
+        }
+    </script>
+</body>
+</html>

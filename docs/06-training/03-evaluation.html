@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>効果測定・評価 - 医療機関向け API キー管理マニュアル</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="header-title">📊 効果測定・評価</h1>
+                <p class="header-subtitle">医療機関向け API キー管理マニュアル</p>
+            </div>
+            <div class="header-actions">
+                <button onclick="window.print()" class="btn btn-outline">🖨️ 印刷</button>
+                <button id="dark-mode-toggle" class="btn btn-outline">🌙</button>
+                <a href="../../index.html" class="btn btn-primary">📚 マニュアル目次に戻る</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <main class="content" style="max-width: 1200px; margin: 40px auto; grid-column: unset;">
+            <h1>研修効果測定と継続的改善</h1>
+
+            <h2>📊 研修効果の測定</h2>
+
+            <h3>理解度・満足度調査</h3>
+
+            <h4>研修直後アンケート</h4>
+            <div class="card">
+                <p><strong>実施方法:</strong> 全研修参加者に実施</p>
+
+                <h5>調査項目:</h5>
+                <ol>
+                    <li><strong>理解度評価（5段階）</strong>
+                        <ul>
+                            <li>内容の理解しやすさ</li>
+                            <li>実務への応用可能性</li>
+                            <li>説明の明確さ</li>
+                        </ul>
+                    </li>
+                    <li><strong>満足度評価（5段階）</strong>
+                        <ul>
+                            <li>研修内容の有用性</li>
+                            <li>講師の指導力</li>
+                            <li>研修時間の適切さ</li>
+                        </ul>
+                    </li>
+                    <li><strong>改善提案（自由記述）</strong>
+                        <ul>
+                            <li>追加してほしい内容</li>
+                            <li>改善してほしい点</li>
+                            <li>その他の意見・要望</li>
+                        </ul>
+                    </li>
+                </ol>
+
+                <div class="alert alert-info">
+                    <strong>目標値:</strong>
+                    <ul>
+                        <li>理解度：平均4.0以上</li>
+                        <li>満足度：平均4.2以上</li>
+                        <li>参加率：95%以上</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h4>フォローアップ調査（研修3ヶ月後）</h4>
+            <div class="card">
+                <p><strong>調査目的:</strong> 実際の業務での活用状況確認</p>
+
+                <h5>調査項目:</h5>
+                <ol>
+                    <li><strong>活用状況</strong>
+                        <ul>
+                            <li>研修後のAI利用頻度</li>
+                            <li>活用している業務内容</li>
+                            <li>遭遇した問題・課題</li>
+                        </ul>
+                    </li>
+                    <li><strong>効果実感</strong>
+                        <ul>
+                            <li>業務効率の改善</li>
+                            <li>作業品質の向上</li>
+                            <li>新たなニーズの発見</li>
+                        </ul>
+                    </li>
+                    <li><strong>追加サポートニーズ</strong>
+                        <ul>
+                            <li>追加研修の必要性</li>
+                            <li>個別指導の希望</li>
+                            <li>ツール・資料の要望</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <h3>実践的評価</h3>
+
+            <h4>スキル認定制度</h4>
+            <div class="card">
+                <h5>認定レベル:</h5>
+
+                <div class="alert alert-info">
+                    <strong>🥉 ブロンズ認定（基礎レベル）</strong>
+                    <ul>
+                        <li>基本的な操作ができる</li>
+                        <li>安全な利用ができる</li>
+                        <li>基本的な問題対応ができる</li>
+                    </ul>
+                </div>
+
+                <div class="alert alert-warning">
+                    <strong>🥈 シルバー認定（実用レベル）</strong>
+                    <ul>
+                        <li>効果的なプロンプト作成ができる</li>
+                        <li>部署業務に活用できる</li>
+                        <li>他職員への指導ができる</li>
+                    </ul>
+                </div>
+
+                <div class="alert alert-success">
+                    <strong>🥇 ゴールド認定（専門レベル）</strong>
+                    <ul>
+                        <li>高度な活用ができる</li>
+                        <li>新たな活用方法を開発できる</li>
+                        <li>研修講師を務められる</li>
+                    </ul>
+                </div>
+
+                <h5>認定方法:</h5>
+                <ul>
+                    <li>実技試験（課題解決）</li>
+                    <li>ポートフォリオ提出</li>
+                    <li>活用実績の評価</li>
+                </ul>
+            </div>
+
+            <h4>成果発表・共有</h4>
+            <div class="card">
+                <h5>活用事例発表会（年2回開催）:</h5>
+                <ul>
+                    <li>優秀事例の表彰</li>
+                    <li>部署別成果の共有</li>
+                    <li>課題・改善点の議論</li>
+                </ul>
+
+                <h5>内部論文・報告書:</h5>
+                <ul>
+                    <li>活用効果の定量的分析</li>
+                    <li>新たな活用方法の提案</li>
+                    <li>他施設への情報発信</li>
+                </ul>
+
+                <h5>外部発表:</h5>
+                <ul>
+                    <li>学会での事例発表</li>
+                    <li>業界誌への寄稿</li>
+                    <li>他医療機関との情報交換</li>
+                </ul>
+            </div>
+
+            <h2>🔄 研修プログラムの継続的改善</h2>
+
+            <h3>改善サイクル</h3>
+
+            <h4>四半期ごとの見直し</h4>
+            <div class="card">
+                <h5>見直し項目:</h5>
+                <ul>
+                    <li>参加者フィードバックの分析</li>
+                    <li>最新技術動向の反映</li>
+                    <li>法規制変更への対応</li>
+                    <li>実践での課題・問題の反映</li>
+                </ul>
+
+                <h5>改善プロセス:</h5>
+                <ol>
+                    <li>データ収集・分析</li>
+                    <li>改善案の検討</li>
+                    <li>関係者との調整</li>
+                    <li>カリキュラム更新</li>
+                    <li>効果測定・評価</li>
+                </ol>
+            </div>
+
+            <h4>年次レビュー</h4>
+            <div class="card">
+                <h5>レビュー内容:</h5>
+                <ul>
+                    <li>年間研修実績の評価</li>
+                    <li>職員スキル向上の測定</li>
+                    <li>ROI（研修投資効果）の分析</li>
+                    <li>次年度計画の策定</li>
+                </ul>
+
+                <div class="alert alert-info">
+                    <strong>評価指標:</strong>
+                    <ul>
+                        <li>研修参加率：目標95%以上</li>
+                        <li>理解度テスト合格率：目標90%以上</li>
+                        <li>実務活用率：目標80%以上</li>
+                        <li>業務効率改善率：目標20%以上</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2>次のステップ</h2>
+            <div class="card">
+                <p>研修効果測定と継続的改善について理解した後は、以下のドキュメントを参照してください：</p>
+                
+                <p><strong>研修関連:</strong></p>
+                <ul>
+                    <li><a href="./01-overview.html">研修体系と新規利用者研修</a> - 基礎研修の内容</li>
+                    <li><a href="./02-advanced.html">継続研修と職種別研修</a> - より高度な研修プログラム</li>
+                    <li><a href="./04-management.html">運営体制と教材管理</a> - 研修運営の詳細</li>
+                </ul>
+            </div>
+
+            <div class="page-navigation">
+                <a href="02-advanced.html" class="page-nav-btn">← 前：継続・職種別研修</a>
+                <div class="page-nav-center">
+                    <a href="../../index.html">📚 目次</a>
+                </div>
+                <a href="04-management.html" class="page-nav-btn">次：運営体制・教材管理 →</a>
+            </div>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 医療機関向け API キー管理マニュアル. 
+            <span class="footer-note">本マニュアルは医療機関での安全なAI活用を支援することを目的としています。</span></p>
+        </div>
+    </footer>
+
+    <script>
+        // ダークモード切り替え
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        if (darkModeToggle) {
+            darkModeToggle.addEventListener('click', () => {
+                const currentTheme = document.documentElement.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                
+                document.documentElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+                
+                darkModeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+            });
+        }
+
+        // 保存されたテーマを復元
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            if (darkModeToggle) {
+                darkModeToggle.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+            }
+        }
+    </script>
+</body>
+</html>
