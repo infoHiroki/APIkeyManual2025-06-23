@@ -284,9 +284,12 @@ body {
 }
 
 .nav-subsection a.active {
-    background: var(--primary-color);
-    color: #333333;
-    font-weight: 500;
+    background: var(--accent-color);
+    color: white;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(255, 123, 154, 0.3);
+    border-left: 4px solid #ff5577;
+    padding-left: 16px;
 }
 
 .nav-subsection-group {
@@ -329,10 +332,11 @@ body {
 }
 
 .nav-subsection-items a.active {
-    background: var(--light-gray);
-    color: var(--text-color);
-    border-left-color: var(--primary-color);
-    font-weight: 500;
+    background: var(--accent-color);
+    color: white;
+    border-left: 3px solid #ff5577;
+    font-weight: 600;
+    box-shadow: 0 1px 4px rgba(255, 123, 154, 0.2);
 }
 
 /* Progress Bar */

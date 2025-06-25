@@ -105,20 +105,28 @@ class SidebarManager {
             link.classList.remove('active');
         });
 
-        // 新しいアクティブリンクを設定
-        const currentLink = document.querySelector(`a[href="${pageUrl}"]`);
-        if (currentLink) {
-            currentLink.classList.add('active');
-            
-            // 親セクションを展開
-            let parentSection = currentLink.closest('.nav-section');
-            if (parentSection) {
-                parentSection.classList.remove('collapsed');
+        // URLからファイル名を抽出
+        const fileName = pageUrl.split('/').pop();
+        
+        // すべてのリンクをチェック
+        document.querySelectorAll('.nav-subsection a, .nav-subsection-items a').forEach(link => {
+            const href = link.getAttribute('href');
+            if (href) {
+                const linkFileName = href.split('/').pop();
+                if (fileName === linkFileName) {
+                    link.classList.add('active');
+                    
+                    // 親セクションを展開
+                    let parentSection = link.closest('.nav-section');
+                    if (parentSection) {
+                        parentSection.classList.remove('collapsed');
+                    }
+                    
+                    // スクロールしてアクティブリンクを表示
+                    this.scrollToActiveLink(link);
+                }
             }
-            
-            // スクロールしてアクティブリンクを表示
-            this.scrollToActiveLink(currentLink);
-        }
+        });
     }
 
     scrollToActiveLink(link) {
