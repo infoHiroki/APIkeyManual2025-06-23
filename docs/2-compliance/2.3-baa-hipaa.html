@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BAA（Business Associate Agreement）完全ガイド - 医療機関向け API キー管理マニュアル</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="header-title">🤝 BAA（Business Associate Agreement）完全ガイド</h1>
+                <p class="header-subtitle">医療機関向け API キー管理マニュアル</p>
+            </div>
+            <div class="header-actions">
+                <button onclick="window.print()" class="btn btn-outline">🖨️ 印刷</button>
+                <a href="../../index.html" class="btn btn-primary">📚 トップに戻る</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container main-container">
+        <nav class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h3>📚 目次</h3>
+                <button id="sidebar-toggle" class="sidebar-toggle">☰</button>
+            </div>
+            
+            <div class="sidebar-content">
+                <div class="nav-section" data-section="basics">
+                    <div class="nav-section-header">
+                        <h4>📖 1. 基本概念</h4>
+                        <span class="nav-section-toggle">▼</span>
+                    </div>
+                    <ul class="nav-subsection">
+                        <li><a href="../1-basics/1.1-what-is-llm.html">LLMとは</a></li>
+                        <li><a href="../1-basics/1.2-what-is-api.html">APIとは</a></li>
+                        <li><a href="../1-basics/1.3-medical-considerations.html">医療機関での注意点</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section" data-section="compliance">
+                    <div class="nav-section-header">
+                        <h4>⚖️ 2. 法規制・コンプライアンス</h4>
+                        <span class="nav-section-toggle">▼</span>
+                    </div>
+                    <ul class="nav-subsection">
+                        <li><a href="../2-compliance/2.1-japanese-regulations.html">日本の医療機関における法規制</a></li>
+                        <li><a href="../2-compliance/2.2-openai-privacy.html">OpenAIプライバシーポリシー</a></li>
+                        <li>
+                            <div class="nav-subsection-group">
+                                <span class="nav-subsection-title">🤝 BAA・HIPAA ガイド</span>
+                                <ul class="nav-subsection-items">
+                                    <li><a href="../2-compliance/2.3-baa-hipaa.html" class="active">BAA概要ページ</a></li>
+                                    <li><a href="../2-compliance/2.3-baa-hipaa/2.3.1-basics.html">BAA基本概念</a></li>
+                                    <li><a href="../2-compliance/2.3-baa-hipaa/2.3.2-zdr.html">ZDR詳細</a></li>
+                                    <li><a href="../2-compliance/2.3-baa-hipaa/2.3.3-implementation.html">実装・申請手順</a></li>
+                                    <li><a href="../2-compliance/2.3-baa-hipaa/2.3.4-decision-guide.html">意思決定ガイド</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="nav-section" data-section="security">
+                    <div class="nav-section-header">
+                        <h4>🛡️ 3. セキュリティ</h4>
+                        <span class="nav-section-toggle">▼</span>
+                    </div>
+                    <ul class="nav-subsection">
+                        <li><a href="../3-security/3.1-security-overview.html">セキュリティ概要</a></li>
+                        <li><a href="../3-security/3.2-patient-data-protection.html">患者情報保護</a></li>
+                        <li><a href="../3-security/3.3-api-key-security.html">APIキーセキュリティ</a></li>
+                        <li>
+                            <div class="nav-subsection-group">
+                                <span class="nav-subsection-title">🔍 セキュリティ監査</span>
+                                <ul class="nav-subsection-items">
+                                    <li><a href="../3-security/3.4-security-audit/3.4.1-overview-daily.html">監査概要・日常チェック</a></li>
+                                    <li><a href="../3-security/3.4-security-audit/3.4.2-audit-items-tools.html">重点監査項目・ツール</a></li>
+                                    <li><a href="../3-security/3.4-security-audit/3.4.3-audit-response-improvement.html">監査対応・改善</a></li>
+                                    <li><a href="../3-security/3.4-security-audit/3.4.4-documentation-training.html">文書管理・担当者育成</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="nav-section" data-section="implementation">
+                    <div class="nav-section-header">
+                        <h4>🔧 4. 実装・運用</h4>
+                        <span class="nav-section-toggle">▼</span>
+                    </div>
+                    <ul class="nav-subsection">
+                        <li><a href="../4-implementation/4.1-api-key-setup.html">APIキーの取得と設定</a></li>
+                        <li><a href="../4-implementation/4.2-practical-usage.html">実践的な使用ガイド</a></li>
+                        <li>
+                            <div class="nav-subsection-group">
+                                <span class="nav-subsection-title">🚨 トラブルシューティング</span>
+                                <ul class="nav-subsection-items">
+                                    <li><a href="../4-implementation/4.3-troubleshooting/4.3.1-emergency-technical.html">緊急時対応・技術的問題</a></li>
+                                    <li><a href="../4-implementation/4.3-troubleshooting/4.3.2-application-cost.html">アプリケーション・コスト問題</a></li>
+                                    <li><a href="../4-implementation/4.3-troubleshooting/4.3.3-maintenance-escalation.html">システム保守・エスカレーション</a></li>
+                                    <li><a href="../4-implementation/4.3-troubleshooting/4.3.4-tools-improvement.html">ツール・継続的改善</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="nav-subsection-group">
+                                <span class="nav-subsection-title">📊 運用管理</span>
+                                <ul class="nav-subsection-items">
+                                    <li><a href="../4-implementation/4.4-operations-management/4.4.1-daily-operations.html">日常運用</a></li>
+                                    <li><a href="../4-implementation/4.4-operations-management/4.4.2-user-cost-management.html">利用者・コスト管理</a></li>
+                                    <li><a href="../4-implementation/4.4-operations-management/4.4.3-analysis-improvement.html">データ分析・改善</a></li>
+                                    <li><a href="../4-implementation/4.4-operations-management/4.4.4-documentation-emergency.html">文書管理・緊急時対応</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="nav-section" data-section="reference">
+                    <div class="nav-section-header">
+                        <h4>📋 5. リファレンス</h4>
+                        <span class="nav-section-toggle">▼</span>
+                    </div>
+                    <ul class="nav-subsection">
+                        <li><a href="../5-reference/5.1-quick-reference.html">クイックリファレンス</a></li>
+                        <li><a href="../5-reference/5.2-executive-summary.html">エグゼクティブサマリー</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section" data-section="training">
+                    <div class="nav-section-header">
+                        <h4>🎓 6. 研修・トレーニング</h4>
+                        <span class="nav-section-toggle">▼</span>
+                    </div>
+                    <ul class="nav-subsection">
+                        <li>
+                            <div class="nav-subsection-group">
+                                <span class="nav-subsection-title">📚 職員研修プログラム</span>
+                                <ul class="nav-subsection-items">
+                                    <li><a href="../6-training/6.1-overview.html">研修体系概要</a></li>
+                                    <li><a href="../6-training/6.2-advanced.html">継続・職種別研修</a></li>
+                                    <li><a href="../6-training/6.3-evaluation.html">効果測定・評価</a></li>
+                                    <li><a href="../6-training/6.4-management.html">運営体制・教材管理</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a href="../6-training/6.2-assessment-tests.html">理解度テスト問題集</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section" data-section="reporting">
+                    <div class="nav-section-header">
+                        <h4>📊 7. レポート・分析</h4>
+                        <span class="nav-section-toggle">▼</span>
+                    </div>
+                    <ul class="nav-subsection">
+                        <li><a href="../7-reporting/7.1-monthly-reports.html">月次レポートテンプレート</a></li>
+                        <li><a href="../7-reporting/7.2-training-effectiveness.html">研修効果測定レポート</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <main class="content" id="content">
+            <h1>BAA（Business Associate Agreement）完全ガイド</h1>
+
+            <h2>⚠️ 重要な免責事項</h2>
+            <div class="alert alert-warning">
+                <h3>料金情報について:</h3>
+                <p>本マニュアルに記載されている料金情報は、公開情報や業界標準に基づく推測です。
+                OpenAIの正式な料金表は非公開のため、実際の導入前には必ず公式チャネルで
+                最新の料金体系を確認してください。</p>
+                
+                <h3>情報の最新性:</h3>
+                <p>本情報は2025年6月時点のものです。OpenAIのサービス内容や料金体系は
+                変更される可能性があります。</p>
+                
+                <h3>確認先:</h3>
+                <ul>
+                    <li>BAA申請・料金: <a href="mailto:baa@openai.com">baa@openai.com</a></li>
+                    <li>一般問い合わせ: <a href="mailto:support@openai.com">support@openai.com</a></li>
+                    <li>技術サポート: <a href="https://help.openai.com">help.openai.com</a></li>
+                </ul>
+            </div>
+
+            <h2>🤝 BAAとは何か - 分かりやすい基本概念</h2>
+
+            <h3>📖 簡単な説明</h3>
+            <div class="alert alert-info">
+                <p><strong>BAA（Business Associate Agreement）</strong>は、医療機関とIT会社が「患者情報を特別に大切に扱います」という約束をする契約書です。</p>
+            </div>
+
+            <h3>🏗️ わかりやすい例え</h3>
+            <div class="example-block">
+                <h4>普通の契約：</h4>
+                <p>「コンビニ → 清掃業者」<br>
+                「普通にきれいにしてください」</p>
+                
+                <h4>BAA契約：</h4>
+                <p>「病院 → IT業者」<br>
+                「患者情報が含まれる可能性があるので、<br>
+                特別なルールで特別に厳重に管理してください」</p>
+            </div>
+
+            <h3>🔐 金庫の例え</h3>
+            <div class="card-grid">
+                <div class="card">
+                    <h4>一般利用</h4>
+                    <p>「貴重品預かります（普通の金庫）」</p>
+                </div>
+                <div class="card">
+                    <h4>BAA利用</h4>
+                    <p>「医療情報お預かります（特別仕様の金庫）」</p>
+                    <ul>
+                        <li>二重ロック</li>
+                        <li>監視カメラ</li>
+                        <li>24時間警備</li>
+                        <li>専用管理者</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2>🏥 HIPAA（Health Insurance Portability and Accountability Act）の基礎</h2>
+
+            <h3>📜 HIPAAとは</h3>
+            <div class="card">
+                <ul>
+                    <li><strong>制定年</strong>: 1996年（米国）</li>
+                    <li><strong>目的</strong>: 医療情報のプライバシー保護</li>
+                    <li><strong>適用範囲</strong>: 米国の医療機関と関連事業者</li>
+                    <li><strong>PHI（Protected Health Information）</strong>: 保護対象となる医療情報</li>
+                </ul>
+            </div>
+
+            <h3>🌐 日本の医療機関への影響</h3>
+            <div class="example-block">
+                <h4>なぜ日本でHIPAAが重要？</h4>
+                <ol>
+                    <li>OpenAIは米国企業</li>
+                    <li>米国のルールで医療データを処理</li>
+                    <li>日本の病院も間接的に米国法の影響</li>
+                    <li>より厳格な保護を受けられる</li>
+                </ol>
+            </div>
+
+            <h3>🔗 Business Associateの仕組み</h3>
+            <div class="example-block">
+                <p><strong>医療機関（Covered Entity）</strong><br>
+                ↓ 業務委託（BAA契約）<br>
+                <strong>外部業者（Business Associate）</strong></p>
+                
+                <h4>例：</h4>
+                <ul>
+                    <li>病院 → クラウドサービス（OpenAI）</li>
+                    <li>診療所 → データ処理業者</li>
+                    <li>薬局 → IT会社</li>
+                </ul>
+            </div>
+
+            <h2>📊 BAA締結前後の比較</h2>
+
+            <h3>⚖️ 保護レベルの違い</h3>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>項目</th>
+                            <th>一般利用</th>
+                            <th>BAA利用</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>扱い</strong></td>
+                            <td>普通のお客さん</td>
+                            <td>医療パートナー</td>
+                        </tr>
+                        <tr>
+                            <td><strong>データ保持</strong></td>
+                            <td>30日間保存</td>
+                            <td>厳格管理・即座削除オプション</td>
+                        </tr>
+                        <tr>
+                            <td><strong>学習利用</strong></td>
+                            <td>可能性あり</td>
+                            <td>禁止</td>
+                        </tr>
+                        <tr>
+                            <td><strong>サポート</strong></td>
+                            <td>標準窓口</td>
+                            <td>医療専用窓口</td>
+                        </tr>
+                        <tr>
+                            <td><strong>セキュリティ</strong></td>
+                            <td>標準レベル</td>
+                            <td>医療特化レベル</td>
+                        </tr>
+                        <tr>
+                            <td><strong>責任分担</strong></td>
+                            <td>あいまい</td>
+                            <td>明確な契約</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>💰 料金面での違い</h3>
+            
+            <h4>❓ BAA締結の料金（要確認）</h4>
+            <div class="example-block">
+                <h5>推測される料金体系:</h5>
+                <ul>
+                    <li>BAA申請・締結プロセス: 無料の可能性が高い</li>
+                    <li>基本的な医療向け保護機能: 標準提供</li>
+                    <li>契約書の作成・管理: 追加料金なし</li>
+                </ul>
+                
+                <h5>推測の根拠:</h5>
+                <ul>
+                    <li>✓ 業界標準では無料が一般的</li>
+                    <li>✓ OpenAI公開価格表に記載なし</li>
+                    <li>✓ 他社（Microsoft等）は標準提供</li>
+                    <li>✓ Enterprise契約不要での提供</li>
+                </ul>
+            </div>
+
+            <h4>💵 有料の可能性が高い</h4>
+            <div class="alert alert-warning">
+                <ul>
+                    <li>ZDR（Zero Data Retention）</li>
+                    <li>専用サポート窓口</li>
+                    <li>特別なSLA（Service Level Agreement）</li>
+                    <li>カスタムセキュリティ設定</li>
+                </ul>
+            </div>
+
+            <h4>🔍 重要な注意事項</h4>
+            <div class="alert alert-danger">
+                <h5>⚠️ 料金情報の信頼性について:</h5>
+                <ul>
+                    <li>本マニュアルの料金情報は推測に基づく</li>
+                    <li>公式な料金表は非公開</li>
+                    <li>実際の料金は個別見積もりが必要</li>
+                </ul>
+                
+                <h5>必須確認先:</h5>
+                <ul>
+                    <li>BAA申請時: <a href="mailto:baa@openai.com">baa@openai.com</a></li>
+                    <li>営業相談: OpenAI Sales Team</li>
+                    <li>技術質問: <a href="https://help.openai.com">help.openai.com</a></li>
+                </ul>
+            </div>
+
+            <h2>🎯 医療機関での必要性レベル</h2>
+
+            <h3>🔴 BAA必須レベル</h3>
+            <div class="alert alert-danger">
+                <h4>高リスク利用場面：</h4>
+                <ul>
+                    <li>患者情報の誤入力リスクがある</li>
+                    <li>診療現場での直接利用</li>
+                    <li>複数職員での日常的利用</li>
+                    <li>外部監査・患者からの問い合わせ対応</li>
+                </ul>
+                <p><strong>→ BAA締結が実質必須</strong></p>
+            </div>
+
+            <h3>🟡 BAA推奨レベル</h3>
+            <div class="alert alert-warning">
+                <h4>中リスク利用場面：</h4>
+                <ul>
+                    <li>医療機関としての信頼性確保</li>
+                    <li>将来的な利用拡大を予定</li>
+                    <li>管理者・責任者からの要求</li>
+                    <li>監査対応の簡素化</li>
+                </ul>
+                <p><strong>→ BAA締結を強く推奨</strong></p>
+            </div>
+
+            <h3>🟢 BAA不要レベル</h3>
+            <div class="alert alert-success">
+                <h4>低リスク利用場面：</h4>
+                <ul>
+                    <li>完全匿名化データのみ</li>
+                    <li>一般的な医学情報検索</li>
+                    <li>教育・研修目的のみ</li>
+                    <li>個人医師の学習目的</li>
+                </ul>
+                <p><strong>→ 標準API利用で十分</strong></p>
+            </div>
+
+            <h2>🗑️ ZDR（Zero Data Retention）完全解説</h2>
+
+            <h3>🔍 ZDRとは何か</h3>
+            <div class="alert alert-info">
+                <p><strong>Zero Data Retention（ゼロデータ保持）</strong>は、OpenAIがあなたのデータを一切保存しない特別なオプションです。</p>
+            </div>
+
+            <div class="example-block">
+                <h4>通常のAPI利用：</h4>
+                <p>質問 → OpenAI → 回答<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↓<br>
+                &nbsp;&nbsp;30日間保存</p>
+                
+                <h4>ZDR利用：</h4>
+                <p>質問 → OpenAI → 回答<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↓<br>
+                &nbsp;&nbsp;即座に削除</p>
+            </div>
+
+            <h3>📊 ZDRと標準利用の比較</h3>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>項目</th>
+                            <th>標準利用</th>
+                            <th>ZDR利用</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>データ保持</strong></td>
+                            <td>30日間</td>
+                            <td>即座削除</td>
+                        </tr>
+                        <tr>
+                            <td><strong>モデル学習</strong></td>
+                            <td>可能性あり</td>
+                            <td>完全禁止</td>
+                        </tr>
+                        <tr>
+                            <td><strong>利用可能機能</strong></td>
+                            <td>全機能</td>
+                            <td>限定的</td>
+                        </tr>
+                        <tr>
+                            <td><strong>申請プロセス</strong></td>
+                            <td>不要</td>
+                            <td>厳格な審査</td>
+                        </tr>
+                        <tr>
+                            <td><strong>料金</strong></td>
+                            <td>標準</td>
+                            <td>プレミアム（推測）</td>
+                        </tr>
+                        <tr>
+                            <td><strong>サポート</strong></td>
+                            <td>標準</td>
+                            <td>専用</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>⚠️ ZDRの重要な制限事項</h3>
+
+            <h4>🚫 ZDR対象外の機能</h4>
+            <div class="card-grid">
+                <div class="card">
+                    <h5>利用できない機能：</h5>
+                    <ul>
+                        <li>Assistants API</li>
+                        <li>Threads API</li>
+                        <li>Files API</li>
+                        <li>画像生成（DALL-E）</li>
+                        <li>画像入力機能</li>
+                        <li>ファインチューニング</li>
+                        <li>エンベディング（一部）</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h5>利用可能な機能：</h5>
+                    <ul>
+                        <li>Chat Completions API（基本）</li>
+                        <li>テキスト生成のみ</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h4>📋 申請の厳格性</h4>
+            <div class="alert alert-warning">
+                <h5>ZDR取得の困難さ：</h5>
+                <ul>
+                    <li>OpenAIは「簡単には認めない」</li>
+                    <li>医療機関でも審査落ちの可能性</li>
+                    <li>詳細な利用計画の提出が必要</li>
+                    <li>複数回の申請が必要な場合も</li>
+                </ul>
+            </div>
+
+            <h3>💰 ZDRの料金について</h3>
+
+            <h4>❓ 推測される料金構造</h4>
+            <div class="example-block">
+                <h5>業界情報からの推測：</h5>
+                <ul>
+                    <li>基本API料金の20-50%増</li>
+                    <li>または固定月額の追加料金</li>
+                    <li>最低契約金額の設定</li>
+                    <li>長期契約の要求</li>
+                </ul>
+                <div class="alert alert-warning">
+                    <p>⚠️ 具体的な金額は完全に非公開</p>
+                </div>
+            </div>
+
+            <h4>🏥 医療機関での実際のコスト</h4>
+            <div class="alert alert-info">
+                <h5>総コストに含まれる要素：</h5>
+                <ol>
+                    <li>基本API利用料</li>
+                    <li>ZDRプレミアム料金</li>
+                    <li>機能制限による代替システム費用</li>
+                    <li>専用サポート費用（可能性）</li>
+                    <li>長期契約による固定費</li>
+                </ol>
+                <p><strong>実際のコスト = 予想の2-3倍になる可能性</strong></p>
+            </div>
+
+            <h2>🎯 医療機関向け意思決定ガイド</h2>
+
+            <h3>📊 段階的アプローチの推奨</h3>
+
+            <h4>フェーズ1: 標準API + 厳格運用（推奨開始点）</h4>
+            <div class="card">
+                <ul>
+                    <li><strong>対象</strong>: すべての医療機関</li>
+                    <li><strong>期間</strong>: 1-3ヶ月</li>
+                    <li><strong>コスト</strong>: 最小限</li>
+                </ul>
+                <h5>実施内容:</h5>
+                <ul>
+                    <li>完全匿名化データのみ利用</li>
+                    <li>厳格な運用ルールの策定</li>
+                    <li>職員教育の徹底</li>
+                    <li>利用状況の詳細記録</li>
+                </ul>
+                <h5>メリット:</h5>
+                <ul>
+                    <li>低コストで開始可能</li>
+                    <li>リスクを把握しながら運用</li>
+                    <li>BAA申請時の実績作り</li>
+                </ul>
+            </div>
+
+            <h4>フェーズ2: BAA締結（多くの医療機関向け）</h4>
+            <div class="card">
+                <ul>
+                    <li><strong>対象</strong>: 継続利用を予定する医療機関</li>
+                    <li><strong>期間</strong>: フェーズ1完了後</li>
+                    <li><strong>コスト</strong>: 追加料金なしの可能性が高い（要確認）</li>
+                </ul>
+                <h5>実施内容:</h5>
+                <ul>
+                    <li>BAA申請・締結</li>
+                    <li>より安全な利用体制構築</li>
+                    <li>患者・監査への説明材料確保</li>
+                </ul>
+                <h5>メリット:</h5>
+                <ul>
+                    <li>医療機関としての信頼性向上</li>
+                    <li>リスク軽減</li>
+                    <li>将来への備え</li>
+                </ul>
+            </div>
+
+            <h4>フェーズ3: ZDR検討（必要に応じて）</h4>
+            <div class="card">
+                <ul>
+                    <li><strong>対象</strong>: 最高レベルの保護が必要な機関</li>
+                    <li><strong>期間</strong>: BAA運用後に検討</li>
+                    <li><strong>コスト</strong>: 大幅な追加料金</li>
+                </ul>
+                <h5>検討条件:</h5>
+                <ul>
+                    <li>患者情報の直接処理が必要</li>
+                    <li>規制当局からの要求</li>
+                    <li>競合との差別化が必要</li>
+                    <li>予算に十分な余裕</li>
+                </ul>
+            </div>
+
+            <h3>🏥 病院規模別推奨パターン</h3>
+
+            <div class="card-grid">
+                <div class="card">
+                    <h4>🏢 大規模病院（500床以上）</h4>
+                    <p><strong>推奨: BAA + ZDR検討</strong></p>
+                    <h5>理由:</h5>
+                    <ul>
+                        <li>患者数が多くリスクが大きい</li>
+                        <li>監査・報告要求が厳格</li>
+                        <li>予算・体制に余裕</li>
+                        <li>社会的責任が大きい</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>🏥 中規模病院（100-500床）</h4>
+                    <p><strong>推奨: BAA締結</strong></p>
+                    <h5>理由:</h5>
+                    <ul>
+                        <li>リスクと予算のバランス</li>
+                        <li>信頼性確保が重要</li>
+                        <li>ZDRは将来検討</li>
+                        <li>段階的導入が適切</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>🏠 小規模診療所（50床未満）</h4>
+                    <p><strong>推奨: 標準API + 厳格運用</strong></p>
+                    <h5>理由:</h5>
+                    <ul>
+                        <li>予算制約が大きい</li>
+                        <li>リスクは相対的に小さい</li>
+                        <li>BAAは将来検討</li>
+                        <li>シンプルな運用が適切</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2>📝 実践的な申請手順</h2>
+
+            <h3>🚀 BAA申請の完全ガイド</h3>
+
+            <h4>ステップ1: 事前準備（1週間）</h4>
+            <div class="alert alert-info">
+                <h5>準備書類:</h5>
+                <ul>
+                    <li>☐ 医療機関の概要（正式名称、所在地、規模）</li>
+                    <li>☐ 診療科目・病床数・年間患者数</li>
+                    <li>☐ 責任者情報（院長、IT責任者）</li>
+                    <li>☐ 利用計画書（目的、用途、データ種類）</li>
+                    <li>☐ セキュリティ体制（院内規程、管理体制）</li>
+                    <li>☐ 緊急連絡先・担当者情報</li>
+                </ul>
+            </div>
+
+            <h4>ステップ2: 申請メール作成</h4>
+            <div class="example-block">
+                <p><strong>宛先:</strong> baa@openai.com<br>
+                <strong>件名:</strong> Business Associate Agreement Request - [医療機関名]</p>
+                
+                <h5>テンプレート:</h5>
+                <div class="code-block">
+「OpenAI様
+
+[医療機関名]の[役職][氏名]と申します。
+
+弊院では、診療業務の効率化を目的として、
+OpenAI APIの利用を検討しており、
+患者情報の適切な保護のため、
+Business Associate Agreement（BAA）の
+締結をお願いいたします。
+
+＜医療機関情報＞
+正式名称: [医療機関名]
+所在地: [住所]
+診療科目: [科目]
+病床数: [数]
+年間患者数: [概算]
+責任者: [氏名・役職]
+
+＜利用計画＞
+利用目的: [具体的な用途]
+利用部署: [部署名]
+利用者数: [概算]
+月間利用量: [概算]
+
+＜セキュリティ体制＞
+院内規程: [有無・概要]
+管理者: [担当者情報]
+監査体制: [概要]
+
+何かご質問がございましたら、
+下記連絡先までお気軽にお問い合わせください。
+
+[署名・連絡先]」
+                </div>
+            </div>
+
+            <h4>ステップ3: フォローアップ（1-2週間）</h4>
+            <div class="alert alert-success">
+                <h5>期待されるレスポンス:</h5>
+                <ul>
+                    <li>1-2営業日: 初回回答</li>
+                    <li>追加情報要求の可能性</li>
+                    <li>詳細確認・調整</li>
+                    <li>最終的なBAA締結</li>
+                </ul>
+            </div>
+
+            <h2>📋 チェックリスト・まとめ</h2>
+
+            <h3>✅ BAA取得のメリット</h3>
+            <div class="alert alert-success">
+                <ul>
+                    <li><strong>リスク軽減</strong>: 医療データ取り扱いの法的保護</li>
+                    <li><strong>信頼性向上</strong>: 患者・監査への説明材料</li>
+                    <li><strong>将来への備え</strong>: 規制強化・利用拡大への対応</li>
+                    <li><strong>運用改善</strong>: 専用サポート・リソースの利用</li>
+                </ul>
+            </div>
+
+            <h3>⚠️ 注意すべき点</h3>
+            <div class="alert alert-warning">
+                <ul>
+                    <li><strong>日本法との併用</strong>: 国内法令の同時遵守が必要</li>
+                    <li><strong>技術的制限</strong>: ZDR利用時の機能制限</li>
+                    <li><strong>継続的管理</strong>: 契約後の運用・監査が重要</li>
+                    <li><strong>コスト管理</strong>: ZDRは大幅な追加料金の可能性</li>
+                </ul>
+            </div>
+
+            <h3>🎯 推奨行動</h3>
+            <div class="card">
+                <ol>
+                    <li><strong>段階的アプローチ</strong>: 標準API → BAA → ZDR（必要時）</li>
+                    <li><strong>予算計画</strong>: BAA低コスト、ZDR高額を前提とした計画</li>
+                    <li><strong>事前確認</strong>: 申請前に必ず料金体系を確認</li>
+                    <li><strong>代替案検討</strong>: Azure、Bedrock等との比較</li>
+                    <li><strong>継続的評価</strong>: 効果・コスト・リスクの定期見直し</li>
+                </ol>
+            </div>
+
+            <h3>📞 重要な連絡先</h3>
+            <div class="card">
+                <ul>
+                    <li><strong>BAA申請</strong>: <a href="mailto:baa@openai.com">baa@openai.com</a></li>
+                    <li><strong>技術サポート</strong>: <a href="https://help.openai.com">help.openai.com</a></li>
+                    <li><strong>一般問い合わせ</strong>: <a href="mailto:support@openai.com">support@openai.com</a></li>
+                </ul>
+            </div>
+
+            <div class="page-navigation">
+                <a href="2.2-openai-privacy.html" class="page-nav-btn">← 前：OpenAIプライバシー</a>
+                <div class="page-nav-center">
+                    <a href="../../index.html">📚 目次</a>
+                </div>
+                <a href="../3-security/3.1-security-overview.html" class="page-nav-btn">次：セキュリティ概要 →</a>
+            </div>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 医療機関向け API キー管理マニュアル. 
+            <span class="footer-note">本マニュアルは医療機関での安全なAI活用を支援することを目的としています。</span></p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/sidebar.js"></script>
+    <script>
+    </script>
+</body>
+</html>

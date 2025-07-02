@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>患者情報保護の具体策 - 医療機関向け API キー管理マニュアル</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="header-title">🔒 患者情報保護の具体策</h1>
+                <p class="header-subtitle">医療機関向け API キー管理マニュアル</p>
+            </div>
+            <div class="header-actions">
+                <button onclick="window.print()" class="btn btn-outline">🖨️ 印刷</button>
+                <a href="../../index.html" class="btn btn-primary">📚 トップに戻る</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container main-container">
+        <nav class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h3>📚 目次</h3>
+                <button id="sidebar-toggle" class="sidebar-toggle">☰</button>
+            </div>
+            
+            <div class="sidebar-content">
+                <div class="nav-section" data-section="basics">
+                    <div class="nav-section-header">
+                        <h4>📖 1. 基本概念</h4>
+                        <span class="nav-section-toggle">▼</span>
+                    </div>
+                    <ul class="nav-subsection">
+                        <li><a href="../1-basics/1.1-what-is-llm.html">LLMとは</a></li>
+                        <li><a href="../1-basics/1.2-what-is-api.html">APIとは</a></li>
+                        <li><a href="../1-basics/1.3-medical-considerations.html">医療機関での注意点</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section" data-section="compliance">
+                    <div class="nav-section-header">
+                        <h4>⚖️ 2. 法規制・コンプライアンス</h4>
+                        <span class="nav-section-toggle">▼</span>
+                    </div>
+                    <ul class="nav-subsection">
+                        <li><a href="../2-compliance/2.1-japanese-regulations.html">日本の医療機関における法規制</a></li>
+                        <li><a href="../2-compliance/2.2-openai-privacy.html">OpenAIプライバシーポリシー</a></li>
+                        <li>
+                            <div class="nav-subsection-group">
+                                <span class="nav-subsection-title">🤝 BAA・HIPAA ガイド</span>
+                                <ul class="nav-subsection-items">
+                                    <li><a href="../2-compliance/2.3-baa-hipaa/2.3.1-basics.html">BAA基本概念</a></li>
+                                    <li><a href="../2-compliance/2.3-baa-hipaa/2.3.2-zdr.html">ZDR詳細</a></li>
+                                    <li><a href="../2-compliance/2.3-baa-hipaa/2.3.3-implementation.html">実装・申請手順</a></li>
+                                    <li><a href="../2-compliance/2.3-baa-hipaa/2.3.4-decision-guide.html">意思決定ガイド</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="nav-section" data-section="security">
+                    <div class="nav-section-header">
+                        <h4>🛡️ 3. セキュリティ</h4>
+                        <span class="nav-section-toggle">▼</span>
+                    </div>
+                    <ul class="nav-subsection">
+                        <li><a href="../3-security/3.1-security-overview.html">セキュリティ概要</a></li>
+                        <li><a href="../3-security/3.2-patient-data-protection.html" class="active">患者情報保護</a></li>
+                        <li><a href="../3-security/3.3-api-key-security.html">APIキーセキュリティ</a></li>
+                        <li>
+                            <div class="nav-subsection-group">
+                                <span class="nav-subsection-title">🔍 セキュリティ監査</span>
+                                <ul class="nav-subsection-items">
+                                    <li><a href="../3-security/3.4-security-audit/3.4.1-overview-daily.html">監査概要・日常チェック</a></li>
+                                    <li><a href="../3-security/3.4-security-audit/3.4.2-audit-items-tools.html">重点監査項目・ツール</a></li>
+                                    <li><a href="../3-security/3.4-security-audit/3.4.3-audit-response-improvement.html">監査対応・改善</a></li>
+                                    <li><a href="../3-security/3.4-security-audit/3.4.4-documentation-training.html">文書管理・担当者育成</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="nav-section" data-section="implementation">
+                    <div class="nav-section-header">
+                        <h4>🔧 4. 実装・運用</h4>
+                        <span class="nav-section-toggle">▼</span>
+                    </div>
+                    <ul class="nav-subsection">
+                        <li><a href="../4-implementation/4.1-api-key-setup.html">APIキーの取得と設定</a></li>
+                        <li><a href="../4-implementation/4.2-practical-usage.html">実践的な使用ガイド</a></li>
+                        <li>
+                            <div class="nav-subsection-group">
+                                <span class="nav-subsection-title">🚨 トラブルシューティング</span>
+                                <ul class="nav-subsection-items">
+                                    <li><a href="../4-implementation/4.3-troubleshooting/4.3.1-emergency-technical.html">緊急時対応・技術的問題</a></li>
+                                    <li><a href="../4-implementation/4.3-troubleshooting/4.3.2-application-cost.html">アプリケーション・コスト問題</a></li>
+                                    <li><a href="../4-implementation/4.3-troubleshooting/4.3.3-maintenance-escalation.html">システム保守・エスカレーション</a></li>
+                                    <li><a href="../4-implementation/4.3-troubleshooting/4.3.4-tools-improvement.html">ツール・継続的改善</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="nav-subsection-group">
+                                <span class="nav-subsection-title">📊 運用管理</span>
+                                <ul class="nav-subsection-items">
+                                    <li><a href="../4-implementation/4.4-operations-management/4.4.1-daily-operations.html">日常運用</a></li>
+                                    <li><a href="../4-implementation/4.4-operations-management/4.4.2-user-cost-management.html">利用者・コスト管理</a></li>
+                                    <li><a href="../4-implementation/4.4-operations-management/4.4.3-analysis-improvement.html">データ分析・改善</a></li>
+                                    <li><a href="../4-implementation/4.4-operations-management/4.4.4-documentation-emergency.html">文書管理・緊急時対応</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="nav-section" data-section="reference">
+                    <div class="nav-section-header">
+                        <h4>📋 5. リファレンス</h4>
+                        <span class="nav-section-toggle">▼</span>
+                    </div>
+                    <ul class="nav-subsection">
+                        <li><a href="../5-reference/5.1-quick-reference.html">クイックリファレンス</a></li>
+                        <li><a href="../5-reference/5.2-executive-summary.html">エグゼクティブサマリー</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section" data-section="training">
+                    <div class="nav-section-header">
+                        <h4>🎓 6. 研修・トレーニング</h4>
+                        <span class="nav-section-toggle">▼</span>
+                    </div>
+                    <ul class="nav-subsection">
+                        <li>
+                            <div class="nav-subsection-group">
+                                <span class="nav-subsection-title">📚 職員研修プログラム</span>
+                                <ul class="nav-subsection-items">
+                                    <li><a href="../6-training/6.1-overview.html">研修体系概要</a></li>
+                                    <li><a href="../6-training/6.2-advanced.html">継続・職種別研修</a></li>
+                                    <li><a href="../6-training/6.3-evaluation.html">効果測定・評価</a></li>
+                                    <li><a href="../6-training/6.4-management.html">運営体制・教材管理</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a href="../6-training/6.2-assessment-tests.html">理解度テスト問題集</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section" data-section="reporting">
+                    <div class="nav-section-header">
+                        <h4>📊 7. レポート・分析</h4>
+                        <span class="nav-section-toggle">▼</span>
+                    </div>
+                    <ul class="nav-subsection">
+                        <li><a href="../7-reporting/7.1-monthly-reports.html">月次レポートテンプレート</a></li>
+                        <li><a href="../7-reporting/7.2-training-effectiveness.html">研修効果測定レポート</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <main class="content" id="content">
+            <h1>患者情報保護の具体策</h1>
+
+            <h2>患者情報の分類と保護レベル</h2>
+
+            <h3>📊 医療情報の分類</h3>
+
+            <h4>レベル1: 公開可能情報</h4>
+            <div class="card">
+                <ul>
+                    <li><strong>一般的な医学情報</strong>: 疾患の概要、治療方法の説明</li>
+                    <li><strong>統計情報</strong>: 匿名化された集計データ</li>
+                    <li><strong>教育資料</strong>: 一般向けの健康情報</li>
+                </ul>
+            </div>
+
+            <h4>レベル2: 制限情報</h4>
+            <div class="card">
+                <ul>
+                    <li><strong>匿名化症例</strong>: 個人特定不可能な症例情報</li>
+                    <li><strong>研究データ</strong>: 統計的加工済みデータ</li>
+                    <li><strong>教育症例</strong>: 架空・仮名化された事例</li>
+                </ul>
+            </div>
+
+            <h4>レベル3: 機密情報</h4>
+            <div class="alert alert-warning">
+                <ul>
+                    <li><strong>患者個人情報</strong>: 氏名、住所、連絡先</li>
+                    <li><strong>診療情報</strong>: 診断名、治療内容、検査結果</li>
+                    <li><strong>支払情報</strong>: 保険情報、請求データ</li>
+                </ul>
+            </div>
+
+            <h4>レベル4: 極秘情報</h4>
+            <div class="alert alert-danger">
+                <ul>
+                    <li><strong>精神科情報</strong>: 精神疾患・心理状態</li>
+                    <li><strong>遺伝情報</strong>: 遺伝子検査・家族歴</li>
+                    <li><strong>VIP患者情報</strong>: 著名人・関係者の情報</li>
+                </ul>
+            </div>
+
+            <h2>AI利用時の情報保護原則</h2>
+
+            <h3>🚫 絶対に送信してはいけない情報</h3>
+
+            <h4>直接識別子</h4>
+            <div class="alert alert-danger">
+                <ul>
+                    <li><strong>氏名</strong>: 患者の姓名（フルネーム・部分含む）</li>
+                    <li><strong>生年月日</strong>: 年月日の組み合わせ</li>
+                    <li><strong>住所</strong>: 都道府県を含む住所情報</li>
+                    <li><strong>電話番号</strong>: 自宅・携帯・職場の番号</li>
+                    <li><strong>メールアドレス</strong>: 個人・職場のアドレス</li>
+                </ul>
+            </div>
+
+            <h4>医療固有識別子</h4>
+            <div class="alert alert-danger">
+                <ul>
+                    <li><strong>診察券番号</strong>: 患者ID・受付番号</li>
+                    <li><strong>保険証番号</strong>: 健康保険・国民健康保険番号</li>
+                    <li><strong>カルテ番号</strong>: 電子カルテ・紙カルテ番号</li>
+                    <li><strong>検査番号</strong>: 検体番号・画像番号</li>
+                </ul>
+            </div>
+
+            <h4>間接識別子の組み合わせ</h4>
+            <div class="alert alert-warning">
+                <ul>
+                    <li><strong>年齢＋性別＋診療科</strong>: 特定につながる組み合わせ</li>
+                    <li><strong>珍しい疾患名</strong>: 希少疾患の診断名</li>
+                    <li><strong>特定の手術日</strong>: 具体的な手術実施日</li>
+                </ul>
+            </div>
+
+            <h3>⚠️ 注意が必要な情報</h3>
+
+            <h4>準識別子</h4>
+            <div class="card">
+                <ul>
+                    <li><strong>年代</strong>: 「70代男性」等の大まかな区分は許可</li>
+                    <li><strong>疾患カテゴリー</strong>: 「循環器疾患」等の大分類</li>
+                    <li><strong>地域</strong>: 「関東地方」等の広域情報</li>
+                </ul>
+            </div>
+
+            <h4>コンテキスト情報</h4>
+            <div class="card">
+                <ul>
+                    <li><strong>複数患者の情報</strong>: 同時に複数患者を扱う場合</li>
+                    <li><strong>時系列情報</strong>: 連続した診療記録</li>
+                    <li><strong>関連性情報</strong>: 家族・知人との関係性</li>
+                </ul>
+            </div>
+
+            <h2>匿名化・仮名化の実践</h2>
+
+            <h3>🔄 適切な匿名化手法</h3>
+
+            <h4>直接削除法</h4>
+            <div class="example-block">
+                <p><strong>❌ 悪い例:</strong><br>
+                「田中太郎さん（65歳男性）は糖尿病で...」</p>
+                
+                <p><strong>✅ 良い例:</strong><br>
+                「60代男性患者は糖尿病で...」</p>
+            </div>
+
+            <h4>一般化</h4>
+            <div class="example-block">
+                <p><strong>❌ 悪い例:</strong><br>
+                「2024年3月15日に手術を実施」</p>
+                
+                <p><strong>✅ 良い例:</strong><br>
+                「春頃に手術を実施」</p>
+            </div>
+
+            <h4>仮名化</h4>
+            <div class="example-block">
+                <p><strong>❌ 悪い例:</strong><br>
+                「患者A、患者B、患者C...」（パターンが読める）</p>
+                
+                <p><strong>✅ 良い例:</strong><br>
+                「Case 1」「症例α」「事例X」（ランダム）</p>
+            </div>
+
+            <h3>🎯 匿名化の具体例</h3>
+
+            <h4>症例記述の例</h4>
+            <div class="example-block">
+                <p><strong>原文:</strong><br>
+                「佐藤花子様（78歳、女性、東京都新宿区在住）は、<br>
+                2024年2月10日に当院循環器内科を受診。<br>
+                診察券番号12345での初診...」</p>
+                
+                <p><strong>匿名化後:</strong><br>
+                「70代後半の女性患者が循環器内科を受診。<br>
+                初診時の主訴は...」</p>
+            </div>
+
+            <h4>検査結果の例</h4>
+            <div class="example-block">
+                <p><strong>原文:</strong><br>
+                「患者ID: A123456<br>
+                氏名: 山田次郎<br>
+                HbA1c: 8.2% (2024/03/01採血)」</p>
+                
+                <p><strong>匿名化後:</strong><br>
+                「糖尿病患者の検査結果<br>
+                HbA1c: 8.2%（基準値6.5%未満）」</p>
+            </div>
+
+            <h2>AI利用時の安全な入力方法</h2>
+
+            <h3>✅ 推奨される入力パターン</h3>
+
+            <h4>症例相談の例</h4>
+            <div class="example-block">
+                <p>「50代男性の高血圧患者で、ACE阻害薬を服用中です。<br>
+                新たに糖尿病を発症した場合の治療選択について、<br>
+                一般的な考慮事項を教えてください。」</p>
+            </div>
+
+            <h4>文書作成支援の例</h4>
+            <div class="example-block">
+                <p>「慢性腎臓病の患者向けの食事指導資料を作成したいです。<br>
+                塩分制限とタンパク質制限について、<br>
+                わかりやすい説明文を作成してください。」</p>
+            </div>
+
+            <h4>医学情報の確認</h4>
+            <div class="example-block">
+                <p>「心房細動の抗凝固療法において、<br>
+                CHADS2スコアとCHA2DS2-VAScスコアの<br>
+                使い分けについて説明してください。」</p>
+            </div>
+
+            <h3>❌ 避けるべき入力パターン</h3>
+
+            <h4>個人情報を含む相談</h4>
+            <div class="alert alert-danger">
+                <p>「田中太郎さん（65歳）の糖尿病について...」<br>
+                → 氏名・年齢が特定されている</p>
+            </div>
+
+            <h4>具体的すぎる情報</h4>
+            <div class="alert alert-danger">
+                <p>「昨日の緊急手術症例について...」<br>
+                → 時期が特定されすぎている</p>
+            </div>
+
+            <h4>複合的な識別情報</h4>
+            <div class="alert alert-danger">
+                <p>「当院の整形外科で今月手術した80代女性について...」<br>
+                → 複数の識別子の組み合わせ</p>
+            </div>
+
+            <h2>データ入力時のチェックリスト</h2>
+
+            <h3>📋 送信前確認項目</h3>
+
+            <h4>個人識別情報チェック</h4>
+            <div class="card">
+                <ul>
+                    <li>☐ 患者名が含まれていないか</li>
+                    <li>☐ 生年月日・住所が含まれていないか</li>
+                    <li>☐ 診察券番号・カルテ番号が含まれていないか</li>
+                    <li>☐ 電話番号・メールアドレスが含まれていないか</li>
+                </ul>
+            </div>
+
+            <h4>間接識別情報チェック</h4>
+            <div class="card">
+                <ul>
+                    <li>☐ 珍しい疾患名が含まれていないか</li>
+                    <li>☐ 具体的な日付が含まれていないか</li>
+                    <li>☐ 地域が特定できる情報が含まれていないか</li>
+                    <li>☐ 年齢・性別の組み合わせが特定的すぎないか</li>
+                </ul>
+            </div>
+
+            <h4>コンテキスト情報チェック</h4>
+            <div class="card">
+                <ul>
+                    <li>☐ 複数患者の情報が混在していないか</li>
+                    <li>☐ 家族・知人との関係性が含まれていないか</li>
+                    <li>☐ 院内の特定部署・職員名が含まれていないか</li>
+                </ul>
+            </div>
+
+            <h3>🔍 定期的な確認作業</h3>
+
+            <h4>月次チェック</h4>
+            <div class="card">
+                <ul>
+                    <li>AI利用履歴の確認</li>
+                    <li>不適切な入力の有無確認</li>
+                    <li>職員の利用状況確認</li>
+                </ul>
+            </div>
+
+            <h4>四半期チェック</h4>
+            <div class="card">
+                <ul>
+                    <li>匿名化手順の適切性評価</li>
+                    <li>セキュリティインシデントの有無</li>
+                    <li>教育効果の測定</li>
+                </ul>
+            </div>
+
+            <h2>患者同意と説明</h2>
+
+            <h3>📄 患者への説明内容</h3>
+
+            <h4>AI利用の説明</h4>
+            <div class="card">
+                <ul>
+                    <li><strong>利用目的</strong>: 診療業務の効率化・質向上</li>
+                    <li><strong>情報の範囲</strong>: 匿名化された医療情報のみ</li>
+                    <li><strong>安全対策</strong>: 個人情報保護の取り組み</li>
+                    <li><strong>患者の権利</strong>: 拒否・取り消しの権利</li>
+                </ul>
+            </div>
+
+            <h4>同意書の例文</h4>
+            <div class="example-block">
+                <p>「当院では、診療業務の効率化を目的として、<br>
+                人工知能（AI）を活用した業務支援システムを<br>
+                利用することがあります。</p>
+                
+                <p>利用にあたっては、お客様の個人情報を<br>
+                適切に匿名化し、個人が特定されない形で<br>
+                処理いたします。</p>
+                
+                <p>本利用について、ご質問やご不明な点が<br>
+                ございましたら、いつでもお申し出ください。」</p>
+            </div>
+
+            <h3>🤝 患者への配慮</h3>
+
+            <h4>拒否権の保障</h4>
+            <div class="card">
+                <ul>
+                    <li>AI利用を希望しない患者への配慮</li>
+                    <li>従来の方法での診療継続</li>
+                    <li>差別・不利益取り扱いの禁止</li>
+                </ul>
+            </div>
+
+            <h4>透明性の確保</h4>
+            <div class="card">
+                <ul>
+                    <li>AI利用の明確な説明</li>
+                    <li>処理内容の可視化</li>
+                    <li>患者からの質問への適切な回答</li>
+                </ul>
+            </div>
+
+            <h2>事故防止のための仕組み</h2>
+
+            <h3>🛡️ 技術的防止策</h3>
+
+            <h4>入力フィルタリング</h4>
+            <div class="card">
+                <ul>
+                    <li>個人情報検出システムの導入</li>
+                    <li>自動的な警告表示</li>
+                    <li>送信前の確認画面</li>
+                </ul>
+            </div>
+
+            <h4>アクセス制御</h4>
+            <div class="card">
+                <ul>
+                    <li>職員ごとの権限設定</li>
+                    <li>時間・場所制限</li>
+                    <li>二要素認証の実装</li>
+                </ul>
+            </div>
+
+            <h3>👥 運用的防止策</h3>
+
+            <h4>ダブルチェック</h4>
+            <div class="card">
+                <ul>
+                    <li>複数職員による確認</li>
+                    <li>上司承認の仕組み</li>
+                    <li>定期的な利用状況レビュー</li>
+                </ul>
+            </div>
+
+            <h4>教育・研修</h4>
+            <div class="card">
+                <ul>
+                    <li>定期的なセキュリティ研修</li>
+                    <li>事例を用いた実践的教育</li>
+                    <li>最新動向の情報共有</li>
+                </ul>
+            </div>
+
+            <div class="page-navigation">
+                <a href="3.1-security-overview.html" class="page-nav-btn">← 前：セキュリティ概要</a>
+                <div class="page-nav-center">
+                    <a href="../../index.html">📚 目次</a>
+                </div>
+                <a href="3.3-api-key-security.html" class="page-nav-btn">次：APIキーセキュリティ →</a>
+            </div>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 医療機関向け API キー管理マニュアル. 
+            <span class="footer-note">本マニュアルは医療機関での安全なAI活用を支援することを目的としています。</span></p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/sidebar.js"></script>
+    <script>
+    </script>
+</body>
+</html>

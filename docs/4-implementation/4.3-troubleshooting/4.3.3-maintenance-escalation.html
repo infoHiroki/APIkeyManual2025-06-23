@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>システム保守とエスカレーション - 医療機関向け API キー管理マニュアル</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="header-title">🛠️ システム保守とエスカレーション</h1>
+                <p class="header-subtitle">医療機関向け API キー管理マニュアル</p>
+            </div>
+            <div class="header-actions">
+                <button onclick="window.print()" class="btn btn-outline">🖨️ 印刷</button>
+                <a href="../../../index.html" class="btn btn-primary">📚 トップに戻る</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container main-container">
+        <nav class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h3>📚 目次</h3>
+                <button id="sidebar-toggle" class="sidebar-toggle">☰</button>
+            </div>
+            
+            <div class="sidebar-content">
+                <div class="nav-section" data-section="basics">
+                    <div class="nav-section-header">
+                        <h4>📖 1. 基本概念</h4>
+                        <span class="nav-section-toggle">▼</span>
+                    </div>
+                    <ul class="nav-subsection">
+                        <li><a href="../../1-basics/1.1-what-is-llm.html">LLMとは</a></li>
+                        <li><a href="../../1-basics/1.2-what-is-api.html">APIとは</a></li>
+                        <li><a href="../../1-basics/1.3-medical-considerations.html">医療機関での注意点</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section" data-section="compliance">
+                    <div class="nav-section-header">
+                        <h4>⚖️ 2. 法規制・コンプライアンス</h4>
+                        <span class="nav-section-toggle">▼</span>
+                    </div>
+                    <ul class="nav-subsection">
+                        <li><a href="../../2-compliance/2.1-japanese-regulations.html">日本の医療機関における法規制</a></li>
+                        <li><a href="../../2-compliance/2.2-openai-privacy.html">OpenAIプライバシーポリシー</a></li>
+                        <li>
+                            <div class="nav-subsection-group">
+                                <span class="nav-subsection-title">🤝 BAA・HIPAA ガイド</span>
+                                <ul class="nav-subsection-items">
+                                    <li><a href="../../2-compliance/2.3-baa-hipaa/2.3.1-basics.html">BAA基本概念</a></li>
+                                    <li><a href="../../2-compliance/2.3-baa-hipaa/2.3.2-zdr.html">ZDR詳細</a></li>
+                                    <li><a href="../../2-compliance/2.3-baa-hipaa/2.3.3-implementation.html">実装・申請手順</a></li>
+                                    <li><a href="../../2-compliance/2.3-baa-hipaa/2.3.4-decision-guide.html">意思決定ガイド</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="nav-section" data-section="security">
+                    <div class="nav-section-header">
+                        <h4>🛡️ 3. セキュリティ</h4>
+                        <span class="nav-section-toggle">▼</span>
+                    </div>
+                    <ul class="nav-subsection">
+                        <li><a href="../../3-security/3.1-security-overview.html">セキュリティ概要</a></li>
+                        <li><a href="../../3-security/3.2-patient-data-protection.html">患者情報保護</a></li>
+                        <li><a href="../../3-security/3.3-api-key-security.html">APIキーセキュリティ</a></li>
+                        <li>
+                            <div class="nav-subsection-group">
+                                <span class="nav-subsection-title">🔍 セキュリティ監査</span>
+                                <ul class="nav-subsection-items">
+                                    <li><a href="../../3-security/3.4-security-audit/3.4.1-overview-daily.html">監査概要・日常チェック</a></li>
+                                    <li><a href="../../3-security/3.4-security-audit/3.4.2-audit-items-tools.html">重点監査項目・ツール</a></li>
+                                    <li><a href="../../3-security/3.4-security-audit/3.4.3-audit-response-improvement.html">監査対応・改善</a></li>
+                                    <li><a href="../../3-security/3.4-security-audit/3.4.4-documentation-training.html">文書管理・担当者育成</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="nav-section" data-section="implementation">
+                    <div class="nav-section-header">
+                        <h4>🔧 4. 実装・運用</h4>
+                        <span class="nav-section-toggle">▼</span>
+                    </div>
+                    <ul class="nav-subsection">
+                        <li><a href="../../4-implementation/4.1-api-key-setup.html">APIキーの取得と設定</a></li>
+                        <li><a href="../../4-implementation/4.2-practical-usage.html">実践的な使用ガイド</a></li>
+                        <li>
+                            <div class="nav-subsection-group">
+                                <span class="nav-subsection-title">🚨 トラブルシューティング</span>
+                                <ul class="nav-subsection-items">
+                                    <li><a href="../../4-implementation/4.3-troubleshooting/4.3.1-emergency-technical.html">緊急時対応・技術的問題</a></li>
+                                    <li><a href="../../4-implementation/4.3-troubleshooting/4.3.2-application-cost.html">アプリケーション・コスト問題</a></li>
+                                    <li><a href="../../4-implementation/4.3-troubleshooting/4.3.3-maintenance-escalation.html" class="active">システム保守・エスカレーション</a></li>
+                                    <li><a href="../../4-implementation/4.3-troubleshooting/4.3.4-tools-improvement.html">ツール・継続的改善</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="nav-subsection-group">
+                                <span class="nav-subsection-title">📊 運用管理</span>
+                                <ul class="nav-subsection-items">
+                                    <li><a href="../../4-implementation/4.4-operations-management/4.4.1-daily-operations.html">日常運用</a></li>
+                                    <li><a href="../../4-implementation/4.4-operations-management/4.4.2-user-cost-management.html">利用者・コスト管理</a></li>
+                                    <li><a href="../../4-implementation/4.4-operations-management/4.4.3-analysis-improvement.html">データ分析・改善</a></li>
+                                    <li><a href="../../4-implementation/4.4-operations-management/4.4.4-documentation-emergency.html">文書管理・緊急時対応</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="nav-section" data-section="reference">
+                    <div class="nav-section-header">
+                        <h4>📋 5. リファレンス</h4>
+                        <span class="nav-section-toggle">▼</span>
+                    </div>
+                    <ul class="nav-subsection">
+                        <li><a href="../../5-reference/5.1-quick-reference.html">クイックリファレンス</a></li>
+                        <li><a href="../../5-reference/5.2-executive-summary.html">エグゼクティブサマリー</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section" data-section="training">
+                    <div class="nav-section-header">
+                        <h4>🎓 6. 研修・トレーニング</h4>
+                        <span class="nav-section-toggle">▼</span>
+                    </div>
+                    <ul class="nav-subsection">
+                        <li>
+                            <div class="nav-subsection-group">
+                                <span class="nav-subsection-title">📚 職員研修プログラム</span>
+                                <ul class="nav-subsection-items">
+                                    <li><a href="../../6-training/6.1-overview.html">研修体系概要</a></li>
+                                    <li><a href="../../6-training/6.2-advanced.html">継続・職種別研修</a></li>
+                                    <li><a href="../../6-training/6.3-evaluation.html">効果測定・評価</a></li>
+                                    <li><a href="../../6-training/6.4-management.html">運営体制・教材管理</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a href="../../6-training/6.2-assessment-tests.html">理解度テスト問題集</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section" data-section="reporting">
+                    <div class="nav-section-header">
+                        <h4>📊 7. レポート・分析</h4>
+                        <span class="nav-section-toggle">▼</span>
+                    </div>
+                    <ul class="nav-subsection">
+                        <li><a href="../../07-reporting/7.1-monthly-reports.html">月次レポートテンプレート</a></li>
+                        <li><a href="../../07-reporting/7.2-training-effectiveness.html">研修効果測定レポート</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <main class="content" id="content">
+            <h1>システム保守とエスカレーション</h1>
+
+            <h2>🛠️ システム保守・メンテナンス</h2>
+
+            <h3>定期メンテナンス時の対応</h3>
+
+            <h4>事前準備</h4>
+            <div class="card">
+                <h5>メンテナンス前チェックリスト:</h5>
+                <div class="code-block">
+                    <pre><code>1. バックアップの確認
+   - [ ] データベースのバックアップ
+   - [ ] 設定ファイルのバックアップ
+   - [ ] ログファイルのアーカイブ
+
+2. 利用者への通知
+   - [ ] メンテナンス予告の通知
+   - [ ] 代替手段の案内
+   - [ ] 緊急連絡先の確認
+
+3. 復旧手順の確認
+   - [ ] 復旧手順書の準備
+   - [ ] テスト環境での検証
+   - [ ] ロールバック手順の確認</code></pre>
+                </div>
+            </div>
+
+            <h4>メンテナンス中の対応</h4>
+            <div class="code-block">
+                <pre><code>対応手順:
+
+1. システム停止
+   - 利用者への最終通知
+   - アプリケーションの停止
+   - データベースの停止
+
+2. 作業実施
+   - 計画された作業の実行
+   - 進捗状況の記録
+   - 問題発生時の対応
+
+3. 動作確認
+   - 基本機能のテスト
+   - データ整合性の確認
+   - 性能の確認</code></pre>
+            </div>
+
+            <h2>📞 エスカレーション手順</h2>
+
+            <h3>社内エスカレーション</h3>
+
+            <h4>レベル1: 現場対応</h4>
+            <div class="card">
+                <div class="code-block">
+                    <pre><code>対応範囲:
+- 基本的な操作エラー
+- 一般的な技術的問題
+- 利用方法の質問
+
+対応者:
+- システム管理者
+- IT担当者
+
+対応時間:
+- 通常業務時間内: 30分以内
+- 緊急時: 即座</code></pre>
+                </div>
+            </div>
+
+            <h4>レベル2: 管理者対応</h4>
+            <div class="card">
+                <div class="code-block">
+                    <pre><code>対応範囲:
+- 複雑な技術的問題
+- セキュリティインシデント
+- システム障害
+
+対応者:
+- IT責任者
+- 医療安全管理者
+
+対応時間:
+- 通常: 2時間以内
+- 緊急時: 30分以内</code></pre>
+                </div>
+            </div>
+
+            <h4>レベル3: 経営陣対応</h4>
+            <div class="alert alert-danger">
+                <div class="code-block">
+                    <pre><code>対応範囲:
+- 重大なセキュリティ事故
+- 法的問題の可能性
+- 大規模システム障害
+
+対応者:
+- 院長・事務長
+- 法務担当
+
+対応時間:
+- 即座（24時間体制）</code></pre>
+                </div>
+            </div>
+
+            <h3>外部エスカレーション</h3>
+
+            <h4>OpenAI サポート</h4>
+            <div class="card">
+                <h5>連絡先:</h5>
+                <div class="code-block">
+                    <pre><code>- 一般的な問題: help.openai.com
+- 技術的問題: support@openai.com
+- BAA関連: baa@openai.com
+
+連絡時の情報:
+- アカウント情報
+- エラーメッセージ
+- 発生時刻
+- 影響範囲</code></pre>
+                </div>
+            </div>
+
+            <h4>規制当局</h4>
+            <div class="card">
+                <h5>個人情報保護委員会:</h5>
+                <div class="code-block">
+                    <pre><code>- 電話: 03-6457-9849
+- ウェブ: https://www.ppc.go.jp/</code></pre>
+                </div>
+                <h5>厚生労働省:</h5>
+                <div class="code-block">
+                    <pre><code>- 電話: 03-5253-1111（代表）
+- 医政局総務課</code></pre>
+                </div>
+            </div>
+
+            <h2>エスカレーション実践例</h2>
+
+            <h3>事例1: セキュリティインシデント</h3>
+            <div class="card">
+                <h4>状況:</h4>
+                <p>不審な大量アクセスを検知、患者情報の漏洩が疑われる状況</p>
+                
+                <h4>エスカレーション手順:</h4>
+                <div class="code-block">
+                    <pre><code>1. 初動対応（レベル1 → レベル2）
+   時刻: 14:30
+   - システム管理者が異常を検知
+   - 即座にシステムアクセスを遮断
+   - IT責任者への緊急連絡（14:35）
+
+2. 詳細調査（レベル2）
+   時刻: 14:35-15:30
+   - ログ分析によるアクセス状況確認
+   - 影響範囲の特定
+   - 医療安全管理者への報告（15:00）
+
+3. 経営陣報告（レベル3）
+   時刻: 15:30-16:00
+   - 院長・事務長への緊急報告
+   - 法的対応の検討開始
+   - 外部機関への連絡準備
+
+4. 外部報告
+   時刻: 16:00-
+   - 個人情報保護委員会への報告
+   - OpenAIへの緊急連絡
+   - 患者・家族への対応準備</code></pre>
+                </div>
+            </div>
+
+            <h3>事例2: システム障害</h3>
+            <div class="card">
+                <h4>状況:</h4>
+                <p>電子カルテシステムと連携したAI機能が完全停止</p>
+                
+                <h4>エスカレーション手順:</h4>
+                <div class="code-block">
+                    <pre><code>1. 現場対応（レベル1）
+   時刻: 09:00-09:30
+   - 利用者からの障害報告
+   - 基本的な復旧作業を実施
+   - 解決できずIT責任者に連絡
+
+2. 管理者対応（レベル2）
+   時刻: 09:30-11:00
+   - システム詳細調査実施
+   - 代替手段の案内
+   - 復旧作業の実施
+
+3. 外部サポート
+   時刻: 11:00-
+   - OpenAI サポートへの連絡
+   - ベンダーサポートへの連絡
+   - 専門技術者の派遣要請
+
+4. 復旧完了
+   時刻: 14:00
+   - システム復旧確認
+   - 動作テスト実施
+   - 利用者への復旧通知</code></pre>
+                </div>
+            </div>
+
+            <h2>保守・エスカレーション体制の改善</h2>
+
+            <h3>定期的な見直し</h3>
+            <div class="card">
+                <h5>見直し項目:</h5>
+                <div class="code-block">
+                    <pre><code>1. 連絡体制の確認
+   - 連絡先情報の更新
+   - 責任者の変更反映
+   - 連絡手段の多重化
+
+2. 対応手順の改善
+   - 過去の事例分析
+   - 対応時間の短縮
+   - 手順書の更新
+
+3. 技術スキルの向上
+   - 担当者の技術研修
+   - 新技術への対応
+   - 外部研修の受講
+
+実施頻度:
+- 四半期ごとの見直し
+- 年1回の総合評価
+- インシデント発生時の臨時見直し</code></pre>
+                </div>
+            </div>
+
+            <div class="page-navigation">
+                <a href="4.3.2-application-cost.html" class="page-nav-btn">← 前：アプリケーション問題とコスト管理</a>
+                <div class="page-nav-center">
+                    <a href="../../../index.html">📚 目次</a>
+                </div>
+                <a href="4.3.4-tools-improvement.html" class="page-nav-btn">次：ツールと継続的改善 →</a>
+            </div>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 医療機関向け API キー管理マニュアル. 
+            <span class="footer-note">本マニュアルは医療機関での安全なAI活用を支援することを目的としています。</span></p>
+        </div>
+    </footer>
+
+    <script src="../../assets/js/sidebar.js"></script>
+    <script>
+    </script>
+</body>
+</html>

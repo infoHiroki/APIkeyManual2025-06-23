@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>効果測定・評価 - 医療機関向け API キー管理マニュアル</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="header-title">📊 効果測定・評価</h1>
+                <p class="header-subtitle">医療機関向け API キー管理マニュアル</p>
+            </div>
+            <div class="header-actions">
+                <button onclick="window.print()" class="btn btn-outline">🖨️ 印刷</button>
+                <a href="../../index.html" class="btn btn-primary">📚 トップに戻る</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container main-container">
+        <nav class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h3>📚 目次</h3>
+                <button id="sidebar-toggle" class="sidebar-toggle">☰</button>
+            </div>
+            
+            <div class="sidebar-content">
+                <div class="nav-section" data-section="basics">
+                    <div class="nav-section-header">
+                        <h4>📖 1. 基本概念</h4>
+                        <span class="nav-section-toggle">▼</span>
+                    </div>
+                    <ul class="nav-subsection">
+                        <li><a href="../1-basics/1.1-what-is-llm.html">LLMとは</a></li>
+                        <li><a href="../1-basics/1.2-what-is-api.html">APIとは</a></li>
+                        <li><a href="../1-basics/1.3-medical-considerations.html">医療機関での注意点</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section" data-section="compliance">
+                    <div class="nav-section-header">
+                        <h4>⚖️ 2. 法規制・コンプライアンス</h4>
+                        <span class="nav-section-toggle">▼</span>
+                    </div>
+                    <ul class="nav-subsection">
+                        <li><a href="../2-compliance/2.1-japanese-regulations.html">日本の医療機関における法規制</a></li>
+                        <li><a href="../2-compliance/2.2-openai-privacy.html">OpenAIプライバシーポリシー</a></li>
+                        <li>
+                            <div class="nav-subsection-group">
+                                <span class="nav-subsection-title">🤝 BAA・HIPAA ガイド</span>
+                                <ul class="nav-subsection-items">
+                                    <li><a href="../2-compliance/2.3-baa-hipaa/2.3.1-basics.html">BAA基本概念</a></li>
+                                    <li><a href="../2-compliance/2.3-baa-hipaa/2.3.2-zdr.html">ZDR詳細</a></li>
+                                    <li><a href="../2-compliance/2.3-baa-hipaa/2.3.3-implementation.html">実装・申請手順</a></li>
+                                    <li><a href="../2-compliance/2.3-baa-hipaa/2.3.4-decision-guide.html">意思決定ガイド</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="nav-section" data-section="security">
+                    <div class="nav-section-header">
+                        <h4>🛡️ 3. セキュリティ</h4>
+                        <span class="nav-section-toggle">▼</span>
+                    </div>
+                    <ul class="nav-subsection">
+                        <li><a href="../3-security/3.1-security-overview.html">セキュリティ概要</a></li>
+                        <li><a href="../3-security/3.2-patient-data-protection.html">患者情報保護</a></li>
+                        <li><a href="../3-security/3.3-api-key-security.html">APIキーセキュリティ</a></li>
+                        <li>
+                            <div class="nav-subsection-group">
+                                <span class="nav-subsection-title">🔍 セキュリティ監査</span>
+                                <ul class="nav-subsection-items">
+                                    <li><a href="../3-security/3.4-security-audit/3.4.1-overview-daily.html">監査概要・日常チェック</a></li>
+                                    <li><a href="../3-security/3.4-security-audit/3.4.2-audit-items-tools.html">重点監査項目・ツール</a></li>
+                                    <li><a href="../3-security/3.4-security-audit/3.4.3-audit-response-improvement.html">監査対応・改善</a></li>
+                                    <li><a href="../3-security/3.4-security-audit/3.4.4-documentation-training.html">文書管理・担当者育成</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="nav-section" data-section="implementation">
+                    <div class="nav-section-header">
+                        <h4>🔧 4. 実装・運用</h4>
+                        <span class="nav-section-toggle">▼</span>
+                    </div>
+                    <ul class="nav-subsection">
+                        <li><a href="../4-implementation/4.1-api-key-setup.html">APIキーの取得と設定</a></li>
+                        <li><a href="../4-implementation/4.2-practical-usage.html">実践的な使用ガイド</a></li>
+                        <li>
+                            <div class="nav-subsection-group">
+                                <span class="nav-subsection-title">🚨 トラブルシューティング</span>
+                                <ul class="nav-subsection-items">
+                                    <li><a href="../4-implementation/4.3-troubleshooting/4.3.1-emergency-technical.html">緊急時対応・技術的問題</a></li>
+                                    <li><a href="../4-implementation/4.3-troubleshooting/4.3.2-application-cost.html">アプリケーション・コスト問題</a></li>
+                                    <li><a href="../4-implementation/4.3-troubleshooting/4.3.3-maintenance-escalation.html">システム保守・エスカレーション</a></li>
+                                    <li><a href="../4-implementation/4.3-troubleshooting/4.3.4-tools-improvement.html">ツール・継続的改善</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="nav-subsection-group">
+                                <span class="nav-subsection-title">📊 運用管理</span>
+                                <ul class="nav-subsection-items">
+                                    <li><a href="../4-implementation/4.4-operations-management/4.4.1-daily-operations.html">日常運用</a></li>
+                                    <li><a href="../4-implementation/4.4-operations-management/4.4.2-user-cost-management.html">利用者・コスト管理</a></li>
+                                    <li><a href="../4-implementation/4.4-operations-management/4.4.3-analysis-improvement.html">データ分析・改善</a></li>
+                                    <li><a href="../4-implementation/4.4-operations-management/4.4.4-documentation-emergency.html">文書管理・緊急時対応</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="nav-section" data-section="reference">
+                    <div class="nav-section-header">
+                        <h4>📋 5. リファレンス</h4>
+                        <span class="nav-section-toggle">▼</span>
+                    </div>
+                    <ul class="nav-subsection">
+                        <li><a href="../5-reference/5.1-quick-reference.html">クイックリファレンス</a></li>
+                        <li><a href="../5-reference/5.2-executive-summary.html">エグゼクティブサマリー</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section" data-section="training">
+                    <div class="nav-section-header">
+                        <h4>🎓 6. 研修・トレーニング</h4>
+                        <span class="nav-section-toggle">▼</span>
+                    </div>
+                    <ul class="nav-subsection">
+                        <li>
+                            <div class="nav-subsection-group">
+                                <span class="nav-subsection-title">📚 職員研修プログラム</span>
+                                <ul class="nav-subsection-items">
+                                    <li><a href="../6-training/6.1-overview.html">研修体系概要</a></li>
+                                    <li><a href="../6-training/6.2-advanced.html">継続・職種別研修</a></li>
+                                    <li><a href="../6-training/6.3-evaluation.html" class="active">効果測定・評価</a></li>
+                                    <li><a href="../6-training/6.4-management.html">運営体制・教材管理</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a href="../6-training/6.2-assessment-tests.html">理解度テスト問題集</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section" data-section="reporting">
+                    <div class="nav-section-header">
+                        <h4>📊 7. レポート・分析</h4>
+                        <span class="nav-section-toggle">▼</span>
+                    </div>
+                    <ul class="nav-subsection">
+                        <li><a href="../7-reporting/7.1-monthly-reports.html">月次レポートテンプレート</a></li>
+                        <li><a href="../7-reporting/7.2-training-effectiveness.html">研修効果測定レポート</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <main class="content" id="content">
+            <h1>研修効果測定と継続的改善</h1>
+
+            <h2>📊 研修効果の測定</h2>
+
+            <h3>理解度・満足度調査</h3>
+
+            <h4>研修直後アンケート</h4>
+            <div class="card">
+                <p><strong>実施方法:</strong> 全研修参加者に実施</p>
+
+                <h5>調査項目:</h5>
+                <ol>
+                    <li><strong>理解度評価（5段階）</strong>
+                        <ul>
+                            <li>内容の理解しやすさ</li>
+                            <li>実務への応用可能性</li>
+                            <li>説明の明確さ</li>
+                        </ul>
+                    </li>
+                    <li><strong>満足度評価（5段階）</strong>
+                        <ul>
+                            <li>研修内容の有用性</li>
+                            <li>講師の指導力</li>
+                            <li>研修時間の適切さ</li>
+                        </ul>
+                    </li>
+                    <li><strong>改善提案（自由記述）</strong>
+                        <ul>
+                            <li>追加してほしい内容</li>
+                            <li>改善してほしい点</li>
+                            <li>その他の意見・要望</li>
+                        </ul>
+                    </li>
+                </ol>
+
+                <div class="alert alert-info">
+                    <strong>目標値:</strong>
+                    <ul>
+                        <li>理解度：平均4.0以上</li>
+                        <li>満足度：平均4.2以上</li>
+                        <li>参加率：95%以上</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h4>フォローアップ調査（研修3ヶ月後）</h4>
+            <div class="card">
+                <p><strong>調査目的:</strong> 実際の業務での活用状況確認</p>
+
+                <h5>調査項目:</h5>
+                <ol>
+                    <li><strong>活用状況</strong>
+                        <ul>
+                            <li>研修後のAI利用頻度</li>
+                            <li>活用している業務内容</li>
+                            <li>遭遇した問題・課題</li>
+                        </ul>
+                    </li>
+                    <li><strong>効果実感</strong>
+                        <ul>
+                            <li>業務効率の改善</li>
+                            <li>作業品質の向上</li>
+                            <li>新たなニーズの発見</li>
+                        </ul>
+                    </li>
+                    <li><strong>追加サポートニーズ</strong>
+                        <ul>
+                            <li>追加研修の必要性</li>
+                            <li>個別指導の希望</li>
+                            <li>ツール・資料の要望</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <h3>実践的評価</h3>
+
+            <h4>スキル認定制度</h4>
+            <div class="card">
+                <h5>認定レベル:</h5>
+
+                <div class="alert alert-info">
+                    <strong>🥉 ブロンズ認定（基礎レベル）</strong>
+                    <ul>
+                        <li>基本的な操作ができる</li>
+                        <li>安全な利用ができる</li>
+                        <li>基本的な問題対応ができる</li>
+                    </ul>
+                </div>
+
+                <div class="alert alert-warning">
+                    <strong>🥈 シルバー認定（実用レベル）</strong>
+                    <ul>
+                        <li>効果的なプロンプト作成ができる</li>
+                        <li>部署業務に活用できる</li>
+                        <li>他職員への指導ができる</li>
+                    </ul>
+                </div>
+
+                <div class="alert alert-success">
+                    <strong>🥇 ゴールド認定（専門レベル）</strong>
+                    <ul>
+                        <li>高度な活用ができる</li>
+                        <li>新たな活用方法を開発できる</li>
+                        <li>研修講師を務められる</li>
+                    </ul>
+                </div>
+
+                <h5>認定方法:</h5>
+                <ul>
+                    <li>実技試験（課題解決）</li>
+                    <li>ポートフォリオ提出</li>
+                    <li>活用実績の評価</li>
+                </ul>
+            </div>
+
+            <h4>成果発表・共有</h4>
+            <div class="card">
+                <h5>活用事例発表会（年2回開催）:</h5>
+                <ul>
+                    <li>優秀事例の表彰</li>
+                    <li>部署別成果の共有</li>
+                    <li>課題・改善点の議論</li>
+                </ul>
+
+                <h5>内部論文・報告書:</h5>
+                <ul>
+                    <li>活用効果の定量的分析</li>
+                    <li>新たな活用方法の提案</li>
+                    <li>他施設への情報発信</li>
+                </ul>
+
+                <h5>外部発表:</h5>
+                <ul>
+                    <li>学会での事例発表</li>
+                    <li>業界誌への寄稿</li>
+                    <li>他医療機関との情報交換</li>
+                </ul>
+            </div>
+
+            <h2>🔄 研修プログラムの継続的改善</h2>
+
+            <h3>改善サイクル</h3>
+
+            <h4>四半期ごとの見直し</h4>
+            <div class="card">
+                <h5>見直し項目:</h5>
+                <ul>
+                    <li>参加者フィードバックの分析</li>
+                    <li>最新技術動向の反映</li>
+                    <li>法規制変更への対応</li>
+                    <li>実践での課題・問題の反映</li>
+                </ul>
+
+                <h5>改善プロセス:</h5>
+                <ol>
+                    <li>データ収集・分析</li>
+                    <li>改善案の検討</li>
+                    <li>関係者との調整</li>
+                    <li>カリキュラム更新</li>
+                    <li>効果測定・評価</li>
+                </ol>
+            </div>
+
+            <h4>年次レビュー</h4>
+            <div class="card">
+                <h5>レビュー内容:</h5>
+                <ul>
+                    <li>年間研修実績の評価</li>
+                    <li>職員スキル向上の測定</li>
+                    <li>ROI（研修投資効果）の分析</li>
+                    <li>次年度計画の策定</li>
+                </ul>
+
+                <div class="alert alert-info">
+                    <strong>評価指標:</strong>
+                    <ul>
+                        <li>研修参加率：目標95%以上</li>
+                        <li>理解度テスト合格率：目標90%以上</li>
+                        <li>実務活用率：目標80%以上</li>
+                        <li>業務効率改善率：目標20%以上</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2>次のステップ</h2>
+            <div class="card">
+                <p>研修効果測定と継続的改善について理解した後は、以下のドキュメントを参照してください：</p>
+                
+                <p><strong>研修関連:</strong></p>
+                <ul>
+                    <li><a href="./6.1-overview.html">研修体系と新規利用者研修</a> - 基礎研修の内容</li>
+                    <li><a href="./6.2-advanced.html">継続研修と職種別研修</a> - より高度な研修プログラム</li>
+                    <li><a href="./6.4-management.html">運営体制と教材管理</a> - 研修運営の詳細</li>
+                </ul>
+            </div>
+
+            <div class="page-navigation">
+                <a href="6.2-advanced.html" class="page-nav-btn">← 前：継続・職種別研修</a>
+                <div class="page-nav-center">
+                    <a href="../../index.html">📚 目次</a>
+                </div>
+                <a href="6.4-management.html" class="page-nav-btn">次：運営体制・教材管理 →</a>
+            </div>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 医療機関向け API キー管理マニュアル. 
+            <span class="footer-note">本マニュアルは医療機関での安全なAI活用を支援することを目的としています。</span></p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/sidebar.js"></script>
+    <script>
+        }
+
+        // 保存されたテーマを復元
+        }
+    </script>
+</body>
+</html>

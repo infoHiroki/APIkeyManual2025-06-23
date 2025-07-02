@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>データ分析と継続的改善 - 医療機関向け API キー管理マニュアル</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="header-title">📊 データ分析と継続的改善</h1>
+                <p class="header-subtitle">医療機関向け API キー管理マニュアル</p>
+            </div>
+            <div class="header-actions">
+                <button onclick="window.print()" class="btn btn-outline">🖨️ 印刷</button>
+                <a href="../../../index.html" class="btn btn-primary">📚 トップに戻る</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container main-container">
+        <nav class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h3>📚 目次</h3>
+                <button id="sidebar-toggle" class="sidebar-toggle">☰</button>
+            </div>
+            
+            <div class="sidebar-content">
+                <div class="nav-section" data-section="basics">
+                    <div class="nav-section-header">
+                        <h4>📖 1. 基本概念</h4>
+                        <span class="nav-section-toggle">▼</span>
+                    </div>
+                    <ul class="nav-subsection">
+                        <li><a href="../../1-basics/1.1-what-is-llm.html">LLMとは</a></li>
+                        <li><a href="../../1-basics/1.2-what-is-api.html">APIとは</a></li>
+                        <li><a href="../../1-basics/1.3-medical-considerations.html">医療機関での注意点</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section" data-section="compliance">
+                    <div class="nav-section-header">
+                        <h4>⚖️ 2. 法規制・コンプライアンス</h4>
+                        <span class="nav-section-toggle">▼</span>
+                    </div>
+                    <ul class="nav-subsection">
+                        <li><a href="../../2-compliance/2.1-japanese-regulations.html">日本の医療機関における法規制</a></li>
+                        <li><a href="../../2-compliance/2.2-openai-privacy.html">OpenAIプライバシーポリシー</a></li>
+                        <li>
+                            <div class="nav-subsection-group">
+                                <span class="nav-subsection-title">🤝 BAA・HIPAA ガイド</span>
+                                <ul class="nav-subsection-items">
+                                    <li><a href="../../2-compliance/2.3-baa-hipaa/2.3.1-basics.html">BAA基本概念</a></li>
+                                    <li><a href="../../2-compliance/2.3-baa-hipaa/2.3.2-zdr.html">ZDR詳細</a></li>
+                                    <li><a href="../../2-compliance/2.3-baa-hipaa/2.3.3-implementation.html">実装・申請手順</a></li>
+                                    <li><a href="../../2-compliance/2.3-baa-hipaa/2.3.4-decision-guide.html">意思決定ガイド</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="nav-section" data-section="security">
+                    <div class="nav-section-header">
+                        <h4>🛡️ 3. セキュリティ</h4>
+                        <span class="nav-section-toggle">▼</span>
+                    </div>
+                    <ul class="nav-subsection">
+                        <li><a href="../../3-security/3.1-security-overview.html">セキュリティ概要</a></li>
+                        <li><a href="../../3-security/3.2-patient-data-protection.html">患者情報保護</a></li>
+                        <li><a href="../../3-security/3.3-api-key-security.html">APIキーセキュリティ</a></li>
+                        <li>
+                            <div class="nav-subsection-group">
+                                <span class="nav-subsection-title">🔍 セキュリティ監査</span>
+                                <ul class="nav-subsection-items">
+                                    <li><a href="../../3-security/3.4-security-audit/3.4.1-overview-daily.html">監査概要・日常チェック</a></li>
+                                    <li><a href="../../3-security/3.4-security-audit/3.4.2-audit-items-tools.html">重点監査項目・ツール</a></li>
+                                    <li><a href="../../3-security/3.4-security-audit/3.4.3-audit-response-improvement.html">監査対応・改善</a></li>
+                                    <li><a href="../../3-security/3.4-security-audit/3.4.4-documentation-training.html">文書管理・担当者育成</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="nav-section" data-section="implementation">
+                    <div class="nav-section-header">
+                        <h4>🔧 4. 実装・運用</h4>
+                        <span class="nav-section-toggle">▼</span>
+                    </div>
+                    <ul class="nav-subsection">
+                        <li><a href="../../4-implementation/4.1-api-key-setup.html">APIキーの取得と設定</a></li>
+                        <li><a href="../../4-implementation/4.2-practical-usage.html">実践的な使用ガイド</a></li>
+                        <li>
+                            <div class="nav-subsection-group">
+                                <span class="nav-subsection-title">🚨 トラブルシューティング</span>
+                                <ul class="nav-subsection-items">
+                                    <li><a href="../../4-implementation/4.3-troubleshooting/4.3.1-emergency-technical.html">緊急時対応・技術的問題</a></li>
+                                    <li><a href="../../4-implementation/4.3-troubleshooting/4.3.2-application-cost.html">アプリケーション・コスト問題</a></li>
+                                    <li><a href="../../4-implementation/4.3-troubleshooting/4.3.3-maintenance-escalation.html">システム保守・エスカレーション</a></li>
+                                    <li><a href="../../4-implementation/4.3-troubleshooting/4.3.4-tools-improvement.html">ツール・継続的改善</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="nav-subsection-group">
+                                <span class="nav-subsection-title">📊 運用管理</span>
+                                <ul class="nav-subsection-items">
+                                    <li><a href="../../4-implementation/4.4-operations-management/4.4.1-daily-operations.html">日常運用</a></li>
+                                    <li><a href="../../4-implementation/4.4-operations-management/4.4.2-user-cost-management.html">利用者・コスト管理</a></li>
+                                    <li><a href="../../4-implementation/4.4-operations-management/4.4.3-analysis-improvement.html" class="active">データ分析・改善</a></li>
+                                    <li><a href="../../4-implementation/4.4-operations-management/4.4.4-documentation-emergency.html">文書管理・緊急時対応</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="nav-section" data-section="reference">
+                    <div class="nav-section-header">
+                        <h4>📋 5. リファレンス</h4>
+                        <span class="nav-section-toggle">▼</span>
+                    </div>
+                    <ul class="nav-subsection">
+                        <li><a href="../../5-reference/5.1-quick-reference.html">クイックリファレンス</a></li>
+                        <li><a href="../../5-reference/5.2-executive-summary.html">エグゼクティブサマリー</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section" data-section="training">
+                    <div class="nav-section-header">
+                        <h4>🎓 6. 研修・トレーニング</h4>
+                        <span class="nav-section-toggle">▼</span>
+                    </div>
+                    <ul class="nav-subsection">
+                        <li>
+                            <div class="nav-subsection-group">
+                                <span class="nav-subsection-title">📚 職員研修プログラム</span>
+                                <ul class="nav-subsection-items">
+                                    <li><a href="../../6-training/6.1-overview.html">研修体系概要</a></li>
+                                    <li><a href="../../6-training/6.2-advanced.html">継続・職種別研修</a></li>
+                                    <li><a href="../../6-training/6.3-evaluation.html">効果測定・評価</a></li>
+                                    <li><a href="../../6-training/6.4-management.html">運営体制・教材管理</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a href="../../6-training/6.2-assessment-tests.html">理解度テスト問題集</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section" data-section="reporting">
+                    <div class="nav-section-header">
+                        <h4>📊 7. レポート・分析</h4>
+                        <span class="nav-section-toggle">▼</span>
+                    </div>
+                    <ul class="nav-subsection">
+                        <li><a href="../../07-reporting/7.1-monthly-reports.html">月次レポートテンプレート</a></li>
+                        <li><a href="../../07-reporting/7.2-training-effectiveness.html">研修効果測定レポート</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <main class="content" id="content">
+            <h1>データ分析と継続的改善</h1>
+
+            <h2>📊 運用データ分析</h2>
+
+            <h3>KPI（重要業績指標）の設定</h3>
+
+            <h4>システム稼働関連KPI</h4>
+            <div class="code-block">
+                <pre><code>1. 可用性
+   - システム稼働率：99.5%以上
+   - 平均応答時間：3秒以内
+   - エラー発生率：0.1%以下
+
+2. 利用状況
+   - 月間アクティブユーザー数：目標50名
+   - 月間API利用回数：目標1,000回
+   - 利用者1人あたり平均利用回数：20回/月
+
+3. 効果測定
+   - 業務時間短縮：目標20%
+   - 文書作成時間短縮：目標30%
+   - 利用者満足度：目標4.0/5.0
+
+4. コスト効率
+   - ROI：目標150%以上
+   - コスト/利用回数：目標$1.5以下
+   - 予算達成率：90-110%</code></pre>
+            </div>
+
+            <h4>分析レポートの作成</h4>
+            <div class="card">
+                <h5>月次分析レポート構成：</h5>
+                <div class="code-block">
+                    <pre><code>1. エグゼクティブサマリー
+   - 主要KPIの達成状況
+   - 重要な変化・トレンド
+   - 主要課題と対応策
+
+2. 利用状況分析
+   - 利用量の推移
+   - 部門別利用状況
+   - 機能別利用状況
+   - 利用者別分析
+
+3. システム稼働状況
+   - 稼働率・性能指標
+   - 障害・インシデント
+   - メンテナンス実施状況
+
+4. コスト分析
+   - コスト実績 vs 予算
+   - コスト効率の分析
+   - 最適化の効果
+
+5. 改善提案
+   - 課題の特定
+   - 改善策の提案
+   - 実施計画</code></pre>
+                </div>
+            </div>
+
+            <h2>🔄 継続的改善</h2>
+
+            <h3>改善サイクル（PDCA）</h3>
+
+            <h4>Plan（計画）</h4>
+            <div class="code-block">
+                <pre><code>改善計画の策定：
+
+1. 現状分析
+   - データ収集・分析
+   - 問題・課題の特定
+   - 根本原因の分析
+
+2. 目標設定
+   - SMART目標の設定
+   - KPIの定義
+   - 成功基準の明確化
+
+3. 改善策の検討
+   - 複数案の比較検討
+   - 実現可能性の評価
+   - リスク・コストの評価
+
+4. 実施計画の作成
+   - 作業分解構造（WBS）
+   - スケジュール策定
+   - 責任者・担当者の決定</code></pre>
+            </div>
+
+            <h4>Do（実行）</h4>
+            <div class="code-block">
+                <pre><code>改善策の実施：
+
+1. 実施準備
+   - リソースの確保
+   - 関係者への周知
+   - 実施環境の整備
+
+2. 段階的実施
+   - パイロット実施
+   - 効果の確認
+   - 本格実施
+
+3. 進捗管理
+   - 実施状況の監視
+   - 問題発生時の対応
+   - スケジュール調整</code></pre>
+            </div>
+
+            <h4>Check（評価）</h4>
+            <div class="code-block">
+                <pre><code>効果測定・評価：
+
+1. データ収集
+   - KPIの測定
+   - 定量・定性データの収集
+   - 利用者フィードバックの収集
+
+2. 効果分析
+   - 目標達成度の評価
+   - 想定外の効果・影響の確認
+   - 課題・問題点の特定
+
+3. 評価レポート
+   - 結果サマリー
+   - 成功要因・阻害要因
+   - 学習・教訓の整理</code></pre>
+            </div>
+
+            <h4>Action（改善）</h4>
+            <div class="code-block">
+                <pre><code>標準化・次期改善：
+
+1. 成功事例の標準化
+   - 手順書の更新
+   - 研修内容への反映
+   - 他部門への横展開
+
+2. 課題・問題への対応
+   - 追加改善策の検討
+   - 緊急対応の実施
+   - 予防策の策定
+
+3. 次期改善計画
+   - 新たな改善テーマの特定
+   - 優先順位の設定
+   - 次期計画の策定</code></pre>
+            </div>
+
+            <h2>改善活動の実践例</h2>
+
+            <h3>事例1：API利用効率の改善</h3>
+            <div class="card">
+                <h4>問題：プロンプトの冗長性によるコスト増加</h4>
+                <div class="code-block">
+                    <pre><code>Plan：
+- 現状分析：平均プロンプト長2,000文字
+- 目標設定：平均プロンプト長1,200文字（40%削減）
+- 改善策：テンプレート化とガイドライン策定
+
+Do：
+- プロンプトテンプレートの作成
+- 利用者向けガイドラインの配布
+- 研修の実施
+
+Check：
+- 平均プロンプト長：1,150文字（42%削減達成）
+- 月次コスト：25%削減
+- 利用者満足度：4.2/5.0（向上）
+
+Action：
+- テンプレートの標準化
+- 新規利用者研修への組み込み
+- 他部門への横展開</code></pre>
+                </div>
+            </div>
+
+            <h3>事例2：システム稼働率の改善</h3>
+            <div class="card">
+                <h4>問題：メンテナンス時間の長期化</h4>
+                <div class="code-block">
+                    <pre><code>Plan：
+- 現状分析：平均メンテナンス時間90分
+- 目標設定：平均メンテナンス時間60分
+- 改善策：自動化とプロセス改善
+
+Do：
+- 自動メンテナンスツールの導入
+- メンテナンス手順の標準化
+- 担当者の技術研修
+
+Check：
+- 平均メンテナンス時間：55分（39%短縮）
+- システム稼働率：99.7%（向上）
+- メンテナンス品質：向上
+
+Action：
+- 自動化ツールの他システムへの適用
+- メンテナンス手順書の更新
+- ベストプラクティスの共有</code></pre>
+                </div>
+            </div>
+
+            <h2>次のステップ</h2>
+
+            <p>データ分析と継続的改善のプロセスを確立した後は、以下のステップに進んでください：</p>
+
+            <div class="card">
+                <ul>
+                    <li><a href="./4.4.4-documentation-emergency.html">文書管理と緊急時対応</a> - 運用文書の整備と緊急時体制の構築</li>
+                    <li><a href="./4.4.1-daily-operations.html">日常運用管理</a> - 日常運用タスクの実施と改善</li>
+                    <li><a href="./4.4.2-user-cost-management.html">利用者管理とコスト管理</a> - 利用者サポートとコスト最適化</li>
+                    <li><a href="../../07-reporting/7.1-monthly-reports.html">月次レポートテンプレート</a> - 分析結果のレポート作成</li>
+                </ul>
+            </div>
+
+            <div class="page-navigation">
+                <a href="4.4.2-user-cost-management.html" class="page-nav-btn">← 前：利用者管理とコスト管理</a>
+                <div class="page-nav-center">
+                    <a href="../../../index.html">📚 目次</a>
+                </div>
+                <a href="4.4.4-documentation-emergency.html" class="page-nav-btn">次：文書管理と緊急時対応 →</a>
+            </div>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 医療機関向け API キー管理マニュアル. 
+            <span class="footer-note">本マニュアルは医療機関での安全なAI活用を支援することを目的としています。</span></p>
+        </div>
+    </footer>
+
+    <script src="../../assets/js/sidebar.js"></script>
+    <script>
+    </script>
+</body>
+</html>

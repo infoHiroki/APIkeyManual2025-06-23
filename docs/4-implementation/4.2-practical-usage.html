@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>実践的な使用ガイド - 医療機関向け API キー管理マニュアル</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="header-title">📋 実践的な使用ガイド</h1>
+                <p class="header-subtitle">医療機関向け API キー管理マニュアル</p>
+            </div>
+            <div class="header-actions">
+                <button onclick="window.print()" class="btn btn-outline">🖨️ 印刷</button>
+                <a href="../../index.html" class="btn btn-primary">📚 トップに戻る</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container main-container">
+        <nav class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h3>📚 目次</h3>
+                <button id="sidebar-toggle" class="sidebar-toggle">☰</button>
+            </div>
+            
+            <div class="sidebar-content">
+                <div class="nav-section" data-section="basics">
+                    <div class="nav-section-header">
+                        <h4>📖 1. 基本概念</h4>
+                        <span class="nav-section-toggle">▼</span>
+                    </div>
+                    <ul class="nav-subsection">
+                        <li><a href="../1-basics/1.1-what-is-llm.html">LLMとは</a></li>
+                        <li><a href="../1-basics/1.2-what-is-api.html">APIとは</a></li>
+                        <li><a href="../1-basics/1.3-medical-considerations.html">医療機関での注意点</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section" data-section="compliance">
+                    <div class="nav-section-header">
+                        <h4>⚖️ 2. 法規制・コンプライアンス</h4>
+                        <span class="nav-section-toggle">▼</span>
+                    </div>
+                    <ul class="nav-subsection">
+                        <li><a href="../2-compliance/2.1-japanese-regulations.html">日本の医療機関における法規制</a></li>
+                        <li><a href="../2-compliance/2.2-openai-privacy.html">OpenAIプライバシーポリシー</a></li>
+                        <li>
+                            <div class="nav-subsection-group">
+                                <span class="nav-subsection-title">🤝 BAA・HIPAA ガイド</span>
+                                <ul class="nav-subsection-items">
+                                    <li><a href="../2-compliance/2.3-baa-hipaa/2.3.1-basics.html">BAA基本概念</a></li>
+                                    <li><a href="../2-compliance/2.3-baa-hipaa/2.3.2-zdr.html">ZDR詳細</a></li>
+                                    <li><a href="../2-compliance/2.3-baa-hipaa/2.3.3-implementation.html">実装・申請手順</a></li>
+                                    <li><a href="../2-compliance/2.3-baa-hipaa/2.3.4-decision-guide.html">意思決定ガイド</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="nav-section" data-section="security">
+                    <div class="nav-section-header">
+                        <h4>🛡️ 3. セキュリティ</h4>
+                        <span class="nav-section-toggle">▼</span>
+                    </div>
+                    <ul class="nav-subsection">
+                        <li><a href="../3-security/3.1-security-overview.html">セキュリティ概要</a></li>
+                        <li><a href="../3-security/3.2-patient-data-protection.html">患者情報保護</a></li>
+                        <li><a href="../3-security/3.3-api-key-security.html">APIキーセキュリティ</a></li>
+                        <li>
+                            <div class="nav-subsection-group">
+                                <span class="nav-subsection-title">🔍 セキュリティ監査</span>
+                                <ul class="nav-subsection-items">
+                                    <li><a href="../3-security/3.4-security-audit/3.4.1-overview-daily.html">監査概要・日常チェック</a></li>
+                                    <li><a href="../3-security/3.4-security-audit/3.4.2-audit-items-tools.html">重点監査項目・ツール</a></li>
+                                    <li><a href="../3-security/3.4-security-audit/3.4.3-audit-response-improvement.html">監査対応・改善</a></li>
+                                    <li><a href="../3-security/3.4-security-audit/3.4.4-documentation-training.html">文書管理・担当者育成</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="nav-section" data-section="implementation">
+                    <div class="nav-section-header">
+                        <h4>🔧 4. 実装・運用</h4>
+                        <span class="nav-section-toggle">▼</span>
+                    </div>
+                    <ul class="nav-subsection">
+                        <li><a href="../4-implementation/4.1-api-key-setup.html">APIキーの取得と設定</a></li>
+                        <li><a href="../4-implementation/4.2-practical-usage.html" class="active">実践的な使用ガイド</a></li>
+                        <li>
+                            <div class="nav-subsection-group">
+                                <span class="nav-subsection-title">🚨 トラブルシューティング</span>
+                                <ul class="nav-subsection-items">
+                                    <li><a href="../4-implementation/4.3-troubleshooting/4.3.1-emergency-technical.html">緊急時対応・技術的問題</a></li>
+                                    <li><a href="../4-implementation/4.3-troubleshooting/4.3.2-application-cost.html">アプリケーション・コスト問題</a></li>
+                                    <li><a href="../4-implementation/4.3-troubleshooting/4.3.3-maintenance-escalation.html">システム保守・エスカレーション</a></li>
+                                    <li><a href="../4-implementation/4.3-troubleshooting/4.3.4-tools-improvement.html">ツール・継続的改善</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="nav-subsection-group">
+                                <span class="nav-subsection-title">📊 運用管理</span>
+                                <ul class="nav-subsection-items">
+                                    <li><a href="../4-implementation/4.4-operations-management/4.4.1-daily-operations.html">日常運用</a></li>
+                                    <li><a href="../4-implementation/4.4-operations-management/4.4.2-user-cost-management.html">利用者・コスト管理</a></li>
+                                    <li><a href="../4-implementation/4.4-operations-management/4.4.3-analysis-improvement.html">データ分析・改善</a></li>
+                                    <li><a href="../4-implementation/4.4-operations-management/4.4.4-documentation-emergency.html">文書管理・緊急時対応</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="nav-section" data-section="reference">
+                    <div class="nav-section-header">
+                        <h4>📋 5. リファレンス</h4>
+                        <span class="nav-section-toggle">▼</span>
+                    </div>
+                    <ul class="nav-subsection">
+                        <li><a href="../5-reference/5.1-quick-reference.html">クイックリファレンス</a></li>
+                        <li><a href="../5-reference/5.2-executive-summary.html">エグゼクティブサマリー</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section" data-section="training">
+                    <div class="nav-section-header">
+                        <h4>🎓 6. 研修・トレーニング</h4>
+                        <span class="nav-section-toggle">▼</span>
+                    </div>
+                    <ul class="nav-subsection">
+                        <li>
+                            <div class="nav-subsection-group">
+                                <span class="nav-subsection-title">📚 職員研修プログラム</span>
+                                <ul class="nav-subsection-items">
+                                    <li><a href="../6-training/6.1-overview.html">研修体系概要</a></li>
+                                    <li><a href="../6-training/6.2-advanced.html">継続・職種別研修</a></li>
+                                    <li><a href="../6-training/6.3-evaluation.html">効果測定・評価</a></li>
+                                    <li><a href="../6-training/6.4-management.html">運営体制・教材管理</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a href="../6-training/6.2-assessment-tests.html">理解度テスト問題集</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section" data-section="reporting">
+                    <div class="nav-section-header">
+                        <h4>📊 7. レポート・分析</h4>
+                        <span class="nav-section-toggle">▼</span>
+                    </div>
+                    <ul class="nav-subsection">
+                        <li><a href="../7-reporting/7.1-monthly-reports.html">月次レポートテンプレート</a></li>
+                        <li><a href="../7-reporting/7.2-training-effectiveness.html">研修効果測定レポート</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <main class="content" id="content">
+            <h1>実践的な使用ガイド</h1>
+
+            <h2>医療機関での具体的活用方法</h2>
+
+            <h3>📝 文書作成業務での活用</h3>
+
+            <h4>診療記録の下書き作成</h4>
+            <p>AIを活用して診療記録の構造化・整理を行います。</p>
+
+            <h5>安全な入力例</h5>
+            <div class="card">
+                <pre>❌ 避けるべき入力:
+「田中太郎さん（65歳男性）の高血圧について診療記録を作成してください」
+
+✅ 推奨される入力:
+「60代男性の高血圧患者の診療記録の下書きを作成してください。
+初診時の所見と治療方針について、標準的なフォーマットで
+構成してください。」</pre>
+            </div>
+
+            <h5>AI出力例と活用方法</h5>
+            <div class="card">
+                <pre>AIからの出力:
+【初診記録】
+主訴：血圧高値
+現病歴：健診で高血圧を指摘され来院
+既往歴：特記事項なし
+家族歴：父親に高血圧の既往
+身体所見：血圧 150/95 mmHg、その他異常なし
+
+【治療方針】
+1. 生活習慣の改善指導
+2. ACE阻害薬の開始を検討
+3. 2週間後の再診予定
+
+→ 医師が患者情報を追加・修正して完成</pre>
+            </div>
+
+            <h4>患者説明資料の作成</h4>
+            <p>患者・家族向けの説明資料を効率的に作成できます。</p>
+
+            <h5>作成例</h5>
+            <div class="card">
+                <pre>入力:
+「慢性腎臓病の患者向けに、食事療法について
+わかりやすい説明資料を作成してください。
+特に塩分制限とタンパク質制限について、
+具体例を含めて説明してください。」
+
+出力例:
+【慢性腎臓病の食事療法】
+
+◆塩分制限について
+・1日6g未満を目標
+・醤油小さじ1杯＝塩分1g
+・ラーメン1杯＝塩分5-6g
+
+◆タンパク質制限について
+・体重1kgあたり0.8g以下
+・肉・魚は手のひらサイズ
+・卵は1日1個まで
+
+→ 医師が患者の病期・状態に合わせて調整</pre>
+            </div>
+
+            <h3>🔍 情報検索・調査業務での活用</h3>
+
+            <h4>医学文献の要約・整理</h4>
+            <p>最新の医学情報の検索・整理に活用できます。</p>
+
+            <h5>活用例</h5>
+            <div class="card">
+                <pre>入力:
+「2型糖尿病の最新治療薬であるSGLT2阻害薬について、
+心血管保護効果に関する主要な研究結果を
+まとめてください。」
+
+期待される出力:
+・EMPA-REG OUTCOME試験の結果概要
+・CANVAS試験の結果概要
+・心血管リスク減少のメカニズム
+・適応患者の特徴
+
+→ 医師が最新論文で情報を確認・更新</pre>
+            </div>
+
+            <h4>薬物相互作用の確認</h4>
+            <p>薬物相互作用の基本的な情報収集に活用できます。</p>
+
+            <h5>安全な確認方法</h5>
+            <div class="card">
+                <pre>入力:
+「ACE阻害薬とNSAIDsの併用時の注意点について
+教えてください。腎機能への影響を中心に
+説明してください。」</pre>
+            </div>
+
+            <div class="alert alert-warning">
+                <h5>⚠️ 注意:</h5>
+                <ul>
+                    <li>AI出力は参考情報として利用</li>
+                    <li>必ず添付文書・相互作用データベースで確認</li>
+                    <li>患者の腎機能・併存疾患を考慮</li>
+                </ul>
+            </div>
+
+            <h3>📊 データ分析・研究支援での活用</h3>
+
+            <h4>研究計画の構成支援</h4>
+            <p>研究計画書の構成や文章作成を支援できます。</p>
+
+            <h5>研究計画書の下書き作成</h5>
+            <div class="card">
+                <pre>入力:
+「高齢者の転倒予防に関する介入研究の計画書を
+作成したいです。主要評価項目は転倒発生率で、
+6ヶ月間の前向き研究を予定しています。
+標準的な研究計画書の構成を教えてください。」
+
+出力例:
+1. 研究の背景・目的
+2. 研究デザイン
+3. 対象患者の選定基準
+4. 評価項目・測定方法
+5. 統計解析計画
+6. 倫理的配慮
+
+→ 研究者が詳細な内容を検討・追加</pre>
+            </div>
+
+            <h4>統計解析の解釈支援</h4>
+            <p>統計結果の解釈や表現方法の検討に活用できます。</p>
+
+            <h5>解釈支援の例</h5>
+            <div class="card">
+                <pre>入力:
+「p値0.03、95%信頼区間0.51-0.98のオッズ比を
+論文でどのように表現すべきか教えてください。」
+
+期待される出力:
+・統計学的有意性の解釈
+・臨床的意義の考察方法
+・信頼区間の意味
+・適切な表現例
+
+→ 研究者が研究の文脈に合わせて判断</pre>
+            </div>
+
+            <h2>部署別活用ガイド</h2>
+
+            <h3>🏥 内科外来での活用</h3>
+
+            <h4>日常業務での活用例</h4>
+            <div class="card">
+                <pre>1. 診療記録の構造化
+   - 主訴・現病歴の整理
+   - 身体所見の記録支援
+   - 治療方針の文書化
+
+2. 患者教育資料
+   - 糖尿病教育資料
+   - 高血圧の生活指導
+   - 薬物療法の説明
+
+3. 診療報酬の記載支援
+   - 診断書の下書き
+   - 紹介状の構成
+   - 指導料算定の記録</pre>
+            </div>
+
+            <h4>注意事項</h4>
+            <div class="alert alert-warning">
+                <ul>
+                    <li>患者の個人情報は絶対に入力しない</li>
+                    <li>AI出力は必ず医師が確認・修正</li>
+                    <li>診断・治療方針は医師が最終決定</li>
+                </ul>
+            </div>
+
+            <h3>🦴 整形外科での活用</h3>
+
+            <h4>特化した活用方法</h4>
+            <div class="card">
+                <pre>1. 手術記録の構造化
+   - 手術手技の記録支援
+   - 合併症の記録整理
+   - 術後管理の計画
+
+2. リハビリテーション計画
+   - 理学療法の指導内容
+   - 患者向け運動指導
+   - 回復段階の説明
+
+3. 画像所見の記録
+   - X線所見の構造化
+   - MRI所見の整理
+   - 経過観察の記録</pre>
+            </div>
+
+            <h3>👩‍⚕️ 看護部での活用</h3>
+
+            <h4>看護業務支援</h4>
+            <div class="card">
+                <pre>1. 看護記録の改善
+   - 看護過程の記録
+   - 患者状態の記録
+   - 家族への説明記録
+
+2. 患者教育の支援
+   - 退院指導資料
+   - 服薬指導の説明
+   - 生活指導のパンフレット
+
+3. 看護計画の作成
+   - 看護問題の整理
+   - 看護目標の設定
+   - 看護介入の計画</pre>
+            </div>
+
+            <h3>💊 薬剤部での活用</h3>
+
+            <h4>薬剤業務支援</h4>
+            <div class="card">
+                <pre>1. 服薬指導資料
+   - 患者向け薬物説明
+   - 副作用の説明資料
+   - 相互作用の確認
+
+2. 薬事委員会資料
+   - 新薬情報の整理
+   - 採用薬検討資料
+   - 使用実績の分析
+
+3. 院内研修資料
+   - 薬物療法の解説
+   - 最新情報の共有
+   - 事例検討資料</pre>
+            </div>
+
+            <h2>ワークフロー例</h2>
+
+            <h3>📋 標準的な業務フロー</h3>
+
+            <h4>文書作成業務の例</h4>
+            <div class="card">
+                <pre>1. 事前準備（5分）
+   - 作成する文書の目的確認
+   - 必要な情報の整理
+   - 個人情報の除去確認
+
+2. AI利用（10分）
+   - 適切なプロンプトの作成
+   - AIへの質問・依頼
+   - 出力結果の確認
+
+3. 医師による確認・修正（15分）
+   - 医学的内容の妥当性確認
+   - 患者の状態に合わせた調整
+   - 最終的な文書の完成
+
+4. 記録・保存（2分）
+   - 利用ログの記録
+   - 文書の適切な保存
+   - バックアップの確認</pre>
+            </div>
+
+            <h4>研究業務での活用例</h4>
+            <div class="card">
+                <pre>1. 研究計画の検討（30分）
+   - 研究の背景・目的の整理
+   - AIによる構成案の作成
+   - 研究デザインの検討
+
+2. 文献調査の支援（20分）
+   - 関連研究の整理
+   - 先行研究の要約
+   - 研究ギャップの特定
+
+3. 統計計画の作成（40分）
+   - 解析方法の検討
+   - サンプルサイズの計算
+   - 統計ソフトの選択
+
+4. 倫理審査資料の作成（60分）
+   - 研究計画書の作成
+   - 同意説明文書の作成
+   - 倫理的配慮の記載</pre>
+            </div>
+
+            <h2>効率向上のコツ</h2>
+
+            <h3>💡 プロンプト作成のベストプラクティス</h3>
+
+            <h4>明確で具体的な指示</h4>
+            <div class="card">
+                <pre>❌ 曖昧な指示:
+「糖尿病について教えて」
+
+✅ 具体的な指示:
+「2型糖尿病患者向けの食事療法について、
+1日の摂取カロリーと栄養バランスを中心に、
+A4用紙1枚程度の説明資料を作成してください」</pre>
+            </div>
+
+            <h4>段階的なアプローチ</h4>
+            <div class="card">
+                <pre>第1段階: 全体構成の確認
+「慢性腎臓病の患者教育資料の構成を考えてください」
+
+第2段階: 詳細内容の作成
+「先ほどの構成の『食事療法』の部分について、
+具体的な内容を詳しく説明してください」
+
+第3段階: 特定部分の修正
+「タンパク質制限の説明をより分かりやすく
+修正してください」</pre>
+            </div>
+
+            <h3>⚡ 効率的な利用方法</h3>
+
+            <h4>テンプレート化</h4>
+            <p>よく使用する質問パターンをテンプレート化</p>
+            <div class="card">
+                <pre>診療記録テンプレート:
+「[年代][性別]の[疾患名]患者の診療記録を
+以下の項目で構成してください：
+1. 主訴
+2. 現病歴  
+3. 身体所見
+4. 診断
+5. 治療方針」</pre>
+            </div>
+
+            <h4>バッチ処理</h4>
+            <p>複数の類似業務をまとめて処理</p>
+            <div class="card">
+                <pre>例: 患者説明資料の一括作成
+1. 高血圧の説明資料
+2. 糖尿病の説明資料  
+3. 高脂血症の説明資料
+→ 連続して効率的に作成</pre>
+            </div>
+
+            <h2>品質管理・確認手順</h2>
+
+            <h3>✅ 出力内容の確認項目</h3>
+
+            <h4>医学的内容の確認</h4>
+            <div class="card">
+                <ul>
+                    <li>☐ 最新のガイドラインに準拠</li>
+                    <li>☐ 薬剤名・用量が正確</li>
+                    <li>☐ 疾患名・分類が適切</li>
+                    <li>☐ 診断・治療方針が妥当</li>
+                </ul>
+            </div>
+
+            <h4>表現・形式の確認</h4>
+            <div class="card">
+                <ul>
+                    <li>☐ 患者に分かりやすい表現</li>
+                    <li>☐ 専門用語の適切な説明</li>
+                    <li>☐ 文章構成が論理的</li>
+                    <li>☐ 誤字・脱字がない</li>
+                </ul>
+            </div>
+
+            <h4>安全性の確認</h4>
+            <div class="card">
+                <ul>
+                    <li>☐ 個人情報が含まれていない</li>
+                    <li>☐ 不適切な医学的アドバイスがない</li>
+                    <li>☐ 免責事項が適切に記載</li>
+                    <li>☐ 院内規定に準拠</li>
+                </ul>
+            </div>
+
+            <h3>📝 継続的改善</h3>
+
+            <h4>利用状況の評価</h4>
+            <div class="card">
+                <ul>
+                    <li>月次での利用実績確認</li>
+                    <li>効果測定・ROI分析</li>
+                    <li>職員の満足度調査</li>
+                    <li>患者への影響評価</li>
+                </ul>
+            </div>
+
+            <h4>フィードバックの収集</h4>
+            <div class="card">
+                <ul>
+                    <li>医師・看護師からの意見</li>
+                    <li>事務職員の使用感</li>
+                    <li>患者からの反応</li>
+                    <li>システム担当者の評価</li>
+                </ul>
+            </div>
+
+            <div class="page-navigation">
+                <a href="4.1-api-key-setup.html" class="page-nav-btn">← 前：APIキー設定</a>
+                <div class="page-nav-center">
+                    <a href="../../index.html">📚 目次</a>
+                </div>
+                <a href="../5-reference/5.1-quick-reference.html" class="page-nav-btn">次：クイックリファレンス →</a>
+            </div>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 医療機関向け API キー管理マニュアル. 
+            <span class="footer-note">本マニュアルは医療機関での安全なAI活用を支援することを目的としています。</span></p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/sidebar.js"></script>
+    <script>
+    </script>
+</body>
+</html>
